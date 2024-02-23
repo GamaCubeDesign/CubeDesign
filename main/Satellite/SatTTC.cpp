@@ -34,7 +34,7 @@ ImagingFIFO imaging_fifo;
 StatusFIFO status_fifo;
 
 StatusDataServer status_server(&status_fifo, 8081);
-ImagingDataServer imaging_server(&imaging_fifo, 8080);
+ImagingDataServer imaging_server(&imaging_fifo, &operation, 8080);
 
 bool running = false;
 

@@ -16,6 +16,7 @@ class ImagingDataServer{
   public:
     static const int bufsize=256;
     ImagingFIFO *_fifo;
+    Operation *_operation;
     int client, server;
     bool isExit = false;
     bool closing = false;
@@ -25,9 +26,10 @@ class ImagingDataServer{
     struct sockaddr_in server_addr;
     socklen_t size;
 
-    ImagingDataServer(ImagingFIFO *fifo, unsigned int portNum){
+    ImagingDataServer(ImagingFIFO *fifo, Operation *operation, unsigned int portNum){
       _fifo = fifo;
       _portNum = portNum;
+      _operation = operation;
 
       // init socket.
 
@@ -82,7 +84,13 @@ class ImagingDataServer{
         unsigned int recvN = recv(server, buffer, bufsize, 0);
         if(strcmp(buffer, "SendPacket\n")==0){
           // cout << "(Imaging) Receiving packet" << endl;
-          strcpy(buffer, "Ok\n");
+          if(!_operation->switch_imaging){
+            strcpy(buffer, "Ok,0\n");
+          } else if(_operation->switch_imaging_mode == 0){
+            strcpy(buffer, "Ok,1\n");
+          } else if(_operation->switch_imaging_mode == 1){
+            strcpy(buffer, "Ok,2\n");
+          }
           send(server, buffer, bufsize, 0);
           int recvN = recv(server, (uint8_t*)&newPacket, sizeof(ImagingData), 0);
           // cout << "(Imaging) Packet received" << endl;

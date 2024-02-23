@@ -85,11 +85,11 @@ class ImagingDataServer{
         if(strcmp(buffer, "SendPacket\n")==0){
           // cout << "(Imaging) Receiving packet" << endl;
           if(!_operation->switch_imaging){
-            strcpy(buffer, "Ok,0\n");
+            strcpy(buffer, "Ok 0\n");
           } else if(_operation->switch_imaging_mode == 0){
-            strcpy(buffer, "Ok,1\n");
+            strcpy(buffer, "Ok 1\n");
           } else if(_operation->switch_imaging_mode == 1){
-            strcpy(buffer, "Ok,2\n");
+            strcpy(buffer, "Ok 2\n");
           }
           send(server, buffer, bufsize, 0);
           int recvN = recv(server, (uint8_t*)&newPacket, sizeof(ImagingData), 0);

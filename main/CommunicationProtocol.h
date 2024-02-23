@@ -127,6 +127,7 @@ struct HealthData{
 };
 
 struct LightningData{
+  uint32_t type;
   uint64_t index;
   float x;
   float y;

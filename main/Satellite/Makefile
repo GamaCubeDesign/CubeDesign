@@ -5,7 +5,7 @@ HomeFolder := $(shell pwd)/..
 # HomeFolder := /mnt/DADOS/Workbench/GCD/TTC/TTEC-Gamacubedesign
 LibFolder := $(HomeFolder)
 
-LoraLib := $(LibFolder)/sx1278-LoRa-RaspberryPi
+# LoraLib := $(LibFolder)/sx1278-LoRa-RaspberryPi
 
 # MAIN
 
@@ -30,8 +30,8 @@ RFModule.o: RFModule.cpp
 DataFIFO.o: DataFIFO.cpp
 	g++ -c DataFIFO.cpp -o DataFIFO.o
 
-LoRa.o: $(LoraLib)/LoRa.c
-	gcc -c $(LoraLib)/LoRa.c -o LoRa.o -lpigpio -lrt -pthread -lm
+LoRa.o: LoRa.c
+	gcc -c LoRa.c -o LoRa.o -lpigpio -lrt -pthread -lm
 
 SatTTC.o: SatTTC.cpp
 	g++ -c SatTTC.cpp -o SatTTC.o -lpigpio -lrt -pthread -lm

@@ -8,6 +8,21 @@ void tx_f(txData *tx){
     printf("tx done \n");
 }
 
+void * rx_f(void *p){
+    rxData *rx = (rxData *)p;
+    printf("rx done \n");
+    printf("CRC error: %d\n", rx->CRC);
+    printf("Data size: %d\n", rx->size);
+    printf("string: ");//Data we'v received
+    for(int i = 0; i < rx->size; i++){
+        printf("%c", rx->buf[i]);
+    }
+    printf("\nRSSI: %d\n", rx->RSSI);
+    printf("SNR: %f\n", rx->SNR);
+    free(p);
+    return NULL;
+}
+
 int main(){
 
     char txbuf[255];
@@ -19,6 +34,7 @@ int main(){
     modem.tx.data.buf = txbuf;
     memcpy(modem.tx.data.buf, "LoRa hello", 11);//copy data we'll sent to buffer
     modem.tx.data.size = 11;//Payload len
+    modem.rx.callback = rx_f;
     modem.eth.preambleLen=8;
     modem.eth.bw = BW125;//Bandwidth 125KHz
     modem.eth.sf = SF7;//Spreading Factor 8
@@ -37,17 +53,8 @@ int main(){
 
     LoRa_begin(&modem);
     LoRa_receive(&modem);
-    LoRa_stop_receive(&modem);
-    LoRa_send(&modem);
 
-    printf("Tsym: %f\n", modem.tx.data.Tsym);
-    printf("Tpkt: %f\n", modem.tx.data.Tpkt);
-    printf("payloadSymbNb: %u\n", modem.tx.data.payloadSymbNb);
-
-    printf("sleep %d seconds to transmitt complete\n", (int)modem.tx.data.Tpkt/1000);
-    sleep(((int)modem.tx.data.Tpkt/1000)+1);
-
+    sleep(60);
     printf("end\n");
-
     LoRa_end(&modem);
 }

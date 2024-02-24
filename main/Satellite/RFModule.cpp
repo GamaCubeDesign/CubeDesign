@@ -108,9 +108,10 @@ void updateRFComm(){
     //   rx_pointer = 0;
     //   talking = false;
     // }
+    cout << "Message received" << endl;
     while(modem_available()){
       b = modem_read();
-      // std::cout << (int)b << " " << (int)rx_pointer << std::endl;
+      std::cout << (int)b << " " << (int)rx_pointer << std::endl;
       ((uint8_t*)(&gsPacket))[rx_pointer++] = b;
       if(rx_pointer>0 && rx_pointer==gsPacket.length){
         std::cout << "Received gs: ";
@@ -127,6 +128,8 @@ void updateRFComm(){
     }
     communication_timeout = millis() + communication_timeout_limit;
   }
+
+  
   // if(talking){
   //   if(millis() > communication_timeout){
   //     DBG_Println("T:2");
@@ -153,10 +156,14 @@ void onReceive(){
       switchCaseImagingDataProtocol();
       break;
     case PROTOCOL_SET_OPERATION:
-      std::cout << "P:O" << std::endl;;
+      std::cout << "P:O" << std::endl;
       satPacket.operation.protocol = PROTOCOL_SET_OPERATION;
       switchCaseSetOperationProtocol();
       break;
+    case PROTOCOL_PING:
+      std::cout << "PROTOCOL:PING" << std::endl;
+      satPacket.operation.protocol = PROTOCOL_PING;
+      ping();
   }
 }
 
@@ -319,4 +326,18 @@ void switchCaseSetOperationProtocol(){
       talking = false;
       break;
   }
+}
+
+void ping(){
+  if(talking){
+    cout << "Cant ping while talking" << endl;
+    return;
+  }
+  cout << "Pinging" << endl;
+  satPacket.operation.protocol = PROTOCOL_PING;
+  satPacket.operation.operation = SATELLITE_PING_RESPONSE;
+  satPacket.length = 2;
+  sendSatPacket();
+  rx_pointer = 0;
+  talking = false;
 }

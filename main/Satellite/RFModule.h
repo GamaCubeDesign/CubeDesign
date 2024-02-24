@@ -46,6 +46,7 @@ void postStatusProtocol();
 void preImagingDataProtocol();
 void updateImagingDataPacket(uint8_t index);
 void postImagingDataProtocol();
+void ping();
 
 void switchCaseStatusProtocol();
 void switchCaseImagingDataProtocol();

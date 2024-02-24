@@ -59,8 +59,8 @@ void initRFModule(){
   modem.eth.ecr = CR5;//Error coding rate CR4/6
   modem.eth.CRC = 1;//Turn on CRC checking
   modem.eth.freq = 433000000;// 434.8MHz
-  modem.eth.resetGpioN = 4;//GPIO4 on lora RESET pin
-  modem.eth.dio0GpioN = 17;//GPIO17 on lora DIO0 pin to control Rxdone and Txdone interrupts
+  modem.eth.resetGpioN = 5;//GPIO4 on lora RESET pin
+  modem.eth.dio0GpioN = 6;//GPIO17 on lora DIO0 pin to control Rxdone and Txdone interrupts
   modem.eth.outPower = OP17;//Output power
   modem.eth.powerOutPin = PA_BOOST;//Power Amplifire pin
   modem.eth.AGC = 1;//Auto Gain Control

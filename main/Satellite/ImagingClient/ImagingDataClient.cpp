@@ -85,8 +85,8 @@ class ImagingDataClient{
 
     int update(){
       strcpy(buffer, "RequestUpdate\n");
-      send(client, buffer, bufsize, 0);
       cout << "Requesting update" << endl;
+      send(client, buffer, bufsize, 0);
       recv(client, buffer, bufsize, 0);
       cout << "Update received" << endl;
       if(strcmp(buffer, "Close\n")==0){

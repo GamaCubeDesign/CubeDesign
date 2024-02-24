@@ -84,13 +84,7 @@ class ImagingDataServer{
         unsigned int recvN = recv(server, buffer, bufsize, 0);
         if(strcmp(buffer, "SendPacket\n")==0){
           // cout << "(Imaging) Receiving packet" << endl;
-          if(!_operation->switch_imaging){
-            strcpy(buffer, "Ok 0\n");
-          } else if(_operation->switch_imaging_mode == 0){
-            strcpy(buffer, "Ok 1\n");
-          } else if(_operation->switch_imaging_mode == 1){
-            strcpy(buffer, "Ok 2\n");
-          }
+          strcpy(buffer, "Ok\n");
           send(server, buffer, bufsize, 0);
           int recvN = recv(server, (uint8_t*)&newPacket, sizeof(ImagingData), 0);
           // cout << "(Imaging) Packet received" << endl;
@@ -99,13 +93,19 @@ class ImagingDataServer{
           }
         } else if(strcmp(buffer, "RequestUpdate\n")==0){
           if(!closing){
-            strcpy(buffer, "Nominal\n");
-            send(server, buffer, bufsize, 0);
+            if(!_operation->switch_imaging){
+              strcpy(buffer, "Ok 0\n");
+            } else if(_operation->switch_imaging_mode == 0){
+              strcpy(buffer, "Ok 1\n");
+            } else if(_operation->switch_imaging_mode == 1){
+              strcpy(buffer, "Ok 2\n");
+            }
+            // send(server, buffer, bufsize, 0);
           } else{
             strcpy(buffer, "Close\n");
-            send(server, buffer, bufsize, 0);
             isExit = true;
           }
+          send(server, buffer, bufsize, 0);
         }
       } while(!isExit);
       

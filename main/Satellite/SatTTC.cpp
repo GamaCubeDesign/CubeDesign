@@ -245,8 +245,8 @@ int main( int argc, char *argv[] ){
   initRFModule();
   std::cout << "Device initiated successfully\n";
 
-  // std::thread status_thread (run_status_server);
-  // std::thread imaging_thread (run_imaging_server);
+  std::thread status_thread (run_status_server);
+  std::thread imaging_thread (run_imaging_server);
 
   // std::thread async_in_thread = start_serial_thread();
 
@@ -256,12 +256,12 @@ int main( int argc, char *argv[] ){
   }
 
   cout << "Closing servers" << endl;
-  // status_server.close_server();
-  // imaging_server.close_server();
-  // status_thread.join();
-  // imaging_thread.join();
+  status_server.close_server();
+  imaging_server.close_server();
+  status_thread.join();
+  imaging_thread.join();
   
-  // exit(1);
+  exit(1);
 
   modem_finish();
   return 0;

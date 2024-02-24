@@ -216,6 +216,9 @@ void parseSerial(uint8_t c){
     case SET_STAND_BY_MODE:
       parsing_function = setStandByMode;
       break;
+    case PING:
+      ping();
+      break;
     default:
       Serial.print("Unknown command ");Serial.println((int)c);
       break;

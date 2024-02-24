@@ -49,15 +49,15 @@ class SerialTransmission:
     return ','.join(out)
   
   def write(self, message):
-    print("Sending:")
-    self.channel.write(bytes('20,1\n', 'utf-8'))
-    # print(bytearray(self.encode(message)+'\n', encoding='utf8'))
-    # self.channel.write(bytearray(self.encode(message)+'\n', encoding='utf8'))
+    # print("Sending:")
+    # self.channel.write([50, 48, 44, 49, 10])
+    print(bytearray(self.encode(message)+'\n', encoding='utf8'))
+    self.channel.write(bytearray(self.encode(message)+'\n', encoding='utf8'))
     # self.channel.write((self.encode(message)+'\n').encode())
     # for c in self.encode(message):#+'\n'
     #   print(ord(c))
     #   self.channel.write([ord(c)])
-    print("Done sending")
+    # print("Done sending")
     time.sleep(0.1)
   
   def read(self):

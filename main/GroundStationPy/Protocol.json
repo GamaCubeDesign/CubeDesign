@@ -36,7 +36,10 @@
         "SET_ATTITUDE_CONTROL",
         "SET_IMAGING",
         "SET_IMAGING_MODE",
-        "SET_STAND_BY_MODE"],
+        "SET_STAND_BY_MODE",
+        
+        "SEND_PING"
+    ],
     
     "bandwidth_dict" : {
         "7.8 kHz":0,

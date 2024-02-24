@@ -47,9 +47,11 @@ void onReceive();
 void startRequestStatusProtocol();
 void startRequestImagingDataProtocol();
 void startSetOperationProtocol();
+void ping();
 
 void switchCaseStatusProtocol();
 void switchCaseImagingDataProtocol();
 void switchCaseSetOperationProtocol();
+void switchCasePingProtocol();
 
 #endif

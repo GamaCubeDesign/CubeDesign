@@ -36,9 +36,9 @@ long tmp_var = sizeof(long);
 long tmp_var2 = sizeof(int);
 
 void sendGSPacket(){
-  //Serial.print(PRINT_STR);
-  //Serial.print("Sending a message:Length:");
-  //Serial.println(gsPacket.length);
+  Serial.print(PRINT_STR);
+  Serial.print("Sending a message:Length:");
+  Serial.println(gsPacket.length);
 
   LoRa.beginPacket();                                 // start packet
   // LoRa.write(txAddh);                                 // add destination high address
@@ -174,6 +174,20 @@ void startSetOperationProtocol(){
   sendGSPacket();
 }
 
+void ping(){
+  if(talking){
+    Serial.println("PRINT:Cant communicate while talking");
+    return;
+  }
+  gsPacket.operation.protocol = PROTOCOL_PING;
+  gsPacket.operation.operation = GS_PING_REQUEST;
+
+  gsPacket.length = 2;
+
+  // talking = true;
+  sendGSPacket();
+}
+
 void onReceive(){
   control_print_packet_info();
   switch(satPacket.operation.protocol){
@@ -185,6 +199,9 @@ void onReceive(){
       break;
     case PROTOCOL_SET_OPERATION:
       switchCaseSetOperationProtocol();
+      break;
+    case PROTOCOL_PING:
+      switchCasePingProtocol();
       break;
   }
 }
@@ -320,6 +337,14 @@ void switchCaseSetOperationProtocol(){
       //Serial.println("Set operation: Done");
       rx_pointer = 0;
       talking = false;
+      break;
+  }
+}
+
+void switchCasePingProtocol(){
+  switch(satPacket.operation.operation){
+    case SATELLITE_PING_RESPONSE:
+      Serial.println("PRINT:Satellite ping!");
       break;
   }
 }

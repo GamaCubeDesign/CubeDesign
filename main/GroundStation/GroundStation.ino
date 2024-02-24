@@ -15,7 +15,7 @@ void setup(){
   Serial.begin(57600);                   // initialize serial
   while (!Serial);
 
-  // Serial.println("Gama Ground Station communication system with LoRa Ra-01 rf module");
+  Serial.println("PRINT:Gama Ground Station communication system with LoRa Ra-01 rf module");
 
   // override the default CS, reset, and IRQ pins (optional)
   LoRa.setPins(csPin, resetPin, irqPin);// set CS, reset, IRQ pin

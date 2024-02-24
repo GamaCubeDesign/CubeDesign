@@ -54,6 +54,10 @@ class GroundStation(ttk.LabelFrame):
     top_left_frame.pack(side='left',fill='both')
     tk.Button(master=top_left_frame, textvariable=self.toggle_set_operation_variable, relief='raised', command=self.toggle_set_operation).pack(side='left',fill='both')
     tk.Button(master=top_frame, text='SEND', relief='raised', command=self.send_set_operation).pack(side='left',fill='both')
+
+    top_frame = ttk.LabelFrame(master=left_frame, text='Ping')
+    top_frame.pack(side='top',fill='both')
+    tk.Button(master=top_frame, text='Send ping', relief='raised', command=self.send_ping).pack(side='left',fill='both')
     
     left_frame = ttk.Frame(master=self)
     left_frame.pack(side='left', fill='both')
@@ -123,6 +127,9 @@ class GroundStation(ttk.LabelFrame):
   
   def send_set_operation(self):
     self.ser.write([protocol['control_commands'].index("SEND_COMMAND")])
+  
+  def send_ping(self):
+    self.ser.write([protocol['control_commands'].index("SEND_PING")])
   
   def toggle_active_thermal_control(self):
     if self.toggle_active_thermal_control_variable.get() == 'OFF':

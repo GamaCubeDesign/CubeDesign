@@ -9,6 +9,8 @@
 #include "/mnt/DADOS/Workbench/GCD/TTC/TTEC-Gamacubedesign/main/CommunicationProtocol.h"
 // #include "../CommunicationProtocol.h"
 
+#define GSCOM_LED 7
+
 extern uint8_t txAddh;
 extern uint8_t txAddl;
 // extern uint8_t txChan;

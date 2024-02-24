@@ -64,13 +64,13 @@ class default(gr.top_block, Qt.QWidget):
         # Variables
         ##################################################
         self.samp_rate = samp_rate = 3200000
-        self.freq = freq = 415e6
+        self.freq = freq = 433e6
 
         ##################################################
         # Blocks
         ##################################################
 
-        self._freq_range = Range(400e6, 433e6, 1e6, 415e6, 200)
+        self._freq_range = Range(400e6, 440e6, 1e6, 433e6, 200)
         self._freq_win = RangeWidget(self._freq_range, self.set_freq, "'freq'", "counter_slider", float, QtCore.Qt.Horizontal)
         self.top_layout.addWidget(self._freq_win)
         self.soapy_rtlsdr_source_0 = None

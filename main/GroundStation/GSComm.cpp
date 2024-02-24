@@ -179,6 +179,17 @@ void ping(){
     Serial.println("PRINT:Cant communicate while talking");
     return;
   }
+
+  // Serial.println("sending LoRa hello");
+  // LoRa.beginPacket();                                 // start packet
+  // LoRa.println("LoRa hello");   // add payload
+  // LoRa.endPacket();
+
+  digitalWrite(GSCOM_LED, HIGH);
+  delay(100);
+  digitalWrite(GSCOM_LED, LOW);
+  delay(100);
+
   gsPacket.operation.protocol = PROTOCOL_PING;
   gsPacket.operation.operation = GS_PING_REQUEST;
 
@@ -345,6 +356,17 @@ void switchCasePingProtocol(){
   switch(satPacket.operation.operation){
     case SATELLITE_PING_RESPONSE:
       Serial.println("PRINT:Satellite ping!");
+      digitalWrite(GSCOM_LED, HIGH);
+      delay(100);
+      digitalWrite(GSCOM_LED, LOW);
+      delay(100);
+      digitalWrite(GSCOM_LED, HIGH);
+      delay(100);
+      digitalWrite(GSCOM_LED, LOW);
+      delay(100);
+      digitalWrite(GSCOM_LED, HIGH);
+      delay(100);
+      digitalWrite(GSCOM_LED, LOW);
       break;
   }
 }

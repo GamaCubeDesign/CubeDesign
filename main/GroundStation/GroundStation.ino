@@ -12,23 +12,43 @@ const int resetPin = 9;       // LoRa radio reset
 const int irqPin = 8;         // change for your board; must be a hardware interrupt pin
 
 void setup(){
+  pinMode(GSCOM_LED, OUTPUT);
+  digitalWrite(GSCOM_LED, LOW);
+  delay(100);
+  digitalWrite(GSCOM_LED, HIGH);
+  delay(500);
+  digitalWrite(GSCOM_LED, LOW);
+  delay(100);
+
   Serial.begin(57600);                   // initialize serial
-  while (!Serial);
+  // while (!Serial);
 
   Serial.println("PRINT:Gama Ground Station communication system with LoRa Ra-01 rf module");
 
   // override the default CS, reset, and IRQ pins (optional)
   LoRa.setPins(csPin, resetPin, irqPin);// set CS, reset, IRQ pin
 
-  LoRa.setSpreadingFactor(spreading_factor);
+  LoRa.setSpreadingFactor(7);
+  LoRa.setCodingRate4(5);
   LoRa.setSignalBandwidth(125E3);
+  LoRa.setPreambleLength(8);
   LoRa.setTxPower(tx_power);
+  LoRa.enableCrc();
 
-  if (!LoRa.begin(frequency)) {             // initialize ratio at 915 MHz
+  if (!LoRa.begin(433e6)) {             // initialize ratio at 433 MHz
     printControlln(PRINT_LORA_INIT_FAILED); // "CONTROL:LoRa init failed. Check your connections."
     while (true);                       // if failed, do nothing
   }
   printControlln(PRINT_DEVICE_READY); // "CONTROL:Device initiated successfully"
+
+  digitalWrite(GSCOM_LED, HIGH);
+  delay(300);
+  digitalWrite(GSCOM_LED, LOW);
+  delay(300);
+  digitalWrite(GSCOM_LED, HIGH);
+  delay(300);
+  digitalWrite(GSCOM_LED, LOW);
+  delay(300);
 }
 
 bool state_sending = false;
@@ -40,6 +60,16 @@ unsigned long next_transmission = 0;
 void loop(){
   updateRFComm();
   checkControl();
+
+  // Serial.println("sending LoRa hello");
+  // LoRa.beginPacket();                                 // start packet
+  // // LoRa.write(txAddh);                                 // add destination high address
+  // // LoRa.write(txAddl);                                 // add destination low address
+  // // LoRa.write(rxAddh);                                 // add sender high address
+  // // LoRa.write(rxAddl);                                 // add sender low address
+  // // LoRa.write(gsPacket.length);                        // add payload length
+  // LoRa.println("LoRa hello");   // add payload
+  // LoRa.endPacket();  
 
   if(millis() >= next_transmission){
     next_transmission += transmission_timer;
@@ -58,6 +88,8 @@ void loop(){
     } else if(send_command > 0){
       send_command--;
       startSetOperationProtocol();
+    } else{
+      ping();
     }
   }
 }

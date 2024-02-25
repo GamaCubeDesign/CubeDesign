@@ -93,7 +93,7 @@ void postImagingDataProtocol(){
 
 void sendSatPacket(){
   DBG_Print("S:");
-  DBG_Print(satPacket.length);DBG_Print("    ");
+  DBG_Print((int)satPacket.length);DBG_Print("    ");
   DBG_Print((int)satPacket.operation.protocol);DBG_Print("    ");
   DBG_Println((int)satPacket.operation.operation);
   tx_send((uint8_t*)&satPacket, satPacket.length);

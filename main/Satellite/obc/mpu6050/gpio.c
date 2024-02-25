@@ -62,6 +62,6 @@ int main() {
 	Gy = Gyro_y/131;
 	Gz = Gyro_z/131;
 	
-	printf("Gx=%.3f °/s\tGy=%.3f °/s\tGz=%.3f °/s\tAx=%.3f g\tAy=%.3f g\tAz=%.3f g\n",Gx,Gy,Gz,Ax,Ay,Az);
+	printf("%.3f %.3f %.3f %.3f %.3f %.3f",Gx,Gy,Gz,Ax,Ay,Az);
 	return 0;
 }

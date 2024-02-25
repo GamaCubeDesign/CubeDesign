@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import spidev
 import time
 
@@ -14,11 +16,8 @@ def read_adc(channel):
 sensor_channel = 0
 
 try:
-    while True:
-        sensor_value = read_adc(sensor_channel)
-        voltage = (sensor_value / 1023.0) * 3.3  # Assuming 3.3V ADC reference voltage
-        print(f"Sensor Value: {sensor_value}, Voltage: {voltage} V")
-        time.sleep(1)
-
+	sensor_value = read_adc(sensor_channel)
+	voltage = (sensor_value / 1023.0) * 3.3  # Assuming 3.3V ADC reference voltage
+	print(f"{voltage}")
 except KeyboardInterrupt:
     spi.close()

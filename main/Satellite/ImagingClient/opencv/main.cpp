@@ -153,13 +153,6 @@ int main()
         }
         matrixVisited[countOfFrames-1].resize(allCentroids[countOfFrames - 1].size(), 0);
 
-        std::cout << allCentroids[countOfFrames - 1] << endl;
-        for (size_t i = 0; i < biggestAreas[countOfFrames - 1].size(); i++)
-        {
-            std::cout << biggestAreas[countOfFrames-1][i] << " " << allCentroids[countOfFrames-1][i] << endl;
-
-        }
-
     }
 
 	int contadorRaio = 0;

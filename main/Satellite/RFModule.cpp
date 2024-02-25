@@ -140,37 +140,38 @@ void updateRFComm(){
 }
 
 void onReceive(){
-  DBG_Print("P:R:");
-  DBG_Println((int)gsPacket.length);
-  std::cout << "Protocol:" << (int)gsPacket.operation.protocol << std::endl;
+  std::cout << "Packet length:" << (int)gsPacket.length << ":";
+  std::cout << "Protocol:" << (int)gsPacket.operation.protocol << ":";
   std::cout << "Operation:" << (int)gsPacket.operation.operation << std::endl;
+  std::cout << "Protocol:";
   switch(gsPacket.operation.protocol){
     case PROTOCOL_STATUS:
-      std::cout << "P:S" << std::endl;
+      std::cout << "Status" << std::endl;
       satPacket.operation.protocol = PROTOCOL_STATUS;
       switchCaseStatusProtocol();
       break;
     case PROTOCOL_IMAGING_DATA:
-      std::cout << "P:I" << std::endl;
+      std::cout << "IMAGING" << std::endl;
       satPacket.operation.protocol = PROTOCOL_IMAGING_DATA;
       switchCaseImagingDataProtocol();
       break;
     case PROTOCOL_SET_OPERATION:
-      std::cout << "P:O" << std::endl;
+      std::cout << "OPERATION" << std::endl;
       satPacket.operation.protocol = PROTOCOL_SET_OPERATION;
       switchCaseSetOperationProtocol();
       break;
     case PROTOCOL_PING:
-      std::cout << "PROTOCOL:PING" << std::endl;
+      std::cout << "PING" << std::endl;
       satPacket.operation.protocol = PROTOCOL_PING;
       ping();
   }
 }
 
 void switchCaseStatusProtocol(){
+  cout << "STATUS:";
   switch(gsPacket.operation.operation){
     case GS_STATUS_REQUEST:
-      DBG_Println("S:1");
+      cout << "REQUEST NUMBER OF PACKETS" << endl;
       preStatusProtocol();
       satPacket.operation.protocol = PROTOCOL_STATUS;
       satPacket.operation.operation = SATELLITE_STATUS_PACKETS_AVAILABLE;
@@ -179,7 +180,7 @@ void switchCaseStatusProtocol(){
       sendSatPacket();
       break;
     case GS_STATUS_START_TRANSMISSION:
-      DBG_Println("S:2");
+      cout << "START TRANSMITTING PACKETS" << endl;
       for(unsigned int i = 0; i < number_of_packets; i++){
         updateStatusPacket(i);
         satPacket.operation.protocol = PROTOCOL_STATUS;
@@ -188,21 +189,20 @@ void switchCaseStatusProtocol(){
         satPacket.length = sizeof(SatPacket);//sizeof(int64_t)+sizeof(HealthData);
         sendSatPacket();
       }
-      DBG_Println("S:3");
+      cout << "STATUS:PACKETS TRANSMITTED" << endl;
       satPacket.operation.protocol = PROTOCOL_STATUS;
       satPacket.operation.operation = SATELLITE_STATUS_PACKETS_DONE;
       satPacket.length = 2;
       sendSatPacket();
       break;
     case GS_STATUS_RESEND_PACKET:
-      DBG_Println("S:4");
+      cout << "CHECKING PACKETS" << endl;
       if(!gsPacket.data.resend.isDone){
-        DBG_Println("Recalling packets");
+        cout << "RECALL PACKETS" << endl;
         for(unsigned int i = 0; i < 32; i++){
           for(unsigned int j = 0; j < 8; j++){
             if((gsPacket.data.resend.packets[i]>>j)&0x01){
-              DBG_Print("Resending packet ");
-              DBG_Println(i*8+j);
+              cout << "Resending packet:" << i*8+j << endl;
               updateStatusPacket(i*8+j);
               satPacket.operation.protocol = PROTOCOL_STATUS;
               satPacket.operation.operation = SATELLITE_STATUS_PACKET;
@@ -213,16 +213,16 @@ void switchCaseStatusProtocol(){
           }
         }
       } else{
-        DBG_Println("S:A");
+        cout << "NO RECALL";
       }
-      DBG_Println("PD");
+      cout << "STATUS:RECALL PACKETS TRANSMITTED" << endl;
       satPacket.operation.protocol = PROTOCOL_STATUS;
       satPacket.operation.operation = SATELLITE_STATUS_PACKETS_DONE;
       satPacket.length = 2;
       sendSatPacket();
       break;
     case GS_STATUS_DONE:
-      DBG_Println("S:D");
+      cout << "DONE" << endl;
       satPacket.operation.protocol = PROTOCOL_STATUS;
       satPacket.operation.operation = SATELLITE_STATUS_DONE;
       satPacket.length = 2;

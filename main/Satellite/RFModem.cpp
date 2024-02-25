@@ -69,19 +69,6 @@ void initRFModule(){
   modem.eth.syncWord = 0x12;
   //For detail information about SF, Error Coding Rate, Explicit header, Bandwidth, AGC, Over current protection and other features refer to sx127x datasheet https://www.semtech.com/uploads/documents/DS_SX1276-7-8-9_W_APP_V5.pdf
 
-    // LoRa_begin(&modem);
-    // LoRa_send(&modem);
-
-    // printf("Tsym: %f\n", modem.tx.data.Tsym);
-    // printf("Tpkt: %f\n", modem.tx.data.Tpkt);
-    // printf("payloadSymbNb: %u\n", modem.tx.data.payloadSymbNb);
-
-    // printf("sleep %d seconds to transmitt complete\n", (int)modem.tx.data.Tpkt/1000);
-    // sleep(((int)modem.tx.data.Tpkt/1000)+1);
-
-    // printf("end\n");
-
-    // LoRa_end(&modem);
   LoRa_begin(&modem);
   LoRa_receive(&modem);
 }
@@ -89,7 +76,7 @@ void initRFModule(){
 void tx_send(uint8_t* buf, unsigned int size){
   LoRa_stop_receive(&modem);
 
-  sleep(1);
+  usleep(50000);
 
   char txbuf[255];
   modem.tx.data.buf = txbuf;
@@ -99,14 +86,14 @@ void tx_send(uint8_t* buf, unsigned int size){
 
   LoRa_send(&modem);
 
-  printf("Tsym: %f\n", modem.tx.data.Tsym);
-  printf("Tpkt: %f\n", modem.tx.data.Tpkt);
-  printf("payloadSymbNb: %u\n", modem.tx.data.payloadSymbNb);
+  // printf("Tsym: %f\n", modem.tx.data.Tsym);
+  // printf("Tpkt: %f\n", modem.tx.data.Tpkt);
+  // printf("payloadSymbNb: %u\n", modem.tx.data.payloadSymbNb);
 
   printf("sleep %f miliseconds to transmitt complete\n", modem.tx.data.Tpkt);
   usleep(((int)modem.tx.data.Tpkt)*1000);
 
-  printf("end\n");
+  // printf("end\n");
   LoRa_receive(&modem);
 }
 

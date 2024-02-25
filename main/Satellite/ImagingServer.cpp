@@ -119,6 +119,8 @@ class ImagingDataServer{
             isExit = true;
           }
           send(server, buffer, bufsize, 0);
+        } else{
+          cout << "Unknown packet: " << buffer << endl;
         }
       } while(!isExit);
       

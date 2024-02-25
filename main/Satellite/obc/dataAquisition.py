@@ -8,9 +8,14 @@ class Client:
   def __init__(self):
     self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0)
     self.socket.connect((HOST, PORT))
+    
+    data = self.socket.recv(1024)
+    r = str(data, encoding='utf-8')
+    print(r)
   
   def update(self):
-    self.socket.sendall(b'RequestUpdate\n')
+    print("Updating")
+    self.socket.sendall(b'RequestUpdate\n\0')
     data = self.socket.recv(1024)
     r = str(data, encoding='utf-8')
     print("Update response: " + r)
@@ -21,7 +26,7 @@ class Client:
       battery_current, battery_charge, battery_temperature,
       internal_temperature, external_temperature,
       sd_memory_usage):
-    self.socket.sendall(b'SendPacket\n')
+    self.socket.sendall(b'SendPacket\n\0')
     data = self.socket.recv(1024)
     r = str(data, encoding='utf-8')
     if r=='Ok\n':

@@ -114,6 +114,8 @@ class StatusDataServer{
             send(server, buffer, bufsize, 0);
             isExit = true;
           }
+        } else{
+          cout << "Unknown packet: " << buffer << endl;
         }
       } while(!isExit);
       

@@ -89,6 +89,8 @@ void initRFModule(){
 void tx_send(uint8_t* buf, unsigned int size){
   LoRa_stop_receive(&modem);
 
+  sleep(1);
+
   char txbuf[255];
   modem.tx.data.buf = txbuf;
 

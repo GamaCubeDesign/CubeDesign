@@ -110,10 +110,15 @@ void updateRFComm(){
     // unsigned int sender = (LoRa.read()<<8) | LoRa.read();            // sender address
     // unsigned int incomingLength = LoRa.read();    // incoming msg length
 
+    Serial.println("PRINT:Packet received!");
     uint8_t b;
     while(LoRa.available()){
       b = LoRa.read();
       ((uint8_t*)(&satPacket))[rx_pointer++] = b;
+      if(rx_pointer==1){
+        Serial.print("PRINT:Packet size: ");
+        Serial.println(satPacket.length);
+      }
       if(rx_pointer>0 && rx_pointer==satPacket.length){
         telemetry_received = true;
         onReceive();

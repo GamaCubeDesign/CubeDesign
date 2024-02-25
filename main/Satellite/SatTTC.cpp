@@ -33,7 +33,7 @@ bool enable_writing = false;
 ImagingFIFO imaging_fifo;
 StatusFIFO status_fifo;
 
-StatusDataServer status_server(&status_fifo, 8081);
+StatusDataServer status_server(&status_fifo, &operation, 8081);
 ImagingDataServer imaging_server(&imaging_fifo, &operation, 8080);
 
 bool running = false;
@@ -55,6 +55,40 @@ void read_fifos(){
     HealthData statusPacket = status_fifo.read();
     logger.writeSatStatusPacket(statusPacket);
   }
+}
+
+void loop(){
+  // checkConsole();
+  updateRFComm();
+  read_fifos();
+}
+
+int main( int argc, char *argv[] ){
+  std::cout << "Raspberry Gama Satellite communication system with LoRa Ra-01 rf module\n";
+
+  initRFModule();
+  std::cout << "Device initiated successfully\n";
+
+  std::thread status_thread (run_status_server);
+  std::thread imaging_thread (run_imaging_server);
+
+  // std::thread async_in_thread = start_serial_thread();
+
+  running = true;
+  while(running){
+    loop();
+  }
+
+  cout << "Closing servers" << endl;
+  status_server.close_server();
+  imaging_server.close_server();
+  status_thread.join();
+  imaging_thread.join();
+  
+  exit(1);
+
+  modem_finish();
+  return 0;
 }
 
 /*void checkConsole(){
@@ -215,54 +249,3 @@ void read_fifos(){
   //   }
   // }
 }*/
-
-void loop(){
-  // checkConsole();
-  // ping();
-    // cout << "Sending Hello LoRa" << endl;
-    // cout << "Stop receiving" << endl;
-    // LoRa_stop_receive(&modem);
-    // cout << "Copying data" << endl;
-    // char txbuf[255];
-    // modem.tx.data.buf = txbuf;
-    // memcpy(modem.tx.data.buf, "LoRa hello", 11);//copy data we'll sent to buffer
-    // modem.tx.data.size = 11;//Payload len
-    // cout << "Send" << endl;
-    // LoRa_send(&modem);
-    // // cout << "Wait for transmission to finish: " << ((int)modem.tx.data.Tpkt/1000)+1 << endl;
-    // // sleep(((int)modem.tx.data.Tpkt/1000)+1);
-    // cout << "Sent Hello LoRa" << endl;
-    // sleep(2);
-    // cout << "Start receiving" << endl;
-    // LoRa_receive(&modem);
-  updateRFComm();
-  read_fifos();
-}
-
-int main( int argc, char *argv[] ){
-  std::cout << "Raspberry Gama Satellite communication system with LoRa Ra-01 rf module\n";
-
-  initRFModule();
-  std::cout << "Device initiated successfully\n";
-
-  std::thread status_thread (run_status_server);
-  std::thread imaging_thread (run_imaging_server);
-
-  // std::thread async_in_thread = start_serial_thread();
-
-  running = true;
-  while(running){
-    loop();
-  }
-
-  cout << "Closing servers" << endl;
-  status_server.close_server();
-  imaging_server.close_server();
-  status_thread.join();
-  imaging_thread.join();
-  
-  exit(1);
-
-  modem_finish();
-  return 0;
-}

@@ -131,7 +131,7 @@ struct HealthData{
   float internal_temperature;
   float external_temperature;
   uint32_t sd_memory_usage; // MB
-  uint8_t rasp_data[N];
+  // uint8_t rasp_data[N];
 };
 
 struct LightningData{

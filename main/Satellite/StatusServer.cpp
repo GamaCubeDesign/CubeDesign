@@ -16,6 +16,7 @@ class StatusDataServer{
   public:
     static const int bufsize=256;
     StatusFIFO *_fifo;
+    Operation *_operation;
     int client, server;
     bool isExit = false;
     bool closing = false;
@@ -25,9 +26,24 @@ class StatusDataServer{
     struct sockaddr_in server_addr;
     socklen_t size;
 
-    StatusDataServer(StatusFIFO *fifo, unsigned int portNum){
+    StatusDataServer(StatusFIFO *fifo, Operation *operation, unsigned int portNum){
       _fifo = fifo;
       _portNum = portNum;
+      _operation = operation;
+
+      HealthData newPacket;
+      newPacket.battery_charge = 0;
+      newPacket.battery_current = 0;
+      newPacket.battery_temperature = 0;
+      newPacket.battery_voltage = 0;
+      newPacket.external_temperature = 0;
+      newPacket.index = 0;
+      newPacket.internal_temperature = 0;
+      newPacket.sd_memory_usage = 0;
+      newPacket.time = 0;
+      for(int i = 0; i < 5; i++){
+        _fifo->write(newPacket);
+      }
 
       // init socket.
 
@@ -85,7 +101,7 @@ class StatusDataServer{
           strcpy(buffer, "Ok\n");
           send(server, buffer, bufsize, 0);
           int recvN = recv(server, (uint8_t*)&newPacket, sizeof(HealthData), 0);
-          // cout << "(Status) Packet received" << endl;
+          cout << "(Status) Packet received" << endl;
           if(recvN > 0){
             _fifo->write(newPacket);
           }

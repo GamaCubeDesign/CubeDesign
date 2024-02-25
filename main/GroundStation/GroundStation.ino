@@ -89,7 +89,7 @@ void loop(){
       send_command--;
       startSetOperationProtocol();
     } else{
-      ping();
+      // ping();
     }
   }
 }

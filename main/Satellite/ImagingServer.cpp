@@ -31,6 +31,19 @@ class ImagingDataServer{
       _portNum = portNum;
       _operation = operation;
 
+      ImagingData newPacket;
+      for(int i = 0; i < 5; i++){
+        newPacket.lightnings[i].duration = 0;
+        newPacket.lightnings[i].index = 0;
+        newPacket.lightnings[i].radius = 0;
+        newPacket.lightnings[i].type = 0;
+        newPacket.lightnings[i].x = 0;
+        newPacket.lightnings[i].y = 0;
+      }
+      for(int i = 0; i < 5; i++){
+        _fifo->write(newPacket);
+      }
+
       // init socket.
 
       client = socket(AF_INET, SOCK_STREAM, 0);
@@ -87,7 +100,7 @@ class ImagingDataServer{
           strcpy(buffer, "Ok\n");
           send(server, buffer, bufsize, 0);
           int recvN = recv(server, (uint8_t*)&newPacket, sizeof(ImagingData), 0);
-          // cout << "(Imaging) Packet received" << endl;
+          cout << "(Imaging) Packet received" << endl;
           if(recvN > 0){
             _fifo->write(newPacket);
           }

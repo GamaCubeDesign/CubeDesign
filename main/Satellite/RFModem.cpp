@@ -101,8 +101,8 @@ void tx_send(uint8_t* buf, unsigned int size){
   printf("Tpkt: %f\n", modem.tx.data.Tpkt);
   printf("payloadSymbNb: %u\n", modem.tx.data.payloadSymbNb);
 
-  printf("sleep %d seconds to transmitt complete\n", (int)modem.tx.data.Tpkt/1000);
-  sleep(((int)modem.tx.data.Tpkt/1000)+1);
+  printf("sleep %f miliseconds to transmitt complete\n", modem.tx.data.Tpkt);
+  usleep(((int)modem.tx.data.Tpkt)*1000);
 
   printf("end\n");
   LoRa_receive(&modem);

@@ -90,16 +90,20 @@ class StatusDataServer{
 
     if(server > 0){
       strcpy(buffer, "Server connected...\n");
-      send(server, buffer, bufsize, 0);
+      send(server, buffer, 20, 0);
 
       cout << "(Status) connected with client..." << endl;
 
       do{
         unsigned int recvN = recv(server, buffer, bufsize, 0);
+        if(recvN==0){
+          isExit = true;
+          continue;
+        }
         if(strcmp(buffer, "SendPacket\n")==0){
           // cout << "(Status) Receiving packet" << endl;
           strcpy(buffer, "Ok\n");
-          send(server, buffer, bufsize, 0);
+          send(server, buffer, 3, 0);
           int recvN = recv(server, (uint8_t*)&newPacket, sizeof(HealthData), 0);
           cout << "(Status) Packet received" << endl;
           if(recvN > 0){
@@ -107,13 +111,15 @@ class StatusDataServer{
           }
         } else if(strcmp(buffer, "RequestUpdate\n")==0){
           if(!closing){
-            strcpy(buffer, "Nominal\n");
-            send(server, buffer, bufsize, 0);
+            strcpy(buffer, "Ok\n");
+            send(server, buffer, 3, 0);
           } else{
             strcpy(buffer, "Close\n");
-            send(server, buffer, bufsize, 0);
+            send(server, buffer, 6, 0);
             isExit = true;
           }
+        } else{
+          cout << "Unknown packet: " << buffer << endl;
         }
       } while(!isExit);
       

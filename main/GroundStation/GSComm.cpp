@@ -105,6 +105,7 @@ void updateRFComm(){
   // parse for a packet, and call onReceive with the result:
   unsigned int packetSize = LoRa.parsePacket();
   if(packetSize > 0){
+    delay(50);
     // unsigned int recipient = (LoRa.read()<<8) | LoRa.read();          // recipient address
     // unsigned int sender = (LoRa.read()<<8) | LoRa.read();            // sender address
     // unsigned int incomingLength = LoRa.read();    // incoming msg length
@@ -222,7 +223,7 @@ void switchCaseStatusProtocol(){
   switch(satPacket.operation.operation){
     case SATELLITE_STATUS_PACKETS_AVAILABLE:
       printPrint();
-      //Serial.print("Status: packets available: ");
+      Serial.print("Status: packets available: ");
       Serial.println(satPacket.byte_data.number_of_packets);
       for(unsigned int i = 0; i < 32; i++){
         for(unsigned int j = 0; j < 8; j++){
@@ -239,12 +240,15 @@ void switchCaseStatusProtocol(){
       sendGSPacket();
       break;
     case SATELLITE_STATUS_PACKET:
+      Serial.print(PRINT_STR);
+      Serial.print("Status: Packet: ");
+      Serial.println(satPacket.byte_data.index);
       bitClear(gsPacket.data.resend.packets[satPacket.byte_data.index>>3],satPacket.byte_data.index&0x07);
       control_print_status_packet();
       break;
     case SATELLITE_STATUS_PACKETS_DONE:
-      //Serial.print(PRINT_STR);
-      //Serial.println("Status: Packets done");
+      Serial.print(PRINT_STR);
+      Serial.println("Status: Packets done");
       gsPacket.data.resend.isDone = true;
       for(unsigned int i = 0; i < 32; i++){
         if(gsPacket.data.resend.packets[i]!=0){
@@ -264,8 +268,8 @@ void switchCaseStatusProtocol(){
       sendGSPacket();
       break;
     case SATELLITE_STATUS_DONE:
-      //Serial.print(PRINT_STR);
-      //Serial.println("Status: Done");
+      Serial.print(PRINT_STR);
+      Serial.println("Status: Done");
       talking = false;
       break;
   }

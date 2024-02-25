@@ -51,7 +51,7 @@ class SerialTransmission:
   def write(self, message):
     # print("Sending:")
     # self.channel.write([50, 48, 44, 49, 10])
-    print(bytearray(self.encode(message)+'\n', encoding='utf8'))
+    # print(bytearray(self.encode(message)+'\n', encoding='utf8'))
     self.channel.write(bytearray(self.encode(message)+'\n', encoding='utf8'))
     # self.channel.write((self.encode(message)+'\n').encode())
     # for c in self.encode(message):#+'\n'
@@ -86,8 +86,8 @@ class SerialTransmission:
           cmd = v[1]
           args = v[2:]
           self.listeners[v[0]].parse_message(cmd,args)
-        else:
-          print(msg)
+        # else:
+          # print(msg)
     except Exception as e:
       print("Exception")
       print(e)

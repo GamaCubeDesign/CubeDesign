@@ -71,7 +71,7 @@ void checkControl(){
   uint8_t c;
   while(Serial.available()){
     c = Serial.read();
-    Serial.println((int)c);
+    // Serial.println((int)c);
     if(c == ',' || c == '\n' || c == 225){
       parsing_function(rcv_b);
       rcv_b = 0;

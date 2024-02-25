@@ -30,4 +30,6 @@ class Client:
       print("Unknown response: " + r)
 
 if __name__=='__main__':
-  pass
+  client = Client()
+  client.update()
+  client.send_packet(0,0,0,0,0,0,0,0,0)

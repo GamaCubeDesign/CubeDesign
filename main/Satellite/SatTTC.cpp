@@ -46,7 +46,7 @@ void run_imaging_server(){
   imaging_server.run_server();
 }
 
-void send_to_control(){
+void send_to_control(float gx, float gy){
 
 }
 

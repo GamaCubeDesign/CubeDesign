@@ -91,6 +91,7 @@ void tx_send(uint8_t* buf, unsigned int size){
   // printf("payloadSymbNb: %u\n", modem.tx.data.payloadSymbNb);
 
   printf("sleep %f miliseconds to transmitt complete\n", modem.tx.data.Tpkt);
+  printf("tx: Sending packet with length %d", buf[0]);
   usleep(((int)modem.tx.data.Tpkt)*1000);
 
   // printf("end\n");

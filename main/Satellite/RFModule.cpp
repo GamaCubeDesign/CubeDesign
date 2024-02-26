@@ -94,7 +94,7 @@ void postImagingDataProtocol(){
 void sendSatPacket(){
   DBG_Print("Sending packet with length:");
   DBG_Print((int)satPacket.length);DBG_Print(":PROTOCOL:");
-  DBG_Print((int)satPacket.operation.protocol);DBG_Print("OPERATION:");
+  DBG_Print((int)satPacket.operation.protocol);DBG_Print(":OPERATION:");
   DBG_Println((int)satPacket.operation.operation);
   tx_send((uint8_t*)&satPacket, satPacket.length);
   // tx_send((uint8_t*)&satPacket, sizeof(satPacket));
@@ -181,13 +181,14 @@ void switchCaseStatusProtocol(){
       break;
     case GS_STATUS_START_TRANSMISSION:
       cout << "START TRANSMITTING PACKETS" << endl;
-      for(unsigned int i = 0; i < number_of_packets; i++){
+      for(uint8_t i = 0; i < number_of_packets; i++){
         updateStatusPacket(i);
         satPacket.operation.protocol = PROTOCOL_STATUS;
         satPacket.operation.operation = SATELLITE_STATUS_PACKET;
         satPacket.byte_data.index = i;
         satPacket.length = sizeof(SatPacket);//sizeof(int64_t)+sizeof(HealthData);
         sendSatPacket();
+        sleep(1);
       }
       cout << "STATUS:PACKETS TRANSMITTED" << endl;
       satPacket.operation.protocol = PROTOCOL_STATUS;
@@ -209,6 +210,7 @@ void switchCaseStatusProtocol(){
               satPacket.byte_data.index = i*8 + j;
               satPacket.length = sizeof(SatPacket);//sizeof(int64_t)+sizeof(HealthData);
               sendSatPacket();
+              sleep(1);
             }
           }
         }

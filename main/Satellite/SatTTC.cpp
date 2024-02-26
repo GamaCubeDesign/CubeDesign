@@ -46,6 +46,10 @@ void run_imaging_server(){
   imaging_server.run_server();
 }
 
+void send_to_control(){
+
+}
+
 void read_fifos(){
   while(imaging_fifo.available()){
     ImagingData imagingPacket = imaging_fifo.read();
@@ -53,6 +57,9 @@ void read_fifos(){
   }
   while(status_fifo.available()){
     HealthData statusPacket = status_fifo.read();
+    float gx = statusPacket.giros_x;
+    float gy = statusPacket.giros_y;
+    send_to_control(gx,gy);
     logger.writeSatStatusPacket(statusPacket);
   }
 }

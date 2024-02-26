@@ -105,7 +105,7 @@ void updateRFComm(){
   // parse for a packet, and call onReceive with the result:
   unsigned int packetSize = LoRa.parsePacket();
   if(packetSize > 0){
-    delay(50);
+    // delay(50);
     rx_pointer = 0;
     // unsigned int recipient = (LoRa.read()<<8) | LoRa.read();          // recipient address
     // unsigned int sender = (LoRa.read()<<8) | LoRa.read();            // sender address
@@ -151,7 +151,7 @@ void updateRFComm(){
   if(talking){
     if(millis() > communication_timeout){
       Serial.println("Timeout");
-      rx_pointer = 0;
+      // rx_pointer = 0;
       talking = false;
     }
   }
@@ -218,7 +218,7 @@ void ping(){
 
   gsPacket.length = 2;
 
-  // talking = true;
+  talking = true;
   sendGSPacket();
 }
 
@@ -266,10 +266,6 @@ void switchCaseStatusProtocol(){
       Serial.print("Status: Packet: ");
       Serial.println(satPacket.byte_data.index);
       Serial.print("CONTROL:STATUS PACKET:");
-      Serial.print(satPacket.data.healthData.accel_x);Serial.print(":");
-      Serial.print(satPacket.data.healthData.accel_y);Serial.print(":");
-      Serial.print(satPacket.data.healthData.giros_x);Serial.print(":");
-      Serial.print(satPacket.data.healthData.giros_y);Serial.print(":");
       Serial.print(satPacket.data.healthData.time);Serial.print(":");
       Serial.print(satPacket.data.healthData.index);Serial.print(":");
       Serial.print(satPacket.data.healthData.sd_memory_usage);Serial.print(":");
@@ -278,7 +274,11 @@ void switchCaseStatusProtocol(){
       Serial.print(satPacket.data.healthData.battery_charge);Serial.print(":");
       Serial.print(satPacket.data.healthData.battery_voltage);Serial.print(":");
       Serial.print(satPacket.data.healthData.battery_current);Serial.print(":");
-      Serial.println(satPacket.data.healthData.battery_temperature);
+      Serial.print(satPacket.data.healthData.battery_temperature);Serial.print(":");
+      Serial.print(satPacket.data.healthData.accel_x);Serial.print(":");
+      Serial.print(satPacket.data.healthData.accel_y);Serial.print(":");
+      Serial.print(satPacket.data.healthData.giros_x);Serial.print(":");
+      Serial.println(satPacket.data.healthData.giros_y);
       bitClear(gsPacket.data.resend.packets[satPacket.byte_data.index>>3],satPacket.byte_data.index&0x07);
       control_print_status_packet();
       break;
@@ -386,7 +386,7 @@ void switchCaseSetOperationProtocol(){
     case SATELLITE_SET_OPERATION_DONE:
       //Serial.print(PRINT_STR);
       //Serial.println("Set operation: Done");
-      rx_pointer = 0;
+      // rx_pointer = 0;
       talking = false;
       break;
   }
@@ -396,6 +396,7 @@ void switchCasePingProtocol(){
   switch(satPacket.operation.operation){
     case SATELLITE_PING_RESPONSE:
       Serial.println("PRINT:Satellite ping!");
+      talking = false;
       digitalWrite(GSCOM_LED, HIGH);
       delay(100);
       digitalWrite(GSCOM_LED, LOW);

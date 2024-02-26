@@ -2,6 +2,8 @@ import tkinter as tk
 import tkinter.filedialog
 from tkinter import ttk
 
+import json
+
 from enum import Enum
 
 import Protocol
@@ -153,9 +155,21 @@ class ControlFrame(ttk.LabelFrame):
     elif cmd == "9":#TXPW
       self.tx_power_variable.set(self.key_from_value(protocol["transmission_power_dict"], int(args[0])))
     elif cmd == "STATUS PACKET":
-      
-      archive =  open("ADCS_DATA.txt", "a")
-      archive.write()
+      data = dict(time = args[0],
+                  index = args[1],
+                  sd_memory_usage = args[2],
+                  internal_temperature = args[3],
+                  external_temperature = args[4],
+                  battery_charge = args[5],
+                  battery_voltage = args[6],
+                  battery_current = args[7],
+                  battery_temperature = args[8],
+                  accel_x = args[9],
+                  accel_y = args[10],
+                  giro_x = args[11],
+                  giro_y = args[12])
+      with open("ADCS_DATA.txt", "a") as archive:
+        json.dump(archive, data)
         
     else:
       print(cmd + " " + args[0:])

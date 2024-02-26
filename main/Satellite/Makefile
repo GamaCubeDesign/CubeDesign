@@ -44,3 +44,10 @@ clean:
 
 test: test_struct_formatting.cpp
 	g++ -o test.out test_struct_formatting.cpp
+
+run: SatTTC.out
+	sudo ./SatTTC.out
+
+run_test_timing: Timing.o
+	g++ -o test_timing.out test_timing.cpp Timing.o
+	./test_timing.out

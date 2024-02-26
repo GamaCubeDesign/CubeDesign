@@ -1,0 +1,1 @@
+{ "temp_bmp": "20.0 ºC", "pressure_bmp": "100000 Pa", "altitude_bmp": "1000 m", "Gx_mpu": "-0.008 °/s", "Gy_mpu": "-0.008 °/s", "Gz_mpu": "-0.008 °/s", "Ax_mpu": "4.123 g", "Ay_mpu": "0.000 g", "Az_mpu": "1.000 g", "voltage": "3.300 V", "diskp": "6" }

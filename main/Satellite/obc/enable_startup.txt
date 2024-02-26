@@ -1,0 +1,2 @@
+sudo vi /etc/rc.local
+/home/bcr/rasp/vitinho/TTEC-Gamacubedesign/main/Satellite/obc/sensor_runner.sh

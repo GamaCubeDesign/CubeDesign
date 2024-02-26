@@ -210,7 +210,7 @@ void switchCaseStatusProtocol(){
               satPacket.byte_data.index = i*8 + j;
               satPacket.length = sizeof(SatPacket);//sizeof(int64_t)+sizeof(HealthData);
               sendSatPacket();
-              sleep(1);
+              usleep(10000);
             }
           }
         }
@@ -278,6 +278,7 @@ void switchCaseImagingDataProtocol(){
               satPacket.byte_data.index = i*8 + j;
               satPacket.length = sizeof(SatPacket);//3+sizeof(ImagingData);
               sendSatPacket();
+              usleep(10000);
             }
           }
         }

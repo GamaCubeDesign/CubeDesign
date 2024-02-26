@@ -130,10 +130,6 @@ struct HealthData{
   float battery_temperature;
   float internal_temperature;
   float external_temperature;
-  float accel_x;
-  float accel_y;
-  float giros_x;
-  float giros_y;
   uint32_t sd_memory_usage; // MB
   float accel_x;
   float accel_y;
@@ -156,7 +152,13 @@ struct LightningData{
 struct ImagingData{
 //   uint8_t length;
 //   uint8_t type;
-  LightningData lightnings[5];
+  // LightningData lightnings[5];
+  uint32_t type;
+  uint64_t index;
+  float x;
+  float y;
+  float radius;
+  float duration;
 };
 
 // struct TelemetryPacket{

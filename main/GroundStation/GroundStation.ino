@@ -41,7 +41,7 @@ void setup(){
   // override the default CS, reset, and IRQ pins (optional)
   LoRa.setPins(csPin, resetPin, irqPin);// set CS, reset, IRQ pin
 
-  LoRa.setSPIFrequency(20000);
+  // LoRa.setSPIFrequency(20000);
   LoRa.setSpreadingFactor(7);
   LoRa.setCodingRate4(5);
   LoRa.setSignalBandwidth(125E3);

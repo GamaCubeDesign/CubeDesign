@@ -17,29 +17,33 @@ uint8_t modem_read(){
 }
 
 void * rx_f(void *p){
-  // cout << "Receive callback" << endl;
-    rxData *rx = (rxData *)p;
-    // printf("rx done \n");
-    printf("CRC error: %d\n", rx->CRC);
-    printf("Data size: %d\n", rx->size);
-    // printf("string: ");//Data we'v received
-    // for(int i = 0; i < rx->size; i++){
-    //     printf("%c", rx->buf[i]);
-    // }
-    // print("\n");
-    printf("RSSI: %d\n", rx->RSSI);
-    printf("SNR: %f\n", rx->SNR);
+  cout << "Receive callback" << endl;
+  rxData *rx = (rxData *)p;
+  // printf("rx done \n");
+  printf("CRC error: %d\n", rx->CRC);
+  printf("Data size: %d\n", rx->size);
+  // printf("string: ");//Data we'v received
+  // for(int i = 0; i < rx->size; i++){
+  //     printf("%c", rx->buf[i]);
+  // }
+  // print("\n");
+  printf("RSSI: %d\n", rx->RSSI);
+  printf("SNR: %f\n", rx->SNR);
 
-    rx_buffer_pointer = 0;
-    memcpy(rx_buffer, rx->buf, rx->size);
-    rx_buffer_size = rx->size;
+  while(rx_buffer_size > 0);
 
-    free(p);
-    return NULL;
+  rx_buffer_pointer = 0;
+  memcpy(rx_buffer, rx->buf, rx->size);
+  rx_buffer_size = rx->size;
+
+  free(p);
+  cout << "Receive callback done" << endl;
+  return NULL;
 }
 
 void tx_f(txData *tx){
-    printf("tx done \n");
+  printf("tx done \n");
+  LoRa_receive(&modem);
 }
 
 void initRFModule(){
@@ -91,11 +95,10 @@ void tx_send(uint8_t* buf, unsigned int size){
   // printf("payloadSymbNb: %u\n", modem.tx.data.payloadSymbNb);
 
   printf("sleep %f miliseconds to transmitt complete\n", modem.tx.data.Tpkt);
-  printf("tx: Sending packet with length %d", buf[0]);
+  printf("tx: Sending packet with length %d\n", buf[0]);
   usleep(((int)modem.tx.data.Tpkt)*1000);
 
   // printf("end\n");
-  LoRa_receive(&modem);
 }
 
 void modem_finish(){

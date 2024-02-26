@@ -33,12 +33,12 @@ class ImagingDataServer{
 
       ImagingData newPacket;
       for(int i = 0; i < 5; i++){
-        newPacket.lightnings[i].duration = 0;
-        newPacket.lightnings[i].index = 0;
-        newPacket.lightnings[i].radius = 0;
-        newPacket.lightnings[i].type = 0;
-        newPacket.lightnings[i].x = 0;
-        newPacket.lightnings[i].y = 0;
+        newPacket.duration = 0;
+        newPacket.index = 0;
+        newPacket.radius = 0;
+        newPacket.type = 0;
+        newPacket.x = 0;
+        newPacket.y = 0;
       }
       for(int i = 0; i < 5; i++){
         _fifo->write(newPacket);

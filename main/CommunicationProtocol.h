@@ -135,6 +135,12 @@ struct HealthData{
   float giros_x;
   float giros_y;
   uint32_t sd_memory_usage; // MB
+  float accel_x;
+  float accel_y;
+  float accel_z;
+  float giros_x;
+  float giros_y;
+  float giros_z;
   // uint8_t rasp_data[N];
 };
 

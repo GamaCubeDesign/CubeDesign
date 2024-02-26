@@ -130,6 +130,10 @@ struct HealthData{
   float battery_temperature;
   float internal_temperature;
   float external_temperature;
+  float accel_x;
+  float accel_y;
+  float giros_x;
+  float giros_y;
   uint32_t sd_memory_usage; // MB
   // uint8_t rasp_data[N];
 };

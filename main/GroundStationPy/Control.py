@@ -152,6 +152,11 @@ class ControlFrame(ttk.LabelFrame):
       self.spreading_factor_variable.set(args[0])
     elif cmd == "9":#TXPW
       self.tx_power_variable.set(self.key_from_value(protocol["transmission_power_dict"], int(args[0])))
+    elif cmd == "STATUS PACKET":
+      
+      archive =  open("ADCS_DATA.txt", "a")
+      archive.write()
+        
     else:
       print(cmd + " " + args[0:])
 

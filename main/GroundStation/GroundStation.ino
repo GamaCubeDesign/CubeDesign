@@ -21,13 +21,27 @@ void setup(){
   delay(100);
 
   Serial.begin(57600);                   // initialize serial
-  // while (!Serial);
+  while (!Serial);
+
+  satPacket.data.healthData.accel_x = 10.0;
+  satPacket.data.healthData.accel_y = 11.0;
+  satPacket.data.healthData.giros_x = 12.0;
+  satPacket.data.healthData.giros_y = 13.0;
+  Serial.print("CONTROL:STATUS PACKET:");
+  Serial.print(satPacket.data.healthData.accel_x);
+  Serial.print(":");
+  Serial.print(satPacket.data.healthData.accel_y);
+  Serial.print(":");
+  Serial.print(satPacket.data.healthData.giros_x);
+  Serial.print(":");
+  Serial.println(satPacket.data.healthData.giros_y);
 
   Serial.println("PRINT:Gama Ground Station communication system with LoRa Ra-01 rf module");
 
   // override the default CS, reset, and IRQ pins (optional)
   LoRa.setPins(csPin, resetPin, irqPin);// set CS, reset, IRQ pin
 
+  LoRa.setSPIFrequency(20000);
   LoRa.setSpreadingFactor(7);
   LoRa.setCodingRate4(5);
   LoRa.setSignalBandwidth(125E3);
@@ -40,6 +54,7 @@ void setup(){
     while (true);                       // if failed, do nothing
   }
   printControlln(PRINT_DEVICE_READY); // "CONTROL:Device initiated successfully"
+  Serial.println("PRINT:DEVICE READY");
 
   digitalWrite(GSCOM_LED, HIGH);
   delay(300);

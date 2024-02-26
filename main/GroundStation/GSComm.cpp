@@ -12,7 +12,7 @@ uint8_t bandwidth = 7;
 unsigned long spi_frequency = 8E6;
 unsigned long frequency = 433E6;
 uint8_t spreading_factor = 9;
-uint8_t tx_power = 17;
+uint8_t tx_power = 5;
 
 bool talking = false;
 unsigned long int communication_timeout;
@@ -106,6 +106,7 @@ void updateRFComm(){
   unsigned int packetSize = LoRa.parsePacket();
   if(packetSize > 0){
     delay(50);
+    rx_pointer = 0;
     // unsigned int recipient = (LoRa.read()<<8) | LoRa.read();          // recipient address
     // unsigned int sender = (LoRa.read()<<8) | LoRa.read();            // sender address
     // unsigned int incomingLength = LoRa.read();    // incoming msg length
@@ -122,18 +123,29 @@ void updateRFComm(){
       if(rx_pointer>0 && rx_pointer==satPacket.length){
         telemetry_received = true;
         onReceive();
-        rx_pointer = 0;
+        // rx_pointer = 0;
+      } else if(rx_pointer > satPacket.length){
+        Serial.print("PRINT:RECEIVING POINTER OUT OF EXPECTED LENGTH:EXPECTED");
+        Serial.print(satPacket.length);Serial.print(":");Serial.println(rx_pointer);
+        // rx_pointer = 0;
       }
       if(rx_pointer >= sizeof(satPacket)){
-        rx_pointer = 0;
+        // rx_pointer = 0;
       }
     }
+
+    if(rx_pointer!=satPacket.length){
+      Serial.print("PRINT:Error:Expected ");
+      Serial.print((int)satPacket.length);Serial.print(" : Received ");
+      Serial.println((int)rx_pointer);
+    }
+
     communication_timeout = millis() + communication_timeout_limit;
   }
 
   if(talking){
     if(millis() > communication_timeout){
-      //Serial.println("Timeout");
+      Serial.println("Timeout");
       rx_pointer = 0;
       talking = false;
     }
@@ -248,8 +260,16 @@ void switchCaseStatusProtocol(){
       Serial.print(PRINT_STR);
       Serial.print("Status: Packet: ");
       Serial.println(satPacket.byte_data.index);
-      bitClear(gsPacket.data.resend.packets[satPacket.byte_data.index>>3],satPacket.byte_data.index&0x07);
-      control_print_status_packet();
+      // Serial.print("CONTROL:STATUS PACKET:");
+      // Serial.print(satPacket.data.healthData.accel_x);
+      // Serial.print(":");
+      // Serial.print(satPacket.data.healthData.accel_y);
+      // Serial.print(":");
+      // Serial.print(satPacket.data.healthData.giros_x);
+      // Serial.print(":");
+      // Serial.println(satPacket.data.healthData.giros_y);
+      // bitClear(gsPacket.data.resend.packets[satPacket.byte_data.index>>3],satPacket.byte_data.index&0x07);
+      // control_print_status_packet();
       break;
     case SATELLITE_STATUS_PACKETS_DONE:
       Serial.print(PRINT_STR);

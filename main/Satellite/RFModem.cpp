@@ -1,11 +1,18 @@
 #include "RFModem.h"
 #include <iostream>
+
+#include "Timing.h"
+
 using namespace std;
 
 LoRa_ctl modem;
 uint8_t rx_buffer[255];
 unsigned int rx_buffer_pointer = 0;
 unsigned int rx_buffer_size = 0;
+bool transmitting = false;
+bool tx_done = false;
+bool receiving = false;
+bool timeout = false;
 
 uint8_t modem_available(){
   return rx_buffer_size;
@@ -42,8 +49,15 @@ void * rx_f(void *p){
 }
 
 void tx_f(txData *tx){
-  printf("tx done \n");
-  LoRa_receive(&modem);
+  printf("tx: done \n");
+  if(timeout){
+    cout << "tx: tx callback but a timout has occured" << endl;
+  } else{
+    transmitting = false;
+    receiving = true;
+    tx_done = true;
+    LoRa_receive(&modem);
+  }
 }
 
 void initRFModule(){
@@ -74,13 +88,20 @@ void initRFModule(){
   //For detail information about SF, Error Coding Rate, Explicit header, Bandwidth, AGC, Over current protection and other features refer to sx127x datasheet https://www.semtech.com/uploads/documents/DS_SX1276-7-8-9_W_APP_V5.pdf
 
   LoRa_begin(&modem);
+  receiving = true;
   LoRa_receive(&modem);
 }
 
 void tx_send(uint8_t* buf, unsigned int size){
   LoRa_stop_receive(&modem);
+  receiving = false;
+  transmitting = true;
+  tx_done = false;
+  timeout = false;
 
   // usleep(50000);
+
+  cout << "tx: starting transmission" << endl;
 
   char txbuf[255];
   modem.tx.data.buf = txbuf;
@@ -96,7 +117,23 @@ void tx_send(uint8_t* buf, unsigned int size){
 
   printf("sleep %f miliseconds to transmitt complete\n", modem.tx.data.Tpkt);
   printf("tx: Sending packet with length %d\n", buf[0]);
-  usleep(((int)modem.tx.data.Tpkt)*1000);
+
+  long now = millis();
+  long timeout_at = now + 1000;
+  cout << "tx: now" << now << endl;
+  cout << "tx: timeout at " << timeout_at << endl;
+  while(!tx_done && millis() < timeout_at){
+    // cout << "tx: waiting " << millis() << endl;
+  }
+  if(!tx_done){
+    cout << "tx: Transmission timeout" << millis() << endl;
+    transmitting = false;
+    receiving = true;
+    tx_done = true;
+    timeout = true;
+    LoRa_receive(&modem);
+  }
+  // usleep(((int)modem.tx.data.Tpkt)*1000);
 
   // printf("end\n");
 }

@@ -119,6 +119,10 @@ void updateRFComm(){
       if(rx_pointer==1){
         Serial.print("PRINT:Packet size: ");
         Serial.println(satPacket.length);
+        if(satPacket.length > sizeof(satPacket)){
+          Serial.println("PRINT:CORRUPT DATA, FLUSHING LORA");
+          LoRa.flush();
+        }
       }
       if(rx_pointer>0 && rx_pointer==satPacket.length){
         telemetry_received = true;
@@ -130,6 +134,7 @@ void updateRFComm(){
         // rx_pointer = 0;
       }
       if(rx_pointer >= sizeof(satPacket)){
+        Serial.println("PRINT:THIS DOESNT EVEN MAKE SENSE AND SHOULD NEVER HAPPEN");
         // rx_pointer = 0;
       }
     }
@@ -260,16 +265,16 @@ void switchCaseStatusProtocol(){
       Serial.print(PRINT_STR);
       Serial.print("Status: Packet: ");
       Serial.println(satPacket.byte_data.index);
-      // Serial.print("CONTROL:STATUS PACKET:");
-      // Serial.print(satPacket.data.healthData.accel_x);
-      // Serial.print(":");
-      // Serial.print(satPacket.data.healthData.accel_y);
-      // Serial.print(":");
-      // Serial.print(satPacket.data.healthData.giros_x);
-      // Serial.print(":");
-      // Serial.println(satPacket.data.healthData.giros_y);
-      // bitClear(gsPacket.data.resend.packets[satPacket.byte_data.index>>3],satPacket.byte_data.index&0x07);
-      // control_print_status_packet();
+      Serial.print("CONTROL:STATUS PACKET:");
+      Serial.print(satPacket.data.healthData.accel_x);
+      Serial.print(":");
+      Serial.print(satPacket.data.healthData.accel_y);
+      Serial.print(":");
+      Serial.print(satPacket.data.healthData.giros_x);
+      Serial.print(":");
+      Serial.println(satPacket.data.healthData.giros_y);
+      bitClear(gsPacket.data.resend.packets[satPacket.byte_data.index>>3],satPacket.byte_data.index&0x07);
+      control_print_status_packet();
       break;
     case SATELLITE_STATUS_PACKETS_DONE:
       Serial.print(PRINT_STR);
@@ -288,7 +293,7 @@ void switchCaseStatusProtocol(){
       } else{
         gsPacket.operation.protocol = PROTOCOL_IMAGING_DATA;
         gsPacket.operation.operation = GS_IMAGING_RESEND_STATUS;
-        gsPacket.length = sizeof(SatPacket);//35;
+        gsPacket.length = sizeof(GSPacket);//35;
       }
       sendGSPacket();
       break;

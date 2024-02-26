@@ -29,6 +29,8 @@ Operation operation = {
 };
 
 uint8_t rx_pointer = 0;
+unsigned long gscomm_next_transmission = 0;
+unsigned long gscomm_transmission_interval = 100;
 
 SatPacket satPacket;int satPacketSize = sizeof(SatPacket);
 GSPacket gsPacket;int gsPacketSize = sizeof(GSPacket);
@@ -39,6 +41,7 @@ void sendGSPacket(){
   Serial.print(PRINT_STR);
   Serial.print("Sending a message:Length:");
   Serial.println(gsPacket.length);
+  while(millis() < gscomm_next_transmission);
 
   LoRa.beginPacket();                                 // start packet
   // LoRa.write(txAddh);                                 // add destination high address
@@ -106,6 +109,7 @@ void updateRFComm(){
   unsigned int packetSize = LoRa.parsePacket();
   if(packetSize > 0){
     // delay(50);
+    gscomm_next_transmission = millis() + gscomm_transmission_interval;
     rx_pointer = 0;
     // unsigned int recipient = (LoRa.read()<<8) | LoRa.read();          // recipient address
     // unsigned int sender = (LoRa.read()<<8) | LoRa.read();            // sender address

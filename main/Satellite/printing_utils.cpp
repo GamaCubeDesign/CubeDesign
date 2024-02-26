@@ -24,13 +24,13 @@ void print_status_packet_bytes(HealthData statusPacket){
 }
 
 void print_imaging_packet(ImagingData imagingPacket){
-  for(int i = 0; i < 5; i++){
-    cout << "Index: " << imagingPacket.lightnings[i].index << endl;
-    cout << "Duration: " << imagingPacket.lightnings[i].duration << endl;
-    cout << "Size: " << imagingPacket.lightnings[i].radius << endl;
-    cout << "x: " << imagingPacket.lightnings[i].x << endl;
-    cout << "y: " << imagingPacket.lightnings[i].y << endl << endl;
-  }
+  // for(int i = 0; i < 5; i++){
+    cout << "Index: " << imagingPacket.index << endl;
+    cout << "Duration: " << imagingPacket.duration << endl;
+    cout << "Size: " << imagingPacket.radius << endl;
+    cout << "x: " << imagingPacket.x << endl;
+    cout << "y: " << imagingPacket.y << endl << endl;
+  // }
 }
 
 void print_imaging_packet_bytes(ImagingData imagingPacket){

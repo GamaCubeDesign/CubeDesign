@@ -142,7 +142,7 @@ struct HealthData{
 
 struct LightningData{
   uint32_t type;
-  uint64_t index;
+  uint32_t index;
   float x;
   float y;
   float radius;
@@ -154,7 +154,7 @@ struct ImagingData{
 //   uint8_t type;
   // LightningData lightnings[5];
   uint32_t type;
-  uint64_t index;
+  uint32_t index;
   float x;
   float y;
   float radius;
@@ -196,9 +196,12 @@ struct Operation{
 
 // extern Message message;
 // extern TelemetryData telemetryData;
-extern SatPacket satPacket;//int defsatPacketSize = sizeof(SatPacket);
-extern GSPacket gsPacket;//int defgsPacketSize = sizeof(GSPacket);
-extern Operation operation;//int defoperationSize = sizeof(Operation);
+extern SatPacket satPacket;
+//int defsatPacketSize = sizeof(SatPacket);
+extern GSPacket gsPacket;
+//int defgsPacketSize = sizeof(GSPacket);
+extern Operation operation;
+//int defoperationSize = sizeof(Operation);
 
 // int temp_var0 = sizeof(SatPacket);
 // int temp_var1 = sizeof(uint8_t);

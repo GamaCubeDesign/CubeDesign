@@ -110,6 +110,9 @@ class StatusDataServer{
         strcpy(buffer, "Ok\n");
         send(server, buffer, 3, 0);
         int recvN = recv(server, (uint8_t*)&newPacket, sizeof(HealthData), 0);
+        if(recvN > 0){
+          _fifo->write(newPacket);
+        }
         cout << "(Status) Packet received" << endl;
 
         // unsigned int recvN = recv(server, buffer, bufsize, 0);

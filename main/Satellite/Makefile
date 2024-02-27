@@ -30,14 +30,17 @@ RFModule.o: RFModule.cpp
 DataFIFO.o: DataFIFO.cpp
 	g++ -c DataFIFO.cpp -o DataFIFO.o
 
+AttitudeControl.o: AttitudeControl.c
+	gcc -c AttitudeControl.c -o AttitudeControl.o -lpigpio -lrt -pthread -lm
+
 LoRa.o: LoRa.c
 	gcc -c LoRa.c -o LoRa.o -lpigpio -lrt -pthread -lm
 
 SatTTC.o: SatTTC.cpp
 	g++ -c SatTTC.cpp -o SatTTC.o -lpigpio -lrt -pthread -lm
 
-SatTTC.out: Timing.o Logger.o RFModule.o RFModem.o SatTTC.o DataFIFO.o LoRa.o
-	g++ -o SatTTC.out SatTTC.o Timing.o Logger.o RFModule.o RFModem.o DataFIFO.o LoRa.o -lpigpio -lrt -pthread -lm
+SatTTC.out: Timing.o Logger.o RFModule.o RFModem.o SatTTC.o DataFIFO.o LoRa.o AttitudeControl.o
+	g++ -o SatTTC.out SatTTC.o Timing.o Logger.o RFModule.o RFModem.o DataFIFO.o LoRa.o AttitudeControl.o -lpigpio -lrt -pthread -lm
 
 clean:
 	rm *.o *.out

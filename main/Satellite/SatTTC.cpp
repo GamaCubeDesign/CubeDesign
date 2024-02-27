@@ -6,6 +6,9 @@
 #include <cstring>
 using namespace std;
 
+#include <iostream>
+#include <fstream>
+
 //#ifdef __cplusplus
 //  extern "C" {
 //    #include "../sx1278-LoRa-RaspberryPi/LoRa.h"
@@ -21,11 +24,11 @@ using namespace std;
 #include "ImagingServer.cpp"
 
 //includes for send_to_control
-#include <stdio.h>
-#include <string.h>
-#include <errno.h>
-#include <wiringPi.h>
-#include <wiringSerial.h>
+#ifdef __cplusplus
+  extern "C" {
+    #include "AttitudeControl.h"
+  }
+#endif
 
 // #include "asynchronous_in.cpp"
 #include "printing_utils.cpp"
@@ -53,44 +56,6 @@ void run_imaging_server(){
   imaging_server.run_server();
 }
 
-void send_to_control(int mode, int gx, int gy){
-  int serial_port ;
-  uint8_t dat;
-  if ((serial_port = serialOpen ("/dev/ttyS0", 9600)) < 0)	/* open serial port */
-  {
-    fprintf (stderr, "Unable to open serial device: %s\n", strerror (errno)) ;
-    return 1 ;
-  }
-
-  if (wiringPiSetup () == -1)					/* initializes wiringPi setup */
-  {
-    fprintf (stdout, "Unable to start wiringPi: %s\n", strerror (errno)) ;
-    return 1 ;
-  }
-	  
-	if(serialDataAvail (serial_port) )
-	{ 
-    serialPutchar(serial_port, (mode+48));
-    serialPutchar(serial_port, ';');
-    while (gx>0){
-      uint8_t b = gx%10;
-      serialPutchar(serial_port, b);
-      gx/=10;
-    }
-    serialPutchar(serial_port, ';');
-    	/* receive character serially*/
-      while (gy>0){
-      uint8_t b = gy%10;
-      serialPutchar(serial_port, b);
-      gy/=10;
-    }
-    serialPutchar(serial_port,'\n');
-		//fflush (stdout) ; /* transmit character serially on port */
-	                     
-	}
-	
-}
-
 void read_fifos(){
   while(imaging_fifo.available()){
     ImagingData imagingPacket = imaging_fifo.read();
@@ -100,9 +65,23 @@ void read_fifos(){
     HealthData statusPacket = status_fifo.read();
     float gx = statusPacket.giros_x;
     float gy = statusPacket.giros_y;
-    send_to_control(gx,gy);
+    send_to_control(operation.switch_attitude_control, gx,gy);
     logger.writeSatStatusPacket(statusPacket);
   }
+}
+
+void open_antennas(){
+  fstream f;
+  f.open("OPEN_ANTENNAS.txt", ios::in);
+  char is_to_open;
+  f >> is_to_open;
+  if(is_to_open == '1'){
+    cout << "Opening Antenna in 60 secods" << endl;
+    // sleep(60);
+  } else{
+    cout << "Not opening Antenna" << endl;
+  }
+  f.close();
 }
 
 void loop(){
@@ -113,6 +92,9 @@ void loop(){
 
 int main( int argc, char *argv[] ){
   std::cout << "Raspberry Gama Satellite communication system with LoRa Ra-01 rf module\n";
+    
+  // std::filesystem::remove_all("frames");
+  // std::filesystem::create_directory("frames");
 
   initRFModule();
   std::cout << "Device initiated successfully\n";
@@ -121,6 +103,8 @@ int main( int argc, char *argv[] ){
   std::thread imaging_thread (run_imaging_server);
 
   // std::thread async_in_thread = start_serial_thread();
+
+  open_antennas();
 
   running = true;
   while(running){

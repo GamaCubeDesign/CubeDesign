@@ -60,8 +60,8 @@ int main()
     	continue;
     }
     
-    std::filesystem::remove_all("frames");
-    std::filesystem::create_directory("frames");
+    //std::filesystem::remove_all("frames");
+    //std::filesystem::create_directory("frames");
 
     // Criar VideoCapture
     VideoCapture capture(0);

@@ -67,10 +67,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bcr/rasp/opencv
+CMAKE_SOURCE_DIR = /home/bcr/rasp/vitinho/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bcr/rasp/opencv
+CMAKE_BINARY_DIR = /home/bcr/rasp/vitinho/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bcr/rasp/opencv/CMakeFiles /home/bcr/rasp/opencv//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bcr/rasp/vitinho/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv/CMakeFiles /home/bcr/rasp/vitinho/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bcr/rasp/opencv/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bcr/rasp/vitinho/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

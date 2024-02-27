@@ -10,7 +10,7 @@
 
 using namespace std;
 
-#include "/mnt/DADOS/Workbench/GCD/TTC/TTEC-Gamacubedesign/main/CommunicationProtocol.h"
+#include "../../CommunicationProtocol.h"
 
 class ImagingDataClient{
   public:

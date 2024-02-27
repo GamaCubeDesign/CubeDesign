@@ -7,3 +7,22 @@
 2024-02-26 20:06:27.655214
 
 {"time": "0", "index": "0", "sd_memory_usage": "0", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_charge": "0.00", "battery_voltage": "0.00", "battery_current": "0.00", "battery_temperature": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_charge": "0.00", "battery_voltage": "0.00", "battery_current": "0.00", "battery_temperature": "0.00", "accel_x": "0.00", "accel_y": "0.00", "giro_x": "0.00", "giro_y": "0.00"}{"time": "0", "index": "1", "sd_memory_usage": "0", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_charge": "0.00", "battery_voltage": "0.00", "battery_current": "0.00", "battery_temperature": "0.00", "accel_x": "0.00", "accel_y": "0.00", "giro_x": "0.00", "giro_y": "0.00"}{"time": "0", "index": "2", "sd_memory_usage": "0", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_charge": "0.00", "battery_voltage": "0.00", "battery_current": "0.00", "battery_temperature": "0.00", "accel_x": "0.00", "accel_y": "0.00", "giro_x": "0.00", "giro_y": "0.00"}{"time": "0", "index": "3", "sd_memory_usage": "0", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_charge": "0.00", "battery_voltage": "0.00", "battery_current": "0.00", "battery_temperature": "0.00", "accel_x": "0.00", "accel_y": "0.00", "giro_x": "0.00", "giro_y": "0.00"}{"time": "0", "index": "4", "sd_memory_usage": "0", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_charge": "0.00", "battery_voltage": "0.00", "battery_current": "0.00", "battery_temperature": "0.00", "accel_x": "0.00", "accel_y": "0.00", "giro_x": "0.00", "giro_y": "0.00"}
+
+2024-02-27 14:55:19.415877
+
+{"time": "0", "index": "0", "sd_memory_usage": "0", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_charge": "0.00", "battery_voltage": "0.00", "battery_current": "0.00", "battery_temperature": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-27 15:07:32.977388
+
+{"time": "0", "index": "0", "sd_memory_usage": "0", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_charge": "0.00", "battery_voltage": "0.00", "battery_current": "0.00", "battery_temperature": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-27 15:14:26.313410
+
+{"time": "0", "index": "0", "sd_memory_usage": "0", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_charge": "0.00", "battery_voltage": "0.00", "battery_current": "0.00", "battery_temperature": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_charge": "0.00", "battery_voltage": "0.00", "battery_current": "0.00", "battery_temperature": "0.00", "accel_x": "0.00", "accel_y": "0.00", "giro_x": "0.00", "giro_y": "0.00"}{"time": "0", "index": "1", "sd_memory_usage": "0", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_charge": "0.00", "battery_voltage": "0.00", "battery_current": "0.00", "battery_temperature": "0.00", "accel_x": "0.00", "accel_y": "0.00", "giro_x": "0.00", "giro_y": "0.00"}{"time": "0", "index": "2", "sd_memory_usage": "0", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_charge": "0.00", "battery_voltage": "0.00", "battery_current": "0.00", "battery_temperature": "0.00", "accel_x": "0.00", "accel_y": "0.00", "giro_x": "0.00", "giro_y": "0.00"}{"time": "0", "index": "4", "sd_memory_usage": "0", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_charge": "0.00", "battery_voltage": "0.00", "battery_current": "0.00", "battery_temperature": "0.00", "accel_x": "0.00", "accel_y": "0.00", "giro_x": "0.00", "giro_y": "0.00"}
+
+2024-02-27 15:43:30.758599
+
+{"time": "0", "index": "0", "sd_memory_usage": "0", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_charge": "0.00", "battery_voltage": "0.00", "battery_current": "0.00", "battery_temperature": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-27 15:59:59.931874
+

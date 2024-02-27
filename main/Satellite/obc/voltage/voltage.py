@@ -12,12 +12,13 @@ ads = ADS.ADS1115(i2c)
 
 # Define the analog input channels
 channel0 = AnalogIn(ads, ADS.P0)
+channel1 = AnalogIn(ads, ADS.P1)
 channel2 = AnalogIn(ads, ADS.P2)
-volt_bat = channel2.voltage
 ntc = channel0.voltage
-print(volt_bat)
-print(ntc)
+volt_3v = channel1.voltage
+volt_bat = channel2.voltage
+print(volt_bat, ntc, volt_3v)
 # Loop to read the analog inputs continuously
 
 # Delay for 1 second
-time.sleep(1)
+# time.sleep(1)

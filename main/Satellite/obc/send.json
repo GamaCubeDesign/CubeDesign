@@ -1,1 +1,1 @@
-{ "temp_bmp": "20.0 ºC", "pressure_bmp": "100000 Pa", "altitude_bmp": "1000 m", "Gx_mpu": "-0.008 °/s", "Gy_mpu": "-0.008 °/s", "Gz_mpu": "-0.008 °/s", "Ax_mpu": "4.123 g", "Ay_mpu": "0.000 g", "Az_mpu": "1.000 g", "voltage": "3.300 V", "diskp": "6" }
+{ "time": 4500, "index": 10, "temp_bmp": 29.700, "pressure_bmp": 93750.000, "altitude_bmp": 650.650, "Gx_mpu": -1.664, "Gy_mpu": 0.214, "Gz_mpu": 0.031, "Ax_mpu": -0.166, "Ay_mpu": 0.243, "Az_mpu": 0.765, "battery_voltage": 0.901, "ext_temp_voltage": 3.273, "volt_3v": 0.651, "diskp": 7 }

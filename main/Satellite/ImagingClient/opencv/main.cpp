@@ -9,7 +9,7 @@
 #include "../../../CommunicationProtocol.h"
 
 ImagingData testingData;
-ImagingDataClient imagingSocket(8080);
+//ImagingDataClient imagingSocket(8080);
 
 using namespace std;
 using namespace cv;
@@ -22,12 +22,14 @@ bool stopLoop = false;
 
 // Função que verifica a entrada do teclado
 void checkInput() {
-    while (true) {
-        if (imagingSocket.update() == 0) {
-            ::stopLoop = true;
-            break;
-        }
-    }
+    // while (true) {
+    //     if (imagingSocket.update() == 0) {
+    //         ::stopLoop = true;
+    //         break;
+    //     }
+    // }
+    sleep(5);
+    ::stopLoop = true;
 }
 
 double twoPointDistance(Point2f A, Point2f B) {
@@ -38,16 +40,18 @@ double twoPointDistance(Point2f A, Point2f B) {
 
 int main() 
 {
-    while(imagingSocket.connect_to_socket() < 0){
-   		 cout << "Error connecting to socket" << endl;
-   		 cout << "Goodbye" << endl;
-   		 return 0;
-    }
+    // while(imagingSocket.connect_to_socket() < 0){
+   	// 	 cout << "Error connecting to socket" << endl;
+   	// 	 cout << "Goodbye" << endl;
+   	// 	 return 0;
+    // }
+    cout << "Imaging code" << endl;
     
     while(true) {
 	 
     // Recebendo entrada de qual tratamento sera realizado
-    int scene = imagingSocket.update();
+    // int scene = imagingSocket.update();
+    int scene = 1;
     
     if(scene == 0) {
     	this_thread::sleep_for(chrono::milliseconds(100));
@@ -212,11 +216,11 @@ int main()
                         newData.y = centroideSum.y;
                         newData.duration = duration/3;
                         newData.radius = areasSum;
-                        imagingClient.sendPacket(newData);
-                        //fstream newfile;
-                        //newfile.open("raios.txt", ios::app);
-                        //newfile << "Inicio = " << k << " e Fim = " << nextIndex-1 << " e Duracao = " << duration/3 << "seg e Centroide = " << centroideSum << endl;
-                        //newfile.close();
+                        // imagingClient.sendPacket(newData);
+                        fstream newfile;
+                        newfile.open("raios.txt", ios::app);
+                        newfile << "Inicio = " << k << " e Fim = " << nextIndex-1 << " e Duracao = " << duration/3 << "seg e Centroide = " << centroideSum << endl;
+                        newfile.close();
                         contadorRaio++;
                         break;
                     }
@@ -271,12 +275,16 @@ int main()
                 // Salvamento da duracao
                 if (count == -1){
                     std::cout << "Duracao = " << duration/3 << endl;
-			LightningData newData;
-			newData.type = 2;
-			newData.index = contadorRaio;
-			newData.duration = duration/3;
-			newData.radius = biggestContourFrames;
-			imagingClient.sendPacket(newData);
+                    LightningData newData;
+                    newData.type = 2;
+                    newData.index = contadorRaio;
+                    newData.duration = duration/3;
+                    newData.radius = biggestContourFrames;
+                    cout << "type " << newData.type << " ";
+                    cout << "index " << newData.type << " ";
+                    cout << "duration " << newData.type << " ";
+                    cout << "radius " << newData.type << endl;
+                    // imagingClient.sendPacket(newData);
                     break;
                 }
                 nextIndex = indexOfFrameOfBiggestContour;

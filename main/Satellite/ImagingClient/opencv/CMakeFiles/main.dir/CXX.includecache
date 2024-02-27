@@ -6,7 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/home/bcr/rasp/opencv/main.cpp
+/home/bcr/rasp/vitinho/TTEC-Gamacubedesign/main/CommunicationProtocol.h
+
+/home/bcr/rasp/vitinho/TTEC-Gamacubedesign/main/Satellite/ImagingClient/ImagingDataClient.cpp
+iostream
+-
+string.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+stdlib.h
+-
+unistd.h
+-
+netdb.h
+-
+../../CommunicationProtocol.h
+/home/bcr/rasp/vitinho/TTEC-Gamacubedesign/main/CommunicationProtocol.h
+
+/home/bcr/rasp/vitinho/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv/main.cpp
 opencv2/core/core.hpp
 -
 opencv2/highgui/highgui.hpp
@@ -21,6 +45,10 @@ fstream
 -
 thread
 -
+../ImagingDataClient.cpp
+/home/bcr/rasp/vitinho/TTEC-Gamacubedesign/main/Satellite/ImagingClient/ImagingDataClient.cpp
+../../../CommunicationProtocol.h
+/home/bcr/rasp/vitinho/TTEC-Gamacubedesign/main/CommunicationProtocol.h
 
 /usr/include/opencv4/opencv2/core.hpp
 opencv2/core/cvdef.h

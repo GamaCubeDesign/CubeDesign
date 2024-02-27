@@ -34,13 +34,11 @@ class ImagingDataServer{
       ImagingData newPacket;
       for(int i = 0; i < 5; i++){
         newPacket.duration = 0;
-        newPacket.index = 0;
+        newPacket.index = i;
         newPacket.radius = 0;
         newPacket.type = 0;
         newPacket.x = 0;
         newPacket.y = 0;
-      }
-      for(int i = 0; i < 5; i++){
         _fifo->write(newPacket);
       }
 

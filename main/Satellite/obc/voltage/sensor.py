@@ -5,7 +5,7 @@ import time
 
 # Setup SPI
 spi = spidev.SpiDev()
-spi.open(0, 0)  # Bus 0, Device 0
+spi.open(1, 48)  # Bus 1, Device 48
 
 def read_adc(channel):
     adc = spi.xfer2([1, (8 + channel) << 4, 0])

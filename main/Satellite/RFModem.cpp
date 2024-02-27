@@ -120,8 +120,8 @@ void tx_send(uint8_t* buf, unsigned int size){
 
   long now = millis();
   long timeout_at = now + 1000;
-  cout << "tx: now" << now << endl;
-  cout << "tx: timeout at " << timeout_at << endl;
+  cout << "tx: now " << now << endl;
+  cout << "tx: will timeout at " << timeout_at << endl;
   while(!tx_done && millis() < timeout_at){
     // cout << "tx: waiting " << millis() << endl;
   }

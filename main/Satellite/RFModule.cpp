@@ -188,7 +188,7 @@ void switchCaseStatusProtocol(){
         satPacket.byte_data.index = i;
         satPacket.length = sizeof(SatPacket);//sizeof(int64_t)+sizeof(HealthData);
         sendSatPacket();
-        sleep(1);
+        // sleep(1);
       }
       cout << "STATUS:PACKETS TRANSMITTED" << endl;
       satPacket.operation.protocol = PROTOCOL_STATUS;
@@ -210,7 +210,7 @@ void switchCaseStatusProtocol(){
               satPacket.byte_data.index = i*8 + j;
               satPacket.length = sizeof(SatPacket);//sizeof(int64_t)+sizeof(HealthData);
               sendSatPacket();
-              usleep(10000);
+              // usleep(10000);
             }
           }
         }

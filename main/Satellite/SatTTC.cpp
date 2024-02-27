@@ -20,6 +20,13 @@ using namespace std;
 #include "StatusServer.cpp"
 #include "ImagingServer.cpp"
 
+//includes for send_to_control
+#include <stdio.h>
+#include <string.h>
+#include <errno.h>
+#include <wiringPi.h>
+#include <wiringSerial.h>
+
 // #include "asynchronous_in.cpp"
 #include "printing_utils.cpp"
 
@@ -46,8 +53,42 @@ void run_imaging_server(){
   imaging_server.run_server();
 }
 
-void send_to_control(float gx, float gy){
-  
+void send_to_control(int mode, int gx, int gy){
+  int serial_port ;
+  uint8_t dat;
+  if ((serial_port = serialOpen ("/dev/ttyS0", 9600)) < 0)	/* open serial port */
+  {
+    fprintf (stderr, "Unable to open serial device: %s\n", strerror (errno)) ;
+    return 1 ;
+  }
+
+  if (wiringPiSetup () == -1)					/* initializes wiringPi setup */
+  {
+    fprintf (stdout, "Unable to start wiringPi: %s\n", strerror (errno)) ;
+    return 1 ;
+  }
+	  
+	if(serialDataAvail (serial_port) )
+	{ 
+    serialPutchar(serial_port, (mode+48));
+    serialPutchar(serial_port, ';');
+    while (gx>0){
+      uint8_t b = gx%10;
+      serialPutchar(serial_port, b);
+      gx/=10;
+    }
+    serialPutchar(serial_port, ';');
+    	/* receive character serially*/
+      while (gy>0){
+      uint8_t b = gy%10;
+      serialPutchar(serial_port, b);
+      gy/=10;
+    }
+    serialPutchar(serial_port,'\n');
+		//fflush (stdout) ; /* transmit character serially on port */
+	                     
+	}
+	
 }
 
 void read_fifos(){

@@ -3,6 +3,7 @@ import tkinter.filedialog
 from tkinter import ttk
 
 import json
+import datetime
 
 from enum import Enum
 
@@ -118,6 +119,16 @@ class ControlFrame(ttk.LabelFrame):
   def begin(self, serial):
       self.ser = serial
       self.pack(fill='both')
+      with open("ADCS_DATA.txt", "a") as archive:
+        print("Appending status to file " + str(archive))
+        archive.write("\n\n")
+        archive.write(str(datetime.datetime.now()))
+        archive.write("\n\n")
+      with open("IMAGING_DATA.txt", "a") as archive:
+        print("Appending imaging to file " + str(archive))
+        archive.write("\n\n")
+        archive.write(str(datetime.datetime.now()))
+        archive.write("\n\n")
   
   def close(self):
     self.pack_forget()
@@ -169,7 +180,24 @@ class ControlFrame(ttk.LabelFrame):
                   giro_x = args[11],
                   giro_y = args[12])
       with open("ADCS_DATA.txt", "a") as archive:
-        json.dump(archive, data)
+        print("Writing packet to status log")
+        print(data)
+        json.dump(data, archive)
+        print("Done writing")
+        
+    elif cmd == "IMAGING PACKET":
+      data = dict(time = args[0],
+                  index = args[1],
+                  type = args[2],
+                  duration = args[3],
+                  radius = args[4],
+                  x = args[5],
+                  y = args[6])
+      print("Writing packet to imaging log")
+      with open("IMAGING_DATA.txt", "a") as archive:
+        print(data)
+        json.dump(data, archive)
+      print("Done writing")
         
     else:
       print(cmd + " " + args[0:])
@@ -229,3 +257,8 @@ class ControlFrame(ttk.LabelFrame):
     self.ser.write([protocol['control_commands'].index("SET_TX_POWER"), protocol['transmission_power_dict'][self.tx_power_variable.get()]])
   def read_tx_power(self):
     self.ser.write([protocol['control_commands'].index("READ_TX_POWER")])
+
+if __name__ == "__main__":
+  with open("test.txt", "w") as f:
+    print("Hello there!")
+    f.write("Hello there!")

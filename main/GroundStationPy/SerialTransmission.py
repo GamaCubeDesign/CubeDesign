@@ -77,7 +77,9 @@ class SerialTransmission:
   
   def parse_message(self):
     # print(self.receiving_buffer)
-    try:
+    # try:
+      # print("received buffer")
+      # print(self.receiving_buffer)
       msg = str(self.receiving_buffer,encoding='utf8').rstrip()
       print(msg)
       if len(msg)>2:
@@ -88,6 +90,6 @@ class SerialTransmission:
           self.listeners[v[0]].parse_message(cmd,args)
         # else:
           # print(msg)
-    except Exception as e:
-      print("Exception")
-      print(e)
+    # except Exception as e:
+    #   print("Exception")
+    #   print(e)

@@ -42,6 +42,22 @@ void setup(){
   Serial.print(satPacket.data.healthData.giros_x);Serial.print(":");
   Serial.println(satPacket.data.healthData.giros_y);
 
+  satPacket.data.imagingData.time = 0;
+  satPacket.data.imagingData.index = 0;
+  satPacket.data.imagingData.type = 0;
+  satPacket.data.imagingData.duration = 0;
+  satPacket.data.imagingData.radius = 0;
+  satPacket.data.imagingData.x = 0;
+  satPacket.data.imagingData.y = 0;
+  Serial.print("CONTROL:IMAGING PACKET:");
+  Serial.print(satPacket.data.imagingData.time);Serial.print(":");
+  Serial.print(satPacket.data.imagingData.index);Serial.print(":");
+  Serial.print(satPacket.data.imagingData.type);Serial.print(":");
+  Serial.print(satPacket.data.imagingData.duration);Serial.print(":");
+  Serial.print(satPacket.data.imagingData.radius);Serial.print(":");
+  Serial.print(satPacket.data.imagingData.x);Serial.print(":");
+  Serial.println(satPacket.data.imagingData.y);
+
   Serial.println("PRINT:Gama Ground Station communication system with LoRa Ra-01 rf module");
 
   // override the default CS, reset, and IRQ pins (optional)

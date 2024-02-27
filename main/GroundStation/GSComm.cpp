@@ -30,7 +30,7 @@ Operation operation = {
 
 uint8_t rx_pointer = 0;
 unsigned long gscomm_next_transmission = 0;
-unsigned long gscomm_transmission_interval = 100;
+unsigned long gscomm_transmission_interval = 200;
 
 SatPacket satPacket;int satPacketSize = sizeof(SatPacket);
 GSPacket gsPacket;int gsPacketSize = sizeof(GSPacket);
@@ -131,13 +131,14 @@ void updateRFComm(){
       if(rx_pointer>0 && rx_pointer==satPacket.length){
         telemetry_received = true;
         onReceive();
+        Serial.println("PRINT:Parsed packet");
         // rx_pointer = 0;
       } else if(rx_pointer > satPacket.length){
         Serial.print("PRINT:RECEIVING POINTER OUT OF EXPECTED LENGTH:EXPECTED");
         Serial.print(satPacket.length);Serial.print(":");Serial.println(rx_pointer);
         // rx_pointer = 0;
       }
-      if(rx_pointer >= sizeof(satPacket)){
+      if(rx_pointer > sizeof(satPacket)){
         Serial.println("PRINT:THIS DOESNT EVEN MAKE SENSE AND SHOULD NEVER HAPPEN");
         // rx_pointer = 0;
       }
@@ -337,6 +338,17 @@ void switchCaseImagingDataProtocol(){
       sendGSPacket();
       break;
     case SATELLITE_IMAGING_PACKET:
+      Serial.print(PRINT_STR);
+      Serial.print("Imaging: Packet: ");
+      Serial.println(satPacket.byte_data.index);
+      Serial.print("CONTROL:IMAGING PACKET:");
+      Serial.print(satPacket.data.imagingData.time);Serial.print(":");
+      Serial.print(satPacket.data.imagingData.index);Serial.print(":");
+      Serial.print(satPacket.data.imagingData.type);Serial.print(":");
+      Serial.print(satPacket.data.imagingData.duration);Serial.print(":");
+      Serial.print(satPacket.data.imagingData.radius);Serial.print(":");
+      Serial.print(satPacket.data.imagingData.x);Serial.print(":");
+      Serial.println(satPacket.data.imagingData.y);
       bitClear(gsPacket.data.resend.packets[satPacket.byte_data.index>>3],satPacket.byte_data.index&0x07);
       control_print_status_packet();
       break;

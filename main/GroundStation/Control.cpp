@@ -36,20 +36,22 @@ void printControlln(CONTROL_ENUM cmd){
 void printBIN(uint8_t *buf, unsigned int size){
   uint8_t b;
   Serial.print("BIN:");
+  Serial.print(size);
   for(unsigned int i = 0; i < size; i++){
-    b = buf[i];
-    if(b == 11){
-      Serial.write(11);
-      Serial.write(11);
-    } else if(b == 10){
-      Serial.write(11);
-      Serial.write(10);
-    } else if(b == 13){
-      Serial.write(11);
-      Serial.write(13);
-    } else{
-      Serial.write(b);
-    }
+    Serial.print(":");Serial.print((unsigned int)buf[i]);
+    // b = buf[i];
+    // if(b == 11){
+    //   Serial.write(11);
+    //   Serial.write(11);
+    // } else if(b == 10){
+    //   Serial.write(11);
+    //   Serial.write(10);
+    // } else if(b == 13){
+    //   Serial.write(11);
+    //   Serial.write(13);
+    // } else{
+    //   Serial.write(b);
+    // }
   }
 }
 
@@ -352,6 +354,7 @@ void setStandByMode(uint8_t c){
 void control_print_status_packet(){
   printPrint(PRINT_STATUS_RECEIVED);
   printBIN((uint8_t*)&satPacket, sizeof(satPacket));
+  Serial.println("");
   // printSeparator();Serial.println(satPacket.byte_data.index);
   // Serial.print(PRINT_STATUS_PACKET);
   // printSeparator();Serial.print(satPacket.data.healthData.time);//Reading time:
@@ -370,6 +373,7 @@ void control_print_status_packet(){
 void control_print_imaging_packet(){
   printPrint(PRINT_IMAGING_RECEIVED);
   printBIN((uint8_t*)&satPacket, sizeof(satPacket));
+  Serial.println("");
   // printSeparator();Serial.println(satPacket.byte_data.index);
   // Serial.print(PRINT_IMAGING_PACKET);
   // printSeparator();Serial.print(satPacket.data.imagingData.lightnings[0].index);//"Index:"

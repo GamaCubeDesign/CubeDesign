@@ -7,6 +7,8 @@
 #include <thread>
 #include "../ImagingDataClient.cpp" 
 #include "../../../CommunicationProtocol.h"
+#include <filesystem>
+
 
 ImagingData testingData;
 //ImagingDataClient imagingSocket(8080);
@@ -58,8 +60,8 @@ int main()
     	continue;
     }
     
-    std::filesystem::remove_all("frames");
-    std::filesystem::create_directory("frames");
+    fs::filesystem::remove_all("frames");
+    fs::filesystem::create_directory("frames");
 
     // Criar VideoCapture
     VideoCapture capture(0);

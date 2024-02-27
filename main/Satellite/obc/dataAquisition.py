@@ -1,6 +1,7 @@
 import socket
 import sys
 import json
+import struct
 
 HOST = "127.0.0.1"
 PORT = 8081
@@ -42,21 +43,21 @@ if __name__=='__main__':
     p = [
       data['index'].to_bytes(4,'little'),
       data['time'].to_bytes(4,'little'),
-      data['battery_voltage'].to_bytes(4,'little'),
-      data['battery_current'].to_bytes(4,'little'),
-      data['battery_charge'].to_bytes(4,'little'),
-      data['battery_temperature'].to_bytes(4,'little'),
-      data['internal_temperature'].to_bytes(4,'little'),
-      data['external_temperature'].to_bytes(4,'little'),
-      data['sd_memory_usage'].to_bytes(4,'little'),
-      data['altitude_bmp'].to_bytes(4,'little'),
-      data['pressure_bmp'].to_bytes(4,'little'),
-      data['Ax_mpu'].to_bytes(4,'little'),
-      data['Ay_mpu'].to_bytes(4,'little'),
-      data['Az_mpu'].to_bytes(4,'little'),
-      data['Gx_mpu'].to_bytes(4,'little'),
-      data['Gy_mpu'].to_bytes(4,'little'),
-      data['Gz_mpu'].to_bytes(4,'little')
+      bytearray(struct.pack("f", data['battery_voltage'])) ,
+      #bytearray(struct.pack("f", data['battery_current'])),
+      #bytearray(struct.pack("f", data['battery_charge'])),
+      #bytearray(struct.pack("f", data['battery_temperature'])),
+      bytearray(struct.pack("f", data['temp_bmp'])),
+      bytearray(struct.pack("f", data['ext_temp_voltage'])),
+      bytearray(struct.pack("f", data['diskp'])),
+      bytearray(struct.pack("f", data['altitude_bmp'])),
+      bytearray(struct.pack("f", data['pressure_bmp'])),
+      bytearray(struct.pack("f", data['Ax_mpu'])),
+      bytearray(struct.pack("f", data['Ay_mpu'])),
+      bytearray(struct.pack("f", data['Az_mpu'])),
+      bytearray(struct.pack("f", data['Gx_mpu'])),
+      bytearray(struct.pack("f", data['Gy_mpu'])),
+      bytearray(struct.pack("f", data['Gz_mpu']))
       ]
     packet = bytearray(0)
     for e in p:

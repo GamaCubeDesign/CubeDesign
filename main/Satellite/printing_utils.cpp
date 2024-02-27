@@ -8,13 +8,19 @@ using namespace std;
 void print_status_packet(HealthData statusPacket){
   cout << "Packet index: " << statusPacket.index << endl;
   cout << "Reading time: " << statusPacket.time << endl;
-  cout << "Battery charge: " << statusPacket.battery_charge << endl;
-  cout << "Battery current: " << statusPacket.battery_current << endl;
+  // cout << "Battery charge: " << statusPacket.battery_charge << endl;
+  // cout << "Battery current: " << statusPacket.battery_current << endl;
   cout << "Battery voltage: " << statusPacket.battery_voltage << endl;
-  cout << "Battery temperature: " << statusPacket.battery_temperature << endl;
+  // cout << "Battery temperature: " << statusPacket.battery_temperature << endl;
   cout << "External temperature: " << statusPacket.external_temperature << endl;
   cout << "Internal temperature: " << statusPacket.internal_temperature << endl;
+  cout << "Pressure: " << statusPacket.pressure << endl;
+  cout << "Altitude: " << statusPacket.altitude << endl;
   cout << "Memory usage: " << statusPacket.sd_memory_usage << endl;
+  cout << "Ax: " << statusPacket.accel_x << endl;
+  cout << "Ay: " << statusPacket.accel_y << endl;
+  cout << "Gx: " << statusPacket.giros_x << endl;
+  cout << "Gy: " << statusPacket.giros_y << endl;
 }
 
 void print_status_packet_bytes(HealthData statusPacket){

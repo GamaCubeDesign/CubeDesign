@@ -47,7 +47,7 @@ void run_imaging_server(){
 }
 
 void send_to_control(float gx, float gy){
-
+  
 }
 
 void read_fifos(){

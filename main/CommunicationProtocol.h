@@ -125,12 +125,12 @@ struct HealthData{
   uint32_t index;
   uint32_t time;
   float battery_voltage;
-  float battery_current;
-  float battery_charge;
-  float battery_temperature;
+  // float battery_charge;
+  // float battery_current;
+  // float battery_temperature;
   float internal_temperature;
   float external_temperature;
-  uint32_t sd_memory_usage; // MB
+  float sd_memory_usage; // MB
   float altitude;
   float pressure;
   float accel_x;

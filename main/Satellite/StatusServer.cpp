@@ -33,19 +33,21 @@ class StatusDataServer{
 
       HealthData newPacket;
       for(int i = 0; i < 5; i++){
-        newPacket.time = 0;
-        newPacket.index = i;
+        newPacket.time = i;
+        newPacket.index = 0;
         newPacket.sd_memory_usage = 0;
-        newPacket.battery_charge = 0;
-        newPacket.battery_current = 0;
-        newPacket.battery_temperature = 0;
+        // newPacket.battery_charge = 0;
+        // newPacket.battery_current = 0;
+        // newPacket.battery_temperature = 0;
         newPacket.battery_voltage = 0;
         newPacket.external_temperature = 0;
         newPacket.internal_temperature = 0;
-        newPacket.accel_x = 0;
-        newPacket.accel_y = 0;
-        newPacket.giros_x = 0;
-        newPacket.giros_y = 0;
+        newPacket.altitude = 1.0;
+        newPacket.pressure = 1.0;
+        newPacket.accel_x = 1;
+        newPacket.accel_y = 1;
+        newPacket.giros_x = 1;
+        newPacket.giros_y = 1;
         _fifo->write(newPacket);
       }
   }

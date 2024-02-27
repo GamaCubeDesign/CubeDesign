@@ -49,6 +49,8 @@ thread
 /home/bcr/rasp/vitinho/TTEC-Gamacubedesign/main/Satellite/ImagingClient/ImagingDataClient.cpp
 ../../../CommunicationProtocol.h
 /home/bcr/rasp/vitinho/TTEC-Gamacubedesign/main/CommunicationProtocol.h
+filesystem
+-
 
 /usr/include/opencv4/opencv2/core.hpp
 opencv2/core/cvdef.h

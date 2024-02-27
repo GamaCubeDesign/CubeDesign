@@ -171,14 +171,16 @@ class ControlFrame(ttk.LabelFrame):
                   sd_memory_usage = args[2],
                   internal_temperature = args[3],
                   external_temperature = args[4],
-                  battery_charge = args[5],
-                  battery_voltage = args[6],
-                  battery_current = args[7],
-                  battery_temperature = args[8],
-                  accel_x = args[9],
-                  accel_y = args[10],
-                  giro_x = args[11],
-                  giro_y = args[12])
+                  battery_voltage = args[5],
+                  # battery_current = args[7],
+                  # battery_charge = args[5],
+                  # battery_temperature = args[8],
+                  altitude = args[6],
+                  pressure = args[7],
+                  accel_x = args[8],
+                  accel_y = args[9],
+                  giro_x = args[10],
+                  giro_y = args[11])
       with open("ADCS_DATA.txt", "a") as archive:
         print("Writing packet to status log")
         print(data)

@@ -39,8 +39,9 @@ LoRa.o: LoRa.c
 SatTTC.o: SatTTC.cpp
 	g++ -c SatTTC.cpp -o SatTTC.o -lpigpio -lrt -pthread -lm
 
-SatTTC.out: Timing.o Logger.o RFModule.o RFModem.o SatTTC.o DataFIFO.o LoRa.o AttitudeControl.o
-	g++ -o SatTTC.out SatTTC.o Timing.o Logger.o RFModule.o RFModem.o DataFIFO.o LoRa.o AttitudeControl.o -lpigpio -lrt -pthread -lm
+SatTTC.out: Timing.o Logger.o RFModule.o RFModem.o SatTTC.o DataFIFO.o LoRa.o
+	g++ -o SatTTC.out SatTTC.o Timing.o Logger.o RFModule.o RFModem.o DataFIFO.o LoRa.o -lpigpio -lrt -pthread -lm
+#  AttitudeControl.o
 
 clean:
 	rm *.o *.out

@@ -24,11 +24,11 @@ using namespace std;
 #include "ImagingServer.cpp"
 
 //includes for send_to_control
-#ifdef __cplusplus
-  extern "C" {
-    #include "AttitudeControl.h"
-  }
-#endif
+// #ifdef __cplusplus
+//   extern "C" {
+//     #include "AttitudeControl.h"
+//   }
+// #endif
 
 // #include "asynchronous_in.cpp"
 #include "printing_utils.cpp"
@@ -65,7 +65,7 @@ void read_fifos(){
     HealthData statusPacket = status_fifo.read();
     float gx = statusPacket.giros_x;
     float gy = statusPacket.giros_y;
-    send_to_control(operation.switch_attitude_control, gx,gy);
+    // send_to_control(operation.switch_attitude_control, gx,gy);
     logger.writeSatStatusPacket(statusPacket);
   }
 }

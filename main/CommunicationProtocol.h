@@ -131,6 +131,8 @@ struct HealthData{
   float internal_temperature;
   float external_temperature;
   uint32_t sd_memory_usage; // MB
+  float altitude;
+  float pressure;
   float accel_x;
   float accel_y;
   float accel_z;

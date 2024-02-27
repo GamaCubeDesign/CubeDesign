@@ -13,42 +13,57 @@ PORT = 8081
 #  def send_packet(self):
 
 if __name__=='__main__':
-  self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0)
-  self.socket.connect((HOST, PORT))
+  socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0)
+  socket.connect((HOST, PORT))
   
-  data = self.socket.recv(1024)
+  data = socket.recv(1024)
   r = str(data, encoding='utf-8')
   print(r)
   
   
-  print("Updating")
-  self.socket.sendall(b'RequestUpdate\n\0')
-  data = self.socket.recv(1024)
+  # print("Updating")
+  # socket.sendall(b'RequestUpdate\n\0')
+  # data = socket.recv(1024)
   
   r = str(data, encoding='utf-8')
   print("Update response: " + r)
-  if r == "Close\n":
-    pass
-  
+  # if r == "Close\n":
+  #   pass
   
   with open("send.json", "r") as f:
     data = json.load(f)
+    print(data)
     
-		self.socket.sendall(b'SendPacket\n\0')
-		resp = self.socket.recv(1024)
-		r = str(resp, encoding='utf-8')
-		if r=='Ok\n':
-		  print("Sending data")
-		  p = [index.to_bytes(4,'little'), time.to_bytes(4,'little'), battery_voltage.to_bytes(4,'little'),
-		  battery_current.to_bytes(4,'little'), battery_charge.to_bytes(4,'little'), battery_temperature.to_bytes(4,'little'),
-		  internal_temperature.to_bytes(4,'little'), external_temperature.to_bytes(4,'little'),
-		  sd_memory_usage.to_bytes(4,'little')]
-		  packet = bytearray(0)
-		  for e in p:
-		    packet += e
-		  self.socket.sendall(packet)
-		else:
-		  print("Unknown response: " + r)
+    # socket.sendall(b'SendPacket\n\0')
+    # resp = socket.recv(1024)
+    # r = str(resp, encoding='utf-8')
+    # if r=='Ok\n':
+    print("Sending data")
+    p = [
+      data['index'].to_bytes(4,'little'),
+      data['time'].to_bytes(4,'little'),
+      data['battery_voltage'].to_bytes(4,'little'),
+      data['battery_current'].to_bytes(4,'little'),
+      data['battery_charge'].to_bytes(4,'little'),
+      data['battery_temperature'].to_bytes(4,'little'),
+      data['internal_temperature'].to_bytes(4,'little'),
+      data['external_temperature'].to_bytes(4,'little'),
+      data['sd_memory_usage'].to_bytes(4,'little'),
+      data['altitude_bmp'].to_bytes(4,'little'),
+      data['pressure_bmp'].to_bytes(4,'little'),
+      data['Ax_mpu'].to_bytes(4,'little'),
+      data['Ay_mpu'].to_bytes(4,'little'),
+      data['Az_mpu'].to_bytes(4,'little'),
+      data['Gx_mpu'].to_bytes(4,'little'),
+      data['Gy_mpu'].to_bytes(4,'little'),
+      data['Gz_mpu'].to_bytes(4,'little')
+      ]
+    packet = bytearray(0)
+    for e in p:
+      packet += e
+    socket.sendall(packet)
+    # else:
+    #   print("Unknown response: " + r)
   # index = 10
   # time = 10
   # battery_voltage = 10

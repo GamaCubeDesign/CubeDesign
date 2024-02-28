@@ -1,10 +1,10 @@
-#ifndef STATUS_SERVER_H
-#define STATUS_SERVER_H
+#ifndef IMAGING_DATA_SERVER
+#define IMAGING_DATA_SERVER
 
-class StatusDataServer{
+class ImagingDataServer{
   public:
     static const int bufsize=256;
-    StatusFIFO *_fifo;
+    ImagingFIFO *_fifo;
     Operation *_operation;
     int client, server;
     bool isExit = false;
@@ -15,7 +15,7 @@ class StatusDataServer{
     struct sockaddr_in server_addr;
     socklen_t size;
 
-    StatusDataServer(StatusFIFO *fifo, Operation *operation, unsigned int portNum);
+    ImagingDataServer(ImagingFIFO *fifo, Operation *operation, unsigned int portNum);
 
     void run_server();
 

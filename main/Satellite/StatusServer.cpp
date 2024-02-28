@@ -40,7 +40,7 @@ StatusDataServer::StatusDataServer(StatusFIFO *fifo, Operation *operation, unsig
   }
 }
 
-void run_server(){
+void StatusDataServer::run_server(){
 
   // init socket.
 

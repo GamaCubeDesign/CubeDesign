@@ -276,10 +276,12 @@ void switchCaseStatusProtocol(){
       Serial.print(satPacket.data.healthData.sd_memory_usage);Serial.print(":");
       Serial.print(satPacket.data.healthData.internal_temperature);Serial.print(":");
       Serial.print(satPacket.data.healthData.external_temperature);Serial.print(":");
-      Serial.print(satPacket.data.healthData.battery_charge);Serial.print(":");
       Serial.print(satPacket.data.healthData.battery_voltage);Serial.print(":");
-      Serial.print(satPacket.data.healthData.battery_current);Serial.print(":");
-      Serial.print(satPacket.data.healthData.battery_temperature);Serial.print(":");
+      Serial.print(satPacket.data.healthData.altitude);Serial.print(":");
+      Serial.print(satPacket.data.healthData.pressure);Serial.print(":");
+      // Serial.print(satPacket.data.healthData.battery_charge);Serial.print(":");
+      // Serial.print(satPacket.data.healthData.battery_current);Serial.print(":");
+      // Serial.print(satPacket.data.healthData.battery_temperature);Serial.print(":");
       Serial.print(satPacket.data.healthData.accel_x);Serial.print(":");
       Serial.print(satPacket.data.healthData.accel_y);Serial.print(":");
       Serial.print(satPacket.data.healthData.giros_x);Serial.print(":");

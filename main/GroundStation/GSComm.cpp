@@ -322,9 +322,9 @@ void switchCaseImagingDataProtocol(){
   unsigned int k = 0;
   switch(satPacket.operation.operation){
     case SATELLITE_IMAGING_PACKETS_AVAILABLE:
-      //Serial.print(PRINT_STR);
-      //Serial.print("Imaging: Number of packets available: ");
-      //Serial.println(satPacket.byte_data.number_of_packets);
+      Serial.print(PRINT_STR);
+      Serial.print("Imaging: Number of packets available: ");
+      Serial.println(satPacket.byte_data.number_of_packets);
       for(unsigned int i = 0; i < 32; i++){
         for(unsigned int j = 0; j < 8; j++){
           if(k < satPacket.byte_data.number_of_packets){
@@ -355,8 +355,8 @@ void switchCaseImagingDataProtocol(){
       control_print_status_packet();
       break;
     case SATELLITE_IMAGING_PACKETS_DONE:
-      //Serial.print(PRINT_STR);
-      //Serial.println("Imaging: Packets done");
+      Serial.print(PRINT_STR);
+      Serial.println("Imaging: Packets done");
       gsPacket.data.resend.isDone = true;
       for(unsigned int i = 0; i < 32; i++){
         if(gsPacket.data.resend.packets[i]!=0){
@@ -376,8 +376,8 @@ void switchCaseImagingDataProtocol(){
       sendGSPacket();
       break;
     case SATELLITE_IMAGING_DONE:
-      //Serial.print(PRINT_STR);
-      //Serial.println("Imaging: Done");
+      Serial.print(PRINT_STR);
+      Serial.println("Imaging: Done");
       talking = false;
       break;
   }

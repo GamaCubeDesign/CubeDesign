@@ -103,7 +103,7 @@ void sendSatPacket(){
 void updateRFComm(){
   uint8_t b;
   if(modem_available()){
-    // if(millis() > communication_timeout){
+    // if(my_millis() > communication_timeout){
     //   DBG_Println("T:1");
     //   rx_pointer = 0;
     //   talking = false;
@@ -126,12 +126,12 @@ void updateRFComm(){
         rx_pointer = 0;
       }
     }
-    communication_timeout = millis() + communication_timeout_limit;
+    communication_timeout = my_millis() + communication_timeout_limit;
   }
 
   
   // if(talking){
-  //   if(millis() > communication_timeout){
+  //   if(my_millis() > communication_timeout){
   //     DBG_Println("T:2");
   //     rx_pointer = 0;
   //     talking = false;

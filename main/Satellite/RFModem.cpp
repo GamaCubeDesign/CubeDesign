@@ -118,15 +118,15 @@ void tx_send(uint8_t* buf, unsigned int size){
   printf("sleep %f miliseconds to transmitt complete\n", modem.tx.data.Tpkt);
   printf("tx: Sending packet with length %d\n", buf[0]);
 
-  long now = millis();
+  long now = my_millis();
   long timeout_at = now + 1000;
   cout << "tx: now " << now << endl;
   cout << "tx: will timeout at " << timeout_at << endl;
-  while(!tx_done && millis() < timeout_at){
-    // cout << "tx: waiting " << millis() << endl;
+  while(!tx_done && my_millis() < timeout_at){
+    // cout << "tx: waiting " << my_millis() << endl;
   }
   if(!tx_done){
-    cout << "tx: Transmission timeout" << millis() << endl;
+    cout << "tx: Transmission timeout" << my_millis() << endl;
     transmitting = false;
     receiving = true;
     tx_done = true;

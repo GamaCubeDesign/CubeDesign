@@ -43,7 +43,7 @@ LoRa.o: LoRa.c
 	gcc -c LoRa.c -o LoRa.o -lpigpio -lrt -pthread -lm
 
 SatTTC.o: SatTTC.cpp
-	g++ -c SatTTC.cpp -o SatTTC.o -lpigpio -lrt -pthread -lm
+	g++ -c SatTTC.cpp -o SatTTC.o -lpigpio -lrt -pthread -lm -lwiringPi
 
 SatTTC.out: Timing.o Logger.o RFModule.o RFModem.o SatTTC.o DataFIFO.o LoRa.o ImagingServer.o StatusServer.o AttitudeControl.o
 	g++ -o SatTTC.out SatTTC.o Timing.o Logger.o RFModule.o RFModem.o DataFIFO.o LoRa.o ImagingServer.o StatusServer.o AttitudeControl.o -lpigpio -lrt -pthread -lm -lwiringPi

@@ -18,6 +18,9 @@ ImagingDataServer::ImagingDataServer(ImagingFIFO *fifo, Operation *operation, un
   _fifo = fifo;
   _portNum = portNum;
   _operation = operation;
+}
+
+void ImagingDataServer::run_server(){
 
   ImagingData newPacket;
   for(int i = 0; i < 5; i++){
@@ -43,7 +46,7 @@ ImagingDataServer::ImagingDataServer(ImagingFIFO *fifo, Operation *operation, un
 
   server_addr.sin_family = AF_INET;
   server_addr.sin_addr.s_addr = htons(INADDR_ANY);
-  server_addr.sin_port = htons(portNum);
+  server_addr.sin_port = htons(_portNum);
 
   // bindind socket
 
@@ -58,9 +61,6 @@ ImagingDataServer::ImagingDataServer(ImagingFIFO *fifo, Operation *operation, un
   // listening socket
 
   listen(client, 2);
-}
-
-void ImagingDataServer::run_server(){
 
   //accept client
 

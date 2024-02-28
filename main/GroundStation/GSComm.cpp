@@ -271,21 +271,21 @@ void switchCaseStatusProtocol(){
       Serial.print("Status: Packet: ");
       Serial.println(satPacket.byte_data.index);
       Serial.print("CONTROL:STATUS PACKET:");
-      Serial.print(satPacket.data.healthData.time);Serial.print(":");
-      Serial.print(satPacket.data.healthData.index);Serial.print(":");
-      Serial.print(satPacket.data.healthData.sd_memory_usage);Serial.print(":");
-      Serial.print(satPacket.data.healthData.internal_temperature);Serial.print(":");
-      Serial.print(satPacket.data.healthData.external_temperature);Serial.print(":");
-      Serial.print(satPacket.data.healthData.battery_voltage);Serial.print(":");
-      Serial.print(satPacket.data.healthData.altitude);Serial.print(":");
-      Serial.print(satPacket.data.healthData.pressure);Serial.print(":");
+      Serial.print(satPacket.data.healthData.time);Serial.print(":"); //0
+      Serial.print(satPacket.data.healthData.index);Serial.print(":"); //1
+      Serial.print(satPacket.data.healthData.sd_memory_usage);Serial.print(":"); //2
+      Serial.print(satPacket.data.healthData.internal_temperature);Serial.print(":"); //3
+      Serial.print(satPacket.data.healthData.external_temperature);Serial.print(":"); //4
+      Serial.print(satPacket.data.healthData.battery_voltage);Serial.print(":"); //5
+      Serial.print(satPacket.data.healthData.altitude);Serial.print(":"); //6
+      Serial.print(satPacket.data.healthData.pressure);Serial.print(":"); //7
       // Serial.print(satPacket.data.healthData.battery_charge);Serial.print(":");
       // Serial.print(satPacket.data.healthData.battery_current);Serial.print(":");
       // Serial.print(satPacket.data.healthData.battery_temperature);Serial.print(":");
-      Serial.print(satPacket.data.healthData.accel_x);Serial.print(":");
-      Serial.print(satPacket.data.healthData.accel_y);Serial.print(":");
-      Serial.print(satPacket.data.healthData.giros_x);Serial.print(":");
-      Serial.println(satPacket.data.healthData.giros_y);
+      Serial.print(satPacket.data.healthData.accel_x);Serial.print(":"); //8
+      Serial.print(satPacket.data.healthData.accel_y);Serial.print(":"); //9
+      Serial.print(satPacket.data.healthData.giros_x);Serial.print(":"); //10
+      Serial.println(satPacket.data.healthData.giros_y); //11
       bitClear(gsPacket.data.resend.packets[satPacket.byte_data.index>>3],satPacket.byte_data.index&0x07);
       control_print_status_packet();
       break;

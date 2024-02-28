@@ -9,6 +9,8 @@ using namespace std;
 #include <iostream>
 #include <fstream>
 
+#include <wiringPi.h>
+
 //#ifdef __cplusplus
 //  extern "C" {
 //    #include "../sx1278-LoRa-RaspberryPi/LoRa.h"
@@ -32,6 +34,8 @@ using namespace std;
 
 // #include "asynchronous_in.cpp"
 #include "printing_utils.cpp"
+
+#define MEC 27
 
 unsigned long int status_write_period = 500;
 unsigned long int imaging_write_period = 250;
@@ -77,7 +81,13 @@ void open_antennas(){
   f >> is_to_open;
   if(is_to_open == '1'){
     cout << "Opening Antenna in 60 secods" << endl;
-    // sleep(60);
+    sleep(60);
+    digitalWrite(MEC, HIGH);   // Set GPIO27 to HIGH
+    usleep(500000);         // Wait for 500ms
+    digitalWrite(MEC, LOW);  // Set GPIO27 to LOW
+    f.close();
+    f.open("OPEN_ANTENNAS.txt", ios::writing);
+    f << '0'
   } else{
     cout << "Not opening Antenna" << endl;
   }
@@ -91,10 +101,14 @@ void loop(){
 }
 
 int main( int argc, char *argv[] ){
+  wiringPiSetup();			// Setup the library
+  pinMode(MEC, OUTPUT);		// Configure GPIO27 as an output
+  digitalWrite(MEC, LOW);   // Set GPIO27 to LOW
+
   std::cout << "Raspberry Gama Satellite communication system with LoRa Ra-01 rf module\n";
     
-  // std::filesystem::remove_all("frames");
-  // std::filesystem::create_directory("frames");
+  // std::filesystem::remove_all("ImagingClient/opencv/frames");
+  // std::filesystem::create_directory("ImagingClient/opencv/frames");
 
   initRFModule();
   std::cout << "Device initiated successfully\n";

@@ -1,26 +1,11 @@
-#include "ImagingDataServer.h"
-
-#include <iostream>
-#include <string.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include "ImagingServer.h"
 
 using namespace std;
-
-#include "DataFIFO.h"
-#include "../CommunicationProtocol.h"
 
 ImagingDataServer::ImagingDataServer(ImagingFIFO *fifo, Operation *operation, unsigned int portNum){
   _fifo = fifo;
   _portNum = portNum;
   _operation = operation;
-}
-
-void ImagingDataServer::run_server(){
 
   ImagingData newPacket;
   for(int i = 0; i < 5; i++){
@@ -32,6 +17,9 @@ void ImagingDataServer::run_server(){
     newPacket.y = 0;
     _fifo->write(newPacket);
   }
+}
+
+void ImagingDataServer::run_server(){
 
   // init socket.
 

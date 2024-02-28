@@ -4,11 +4,11 @@
 #include <wiringPi.h>
 #include <wiringSerial.h>
 #include <stdlib.h>
+#include <unistd.h>
 // #include <iostream>
 
-void send_to_control(int mode, int gx, int gy){
+void send_to_control(int mode, int gz){
   int serial_port ;
-  u_int8_t dat;
   if ((serial_port = serialOpen ("/dev/ttyS0", 9600)) < 0)	/* open serial port */
   {
     fprintf (stderr, "Unable to open serial device: %s\n", strerror (errno)) ;
@@ -26,17 +26,10 @@ void send_to_control(int mode, int gx, int gy){
     serialPutchar(serial_port, (mode+48));
     serialPutchar(serial_port, ';');
     u_int8_t b;
-    while (gx>0){
-      b = gx%10;
+    while (gz>0){
+      b = gz%10;
       serialPutchar(serial_port, b);
-      gx/=10;
-    }
-    serialPutchar(serial_port, ';');
-    	/* receive character serially*/
-      while (gy>0){
-      b = gy%10;
-      serialPutchar(serial_port, b);
-      gy/=10;
+      gz/=10;
     }
     serialPutchar(serial_port,'\n');
 		//fflush (stdout) ; /* transmit character serially on port */
@@ -44,3 +37,13 @@ void send_to_control(int mode, int gx, int gy){
 	}
 	
 }
+
+// int main(){
+//   send_to_control(0, 400, 600);
+//   sleep(4);
+//   send_to_control(1, 400, 600);
+//   sleep(4);
+//   send_to_control(2, 400, 600);
+//   sleep(4);
+//   return 0;
+// }

@@ -134,7 +134,12 @@ void tx_send(uint8_t* buf, unsigned int size){
     counter++;
     cout << "Trying again " << counter << endl;
     LoRa_end(&modem);
+    LoRa_begin(&modem); // Restart LoRa and start listening
+  }
+  if(!tx_done){ // Give up. Restart LoRa and start listening
+    LoRa_end(&modem);
     LoRa_begin(&modem);
+    LoRa_receive(&modem);
   }
   // usleep(50000);
 

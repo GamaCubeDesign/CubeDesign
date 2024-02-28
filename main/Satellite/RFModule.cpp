@@ -187,7 +187,7 @@ void switchCaseStatusProtocol(){
         satPacket.operation.operation = SATELLITE_STATUS_PACKET;
         satPacket.byte_data.index = i;
         satPacket.length = sizeof(SatPacket);//sizeof(int64_t)+sizeof(HealthData);
-        if(i==2) continue;
+        // if(i==2) continue;
         sendSatPacket();
         // sleep(1);
       }
@@ -256,7 +256,7 @@ void switchCaseImagingDataProtocol(){
         satPacket.operation.operation = SATELLITE_IMAGING_PACKET;
         satPacket.byte_data.index = i;
         satPacket.length = sizeof(SatPacket);//3+sizeof(ImagingData);
-        if(i==2) continue;
+        // if(i==2) continue;
         sendSatPacket();
       }
       DBG_Println("I:D");

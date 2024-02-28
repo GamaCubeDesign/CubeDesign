@@ -85,6 +85,9 @@ void open_antennas(){
     digitalWrite(MEC, HIGH);   // Set GPIO27 to HIGH
     usleep(500000);         // Wait for 500ms
     digitalWrite(MEC, LOW);  // Set GPIO27 to LOW
+    f.close();
+    f.open("OPEN_ANTENNAS.txt", ios::writing);
+    f << '0'
   } else{
     cout << "Not opening Antenna" << endl;
   }

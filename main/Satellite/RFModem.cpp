@@ -13,6 +13,9 @@ bool transmitting = false;
 bool tx_done = false;
 bool receiving = false;
 bool timeout = false;
+unsigned long wait_for_new_transmission = 100;
+unsigned long next_transmission_time = 0;
+unsigned long last_transmission_time = 0;
 
 uint8_t modem_available(){
   return rx_buffer_size;
@@ -24,18 +27,18 @@ uint8_t modem_read(){
 }
 
 void * rx_f(void *p){
-  cout << "Receive callback" << endl;
+  cout << "rx: Receive callback" << endl;
   rxData *rx = (rxData *)p;
   // printf("rx done \n");
-  printf("CRC error: %d\n", rx->CRC);
-  printf("Data size: %d\n", rx->size);
+  printf("rx: CRC error: %d\n", rx->CRC);
+  printf("rx: Data size: %d\n", rx->size);
   // printf("string: ");//Data we'v received
   // for(int i = 0; i < rx->size; i++){
   //     printf("%c", rx->buf[i]);
   // }
   // print("\n");
-  printf("RSSI: %d\n", rx->RSSI);
-  printf("SNR: %f\n", rx->SNR);
+  printf("rx: RSSI: %d\n", rx->RSSI);
+  printf("rx: SNR: %f\n", rx->SNR);
 
   while(rx_buffer_size > 0);
 
@@ -44,7 +47,9 @@ void * rx_f(void *p){
   rx_buffer_size = rx->size;
 
   free(p);
-  cout << "Receive callback done" << endl;
+  cout << "rx: Receive callback done" << endl;
+  last_transmission_time = my_millis();
+  next_transmission_time = last_transmission_time + wait_for_new_transmission;
   return NULL;
 }
 
@@ -92,14 +97,7 @@ void initRFModule(){
   LoRa_receive(&modem);
 }
 
-void tx_send(uint8_t* buf, unsigned int size){
-  LoRa_stop_receive(&modem);
-  receiving = false;
-  transmitting = true;
-  tx_done = false;
-  timeout = false;
-
-  // usleep(50000);
+int tx_transmitt(uint8_t* buf, unsigned int size){
 
   cout << "tx: starting transmission" << endl;
 
@@ -108,15 +106,11 @@ void tx_send(uint8_t* buf, unsigned int size){
 
   memcpy(modem.tx.data.buf, buf, size);//copy data we'll sent to buffer
   modem.tx.data.size = size;//Payload len
-
   LoRa_send(&modem);
 
-  // printf("Tsym: %f\n", modem.tx.data.Tsym);
-  // printf("Tpkt: %f\n", modem.tx.data.Tpkt);
-  // printf("payloadSymbNb: %u\n", modem.tx.data.payloadSymbNb);
-
-  printf("sleep %f miliseconds to transmitt complete\n", modem.tx.data.Tpkt);
+  printf("tx: Sleep %f miliseconds to transmitt complete\n", modem.tx.data.Tpkt);
   printf("tx: Sending packet with length %d\n", buf[0]);
+  usleep(((int)modem.tx.data.Tpkt)*1000);
 
   long now = my_millis();
   long timeout_at = now + 1000;
@@ -126,14 +120,54 @@ void tx_send(uint8_t* buf, unsigned int size){
     // cout << "tx: waiting " << my_millis() << endl;
   }
   if(!tx_done){
-    cout << "tx: Transmission timeout" << my_millis() << endl;
-    transmitting = false;
-    receiving = true;
-    tx_done = true;
-    timeout = true;
+    return 1;
+  }
+}
+
+void tx_send(uint8_t* buf, unsigned int size){
+  while(my_millis() < next_transmission_time);
+  LoRa_stop_receive(&modem);
+  receiving = false;
+  transmitting = true;
+  tx_done = false;
+  timeout = false;
+
+  usleep(50000);
+
+  int counter = 0;
+  while(tx_transmitt(buf, size) && counter < 3){
+    cout << "tx: Transmission timeout " << my_millis() << endl;
+    counter++;
+    cout << "tx: Trying again " << counter << endl;
+    LoRa_end(&modem);
+    LoRa_begin(&modem); // Restart LoRa and start listening
+  }
+  if(!tx_done){ // Give up. Restart LoRa and start listening
+    LoRa_end(&modem);
+    LoRa_begin(&modem);
     LoRa_receive(&modem);
   }
+  // usleep(50000);
+
+  // LoRa_send(&modem);
+
+  // printf("Tsym: %f\n", modem.tx.data.Tsym);
+  // printf("Tpkt: %f\n", modem.tx.data.Tpkt);
+  // printf("payloadSymbNb: %u\n", modem.tx.data.payloadSymbNb);
+
+  // printf("sleep %f miliseconds to transmitt complete\n", modem.tx.data.Tpkt);
+  // printf("tx: Sending packet with length %d\n", buf[0]);
   // usleep(((int)modem.tx.data.Tpkt)*1000);
+
+  // if(!tx_done){
+  //   cout << "tx: Transmission timeout" << my_millis() << endl;
+
+  //   // transmitting = false;
+  //   // receiving = true;
+  //   // tx_done = true;
+  //   // timeout = true;
+    // LoRa_receive(&modem);
+  // }
 
   // printf("end\n");
 }

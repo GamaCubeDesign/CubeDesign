@@ -3,7 +3,7 @@
 clock_t timer = clock();
 auto start = std::chrono::system_clock::now();
 
-float seconds(){
+float my_seconds(){
   return ((float)(clock() - timer))/CLOCKS_PER_SEC;
 }
 

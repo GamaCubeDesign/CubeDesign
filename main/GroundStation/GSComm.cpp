@@ -16,13 +16,13 @@ uint8_t tx_power = 5;
 
 bool talking = false;
 unsigned long int communication_timeout;
-const unsigned long int communication_timeout_limit = 1000;
+const unsigned long int communication_timeout_limit = 2000;
 bool telemetry_received = false;
 uint8_t telemetry_state = 0;
 
 Operation operation = {
   .switch_active_thermal_control = false,
-  .switch_attitude_control = false,
+  .switch_attitude_control = 0,
   .switch_imaging = false,
   .switch_imaging_mode = false,
   .switch_stand_by_mode = false,
@@ -322,9 +322,9 @@ void switchCaseImagingDataProtocol(){
   unsigned int k = 0;
   switch(satPacket.operation.operation){
     case SATELLITE_IMAGING_PACKETS_AVAILABLE:
-      //Serial.print(PRINT_STR);
-      //Serial.print("Imaging: Number of packets available: ");
-      //Serial.println(satPacket.byte_data.number_of_packets);
+      Serial.print(PRINT_STR);
+      Serial.print("Imaging: Number of packets available: ");
+      Serial.println(satPacket.byte_data.number_of_packets);
       for(unsigned int i = 0; i < 32; i++){
         for(unsigned int j = 0; j < 8; j++){
           if(k < satPacket.byte_data.number_of_packets){
@@ -355,8 +355,8 @@ void switchCaseImagingDataProtocol(){
       control_print_status_packet();
       break;
     case SATELLITE_IMAGING_PACKETS_DONE:
-      //Serial.print(PRINT_STR);
-      //Serial.println("Imaging: Packets done");
+      Serial.print(PRINT_STR);
+      Serial.println("Imaging: Packets done");
       gsPacket.data.resend.isDone = true;
       for(unsigned int i = 0; i < 32; i++){
         if(gsPacket.data.resend.packets[i]!=0){
@@ -376,8 +376,8 @@ void switchCaseImagingDataProtocol(){
       sendGSPacket();
       break;
     case SATELLITE_IMAGING_DONE:
-      //Serial.print(PRINT_STR);
-      //Serial.println("Imaging: Done");
+      Serial.print(PRINT_STR);
+      Serial.println("Imaging: Done");
       talking = false;
       break;
   }
@@ -386,18 +386,18 @@ void switchCaseImagingDataProtocol(){
 void switchCaseSetOperationProtocol(){
   switch(satPacket.operation.operation){
     case SATELLITE_SET_OPERATION_ECHO:
-      //Serial.print(PRINT_STR);
-      //Serial.println("Set operation: Echo");
+      Serial.print(PRINT_STR);
+      Serial.println("Set operation: Echo");
       if(satPacket.byte_data.byte == *((uint8_t*)&operation)){
-        //Serial.print(PRINT_STR);
-        //Serial.println("Set operation: Operation correct");
+        Serial.print(PRINT_STR);
+        Serial.println("Set operation: Operation correct");
         gsPacket.operation.protocol = PROTOCOL_SET_OPERATION;
         gsPacket.operation.operation = GS_SET_OPERATION_DONE;
         gsPacket.length = 2;
         sendGSPacket();
       } else{
-        //Serial.print(PRINT_STR);
-        //Serial.println("Set operation: Operation incorrect, resending");
+        Serial.print(PRINT_STR);
+        Serial.println("Set operation: Operation incorrect, resending");
         startSetOperationProtocol();
       }
       break;

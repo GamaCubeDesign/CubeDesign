@@ -54,7 +54,9 @@ void setup(){
 
   satPacket.data.healthData.index = 0;
   satPacket.data.healthData.time = 0;
-  satPacket.data.healthData = 0;
+  satPacket.data.healthData.battery_voltage = 0;
+  satPacket.data.healthData.external_temperature = 0;
+  satPacket.data.healthData.internal_temperature = 0;
   satPacket.data.healthData.accel_x = 10.0;
   satPacket.data.healthData.accel_y = 11.0;
   satPacket.data.healthData.giros_x = 12.0;

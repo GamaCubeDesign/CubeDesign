@@ -13,6 +13,9 @@ bool transmitting = false;
 bool tx_done = false;
 bool receiving = false;
 bool timeout = false;
+unsigned long wait_for_new_transmission = 100;
+unsigned long next_transmission_time = 0;
+unsigned long last_transmission_time = 0;
 
 uint8_t modem_available(){
   return rx_buffer_size;
@@ -24,18 +27,18 @@ uint8_t modem_read(){
 }
 
 void * rx_f(void *p){
-  cout << "Receive callback" << endl;
+  cout << "rx: Receive callback" << endl;
   rxData *rx = (rxData *)p;
   // printf("rx done \n");
-  printf("CRC error: %d\n", rx->CRC);
-  printf("Data size: %d\n", rx->size);
+  printf("rx: CRC error: %d\n", rx->CRC);
+  printf("rx: Data size: %d\n", rx->size);
   // printf("string: ");//Data we'v received
   // for(int i = 0; i < rx->size; i++){
   //     printf("%c", rx->buf[i]);
   // }
   // print("\n");
-  printf("RSSI: %d\n", rx->RSSI);
-  printf("SNR: %f\n", rx->SNR);
+  printf("rx: RSSI: %d\n", rx->RSSI);
+  printf("rx: SNR: %f\n", rx->SNR);
 
   while(rx_buffer_size > 0);
 
@@ -44,7 +47,9 @@ void * rx_f(void *p){
   rx_buffer_size = rx->size;
 
   free(p);
-  cout << "Receive callback done" << endl;
+  cout << "rx: Receive callback done" << endl;
+  last_transmission_time = my_millis();
+  next_transmission_time = last_transmission_time + wait_for_new_transmission;
   return NULL;
 }
 
@@ -120,6 +125,7 @@ int tx_transmitt(uint8_t* buf, unsigned int size){
 }
 
 void tx_send(uint8_t* buf, unsigned int size){
+  while(my_millis() < next_transmission_time);
   LoRa_stop_receive(&modem);
   receiving = false;
   transmitting = true;

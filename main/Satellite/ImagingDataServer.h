@@ -17,9 +17,9 @@ class ImagingDataServer{
 
     ImagingDataServer(ImagingFIFO *fifo, Operation *operation, unsigned int portNum);
 
-  void run_server();
+    void run_server();
 
-  void close_server();
+    void close_server();
 };
 
 #endif

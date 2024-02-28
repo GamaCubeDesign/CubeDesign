@@ -8,6 +8,6 @@ extern clock_t timer;
 // extern auto start_clock;
 
 extern float my_seconds();
-extern long my_my_millis();
+extern long my_millis();
 
 #endif

@@ -75,23 +75,23 @@ void read_fifos(){
 }
 
 void open_antennas(){
-  fstream f;
-  f.open("OPEN_ANTENNAS.txt", ios::in);
-  char is_to_open;
-  f >> is_to_open;
-  if(is_to_open == '1'){
-    cout << "Opening Antenna in 60 secods" << endl;
-    sleep(60);
-    digitalWrite(MEC, HIGH);   // Set GPIO27 to HIGH
-    usleep(500000);         // Wait for 500ms
-    digitalWrite(MEC, LOW);  // Set GPIO27 to LOW
-    f.close();
-    f.open("OPEN_ANTENNAS.txt", ios::writing);
-    f << '0'
-  } else{
-    cout << "Not opening Antenna" << endl;
-  }
-  f.close();
+  // fstream f;
+  // f.open("OPEN_ANTENNAS.txt", ios::in);
+  // char is_to_open;
+  // f >> is_to_open;
+  // if(is_to_open == '1'){
+  //   cout << "Opening Antenna in 60 secods" << endl;
+  //   sleep(60);
+  //   digitalWrite(MEC, HIGH);   // Set GPIO27 to HIGH
+  //   usleep(500000);         // Wait for 500ms
+  //   digitalWrite(MEC, LOW);  // Set GPIO27 to LOW
+  //   f.close();
+  //   f.open("OPEN_ANTENNAS.txt", ios::writing);
+  //   f << '0'
+  // } else{
+  //   cout << "Not opening Antenna" << endl;
+  // }
+  // f.close();
 }
 
 void loop(){

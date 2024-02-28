@@ -192,7 +192,7 @@ struct SatPacket{
 
 struct Operation{
   uint8_t switch_active_thermal_control : 1;
-  uint8_t switch_attitude_control : 1;
+  uint8_t switch_attitude_control : 2;
   uint8_t switch_imaging : 1;
   uint8_t switch_imaging_mode : 1;
   uint8_t switch_stand_by_mode : 1;

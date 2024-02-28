@@ -16,13 +16,13 @@ uint8_t tx_power = 5;
 
 bool talking = false;
 unsigned long int communication_timeout;
-const unsigned long int communication_timeout_limit = 1000;
+const unsigned long int communication_timeout_limit = 2000;
 bool telemetry_received = false;
 uint8_t telemetry_state = 0;
 
 Operation operation = {
   .switch_active_thermal_control = false,
-  .switch_attitude_control = false,
+  .switch_attitude_control = 0,
   .switch_imaging = false,
   .switch_imaging_mode = false,
   .switch_stand_by_mode = false,
@@ -386,18 +386,18 @@ void switchCaseImagingDataProtocol(){
 void switchCaseSetOperationProtocol(){
   switch(satPacket.operation.operation){
     case SATELLITE_SET_OPERATION_ECHO:
-      //Serial.print(PRINT_STR);
-      //Serial.println("Set operation: Echo");
+      Serial.print(PRINT_STR);
+      Serial.println("Set operation: Echo");
       if(satPacket.byte_data.byte == *((uint8_t*)&operation)){
-        //Serial.print(PRINT_STR);
-        //Serial.println("Set operation: Operation correct");
+        Serial.print(PRINT_STR);
+        Serial.println("Set operation: Operation correct");
         gsPacket.operation.protocol = PROTOCOL_SET_OPERATION;
         gsPacket.operation.operation = GS_SET_OPERATION_DONE;
         gsPacket.length = 2;
         sendGSPacket();
       } else{
-        //Serial.print(PRINT_STR);
-        //Serial.println("Set operation: Operation incorrect, resending");
+        Serial.print(PRINT_STR);
+        Serial.println("Set operation: Operation incorrect, resending");
         startSetOperationProtocol();
       }
       break;

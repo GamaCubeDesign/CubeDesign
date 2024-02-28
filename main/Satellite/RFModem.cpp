@@ -126,6 +126,8 @@ void tx_send(uint8_t* buf, unsigned int size){
   tx_done = false;
   timeout = false;
 
+  usleep(50000);
+
   int counter = 0;
   while(tx_transmitt(buf, size) && counter < 3){
     cout << "tx: Transmission timeout " << my_millis() << endl;
@@ -134,7 +136,6 @@ void tx_send(uint8_t* buf, unsigned int size){
     LoRa_end(&modem);
     LoRa_begin(&modem);
   }
-
   // usleep(50000);
 
   // LoRa_send(&modem);

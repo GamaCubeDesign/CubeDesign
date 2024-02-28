@@ -61,3 +61,7 @@ run: SatTTC.out
 run_test_timing: Timing.o
 	g++ -o test_timing.out test_timing.cpp Timing.o
 	./test_timing.out
+
+run_Attitude: AttitudeControl.c
+  gcc AttitudeControl.c -o AttitudeControl.out
+	./AttitudeControl.out

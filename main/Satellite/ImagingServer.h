@@ -1,6 +1,18 @@
 #ifndef IMAGING_DATA_SERVER
 #define IMAGING_DATA_SERVER
 
+#include <iostream>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+#include "DataFIFO.h"
+#include "../CommunicationProtocol.h"
+
 class ImagingDataServer{
   public:
     static const int bufsize=256;

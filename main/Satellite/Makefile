@@ -30,14 +30,14 @@ RFModule.o: RFModule.cpp
 DataFIFO.o: DataFIFO.cpp
 	g++ -c DataFIFO.cpp -o DataFIFO.o
 
-ImagingDataServer.o: ImagingDataServer.cpp
-	g++ -c ImagingDataServer.cpp -o ImagingDataServer.o
+ImagingServer.o: ImagingServer.cpp
+	g++ -c ImagingServer.cpp -o ImagingServer.o
 
 StatusServer.o: StatusServer.cpp
 	g++ -c StatusServer.cpp -o StatusServer.o
 
 AttitudeControl.o: AttitudeControl.c
-	gcc -c AttitudeControl.c -o AttitudeControl.o -lpigpio -lrt -pthread -lm
+	gcc -c AttitudeControl.c -o AttitudeControl.o -lwiringPi
 
 LoRa.o: LoRa.c
 	gcc -c LoRa.c -o LoRa.o -lpigpio -lrt -pthread -lm
@@ -45,9 +45,8 @@ LoRa.o: LoRa.c
 SatTTC.o: SatTTC.cpp
 	g++ -c SatTTC.cpp -o SatTTC.o -lpigpio -lrt -pthread -lm
 
-SatTTC.out: Timing.o Logger.o RFModule.o RFModem.o SatTTC.o DataFIFO.o LoRa.o ImagingDataServer.o StatusServer.o
-	g++ -o SatTTC.out SatTTC.o Timing.o Logger.o RFModule.o RFModem.o DataFIFO.o LoRa.o -lpigpio -lrt -pthread -lm
-#  AttitudeControl.o
+SatTTC.out: Timing.o Logger.o RFModule.o RFModem.o SatTTC.o DataFIFO.o LoRa.o ImagingServer.o StatusServer.o AttitudeControl.o
+	g++ -o SatTTC.out SatTTC.o Timing.o Logger.o RFModule.o RFModem.o DataFIFO.o LoRa.o ImagingServer.o StatusServer.o AttitudeControl.o -lpigpio -lrt -pthread -lm -lwiringPi
 
 clean:
 	rm *.o *.out
@@ -62,6 +61,6 @@ run_test_timing: Timing.o
 	g++ -o test_timing.out test_timing.cpp Timing.o
 	./test_timing.out
 
-run_Attitude: AttitudeControl.c
-  gcc AttitudeControl.c -o AttitudeControl.out
+run_att: AttitudeControl.c
+	gcc AttitudeControl.c -o AttitudeControl.out -lwiringPi
 	./AttitudeControl.out

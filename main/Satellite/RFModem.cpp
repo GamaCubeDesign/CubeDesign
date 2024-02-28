@@ -103,7 +103,7 @@ int tx_transmitt(uint8_t* buf, unsigned int size){
   modem.tx.data.size = size;//Payload len
   LoRa_send(&modem);
 
-  printf("sleep %f miliseconds to transmitt complete\n", modem.tx.data.Tpkt);
+  printf("tx: Sleep %f miliseconds to transmitt complete\n", modem.tx.data.Tpkt);
   printf("tx: Sending packet with length %d\n", buf[0]);
   usleep(((int)modem.tx.data.Tpkt)*1000);
 
@@ -132,7 +132,7 @@ void tx_send(uint8_t* buf, unsigned int size){
   while(tx_transmitt(buf, size) && counter < 3){
     cout << "tx: Transmission timeout " << my_millis() << endl;
     counter++;
-    cout << "Trying again " << counter << endl;
+    cout << "tx: Trying again " << counter << endl;
     LoRa_end(&modem);
     LoRa_begin(&modem); // Restart LoRa and start listening
   }

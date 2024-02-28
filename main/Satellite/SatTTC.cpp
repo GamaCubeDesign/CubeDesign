@@ -6,6 +6,9 @@
 #include <cstring>
 using namespace std;
 
+#include <iostream>
+#include <fstream>
+
 //#ifdef __cplusplus
 //  extern "C" {
 //    #include "../sx1278-LoRa-RaspberryPi/LoRa.h"
@@ -19,6 +22,13 @@ using namespace std;
 
 #include "StatusServer.cpp"
 #include "ImagingServer.cpp"
+
+//includes for send_to_control
+// #ifdef __cplusplus
+//   extern "C" {
+//     #include "AttitudeControl.h"
+//   }
+// #endif
 
 // #include "asynchronous_in.cpp"
 #include "printing_utils.cpp"
@@ -46,10 +56,6 @@ void run_imaging_server(){
   imaging_server.run_server();
 }
 
-void send_to_control(float gx, float gy){
-  
-}
-
 void read_fifos(){
   while(imaging_fifo.available()){
     ImagingData imagingPacket = imaging_fifo.read();
@@ -59,9 +65,23 @@ void read_fifos(){
     HealthData statusPacket = status_fifo.read();
     float gx = statusPacket.giros_x;
     float gy = statusPacket.giros_y;
-    send_to_control(gx,gy);
+    // send_to_control(operation.switch_attitude_control, gx,gy);
     logger.writeSatStatusPacket(statusPacket);
   }
+}
+
+void open_antennas(){
+  fstream f;
+  f.open("OPEN_ANTENNAS.txt", ios::in);
+  char is_to_open;
+  f >> is_to_open;
+  if(is_to_open == '1'){
+    cout << "Opening Antenna in 60 secods" << endl;
+    // sleep(60);
+  } else{
+    cout << "Not opening Antenna" << endl;
+  }
+  f.close();
 }
 
 void loop(){
@@ -72,6 +92,9 @@ void loop(){
 
 int main( int argc, char *argv[] ){
   std::cout << "Raspberry Gama Satellite communication system with LoRa Ra-01 rf module\n";
+    
+  // std::filesystem::remove_all("frames");
+  // std::filesystem::create_directory("frames");
 
   initRFModule();
   std::cout << "Device initiated successfully\n";
@@ -80,6 +103,8 @@ int main( int argc, char *argv[] ){
   std::thread imaging_thread (run_imaging_server);
 
   // std::thread async_in_thread = start_serial_thread();
+
+  open_antennas();
 
   running = true;
   while(running){

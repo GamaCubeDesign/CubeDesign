@@ -21,25 +21,24 @@ void send_to_control(int mode, int gz){
     return;
   }
 	  printf("ATTITUDE CONTROL DAMMIT\n");
-	// if(serialDataAvail (serial_port) )
-	// { 
     printf("ATTITUDE CONTROL ");
     printf("%d", mode);
-    printf(" ATTITUDE TYPE ");
+    printf(" Gyro print ");
     serialPutchar(serial_port, (mode+48));
     serialPutchar(serial_port, ';');
     u_int8_t b;
     while (gz>0){
       b = gz%10;
       serialPutchar(serial_port, b);
-      printf("%d ", (int)b);
+      printf("%d", (int)b);
       gz/=10;
     }
     printf("\n");
     serialPutchar(serial_port,'\n');
+    if(serialDataAvail (serial_port) ){
 		//fflush (stdout) ; /* transmit character serially on port */
-	                     
-	// }
+	    printf("ATTITUDE CONTROL RECEIVED: %d\n", (int)serialGetchar(serial_port));
+	  }
 	
 }
 

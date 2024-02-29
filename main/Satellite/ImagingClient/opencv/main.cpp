@@ -26,6 +26,7 @@ bool stopLoop = false;
 void checkInput() {
     while (true) {
         if (imagingSocket.update() == 0) {
+            sleep(1);
             ::stopLoop = true;
             break;
         }
@@ -163,6 +164,7 @@ int main()
 
 	int contadorRaio = 0;
     if (scene == 1) {
+        cout << "Execute scene 1" << endl;
         for (size_t k = 1; k < countOfFrames - 1; k++) {
             std::cout << "TO NO FRAME = " << k << endl;
 
@@ -240,6 +242,7 @@ int main()
     }
 
     if (scene == 2) {
+        cout << "Execute scene 2" << endl;
         // Achar qual o frame com raio de maior area
         int indexOfFrameOfBiggestContour = -1;
         double biggestContourFrames = 0;

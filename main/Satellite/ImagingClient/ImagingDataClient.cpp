@@ -74,11 +74,12 @@ class ImagingDataClient{
     }
 
     void send_packet(ImagingData newPacket){
+      cout << "Sending packet: ";
       strcpy(buffer, "SendPacket\n");
       send(client, buffer, bufsize, 0);
       unsigned int recvN = recv(client, buffer, bufsize, 0);
-      if(strcmp(buffer, "Ok\n")==0){
-        cout << "Sending packet..." << endl;
+      if(buffer[0] == '4'){
+        cout << "Authorized..." << endl;
         send(client, (uint8_t*)&newPacket, sizeof(ImagingData), 0);
       } else{
         cout << "Unknown response: " << buffer << endl;

@@ -49,62 +49,75 @@ void ImagingDataServer::run_server(){
   // listening socket
 
   listen(client, 2);
+  
+  do{
 
-  //accept client
+    //accept client
 
-  server = accept(client, (struct sockaddr*)&server_addr, &size);
+    server = accept(client, (struct sockaddr*)&server_addr, &size);
 
-  if(server < 0){
-    cout << "(Imaging) Error on accepting..." << endl;
-    exit(1);
-  }
+    if(server < 0){
+      cout << "(Imaging) Error on accepting..." << endl;
+      exit(1);
+    }
 
-  ImagingData newPacket;
+    ImagingData newPacket;
 
-  if(server > 0){
-    strcpy(buffer, "Server connected...\n");
-    send(server, buffer, bufsize, 0);
+    if(server > 0){
+      strcpy(buffer, "Server connected...\n");
+      send(server, buffer, bufsize, 0);
 
-    cout << "(Imaging) connected with client..." << endl;
-
-    do{
-      unsigned int recvN = recv(server, buffer, bufsize, 0);
-      if(strcmp(buffer, "SendPacket\n")==0){
-        // cout << "(Imaging) Receiving packet" << endl;
-        strcpy(buffer, "Ok\n");
-        send(server, buffer, 3, 0);
-        int recvN = recv(server, (uint8_t*)&newPacket, sizeof(ImagingData), 0);
-        cout << "(Imaging) Packet received" << endl;
+      cout << "(Imaging) connected with client..." << endl;
+      
+      unsigned int recvN = 0;
+      do{
+        recvN = recv(server, buffer, bufsize, 0);
         if(recvN > 0){
-          _fifo->write(newPacket);
-        }
-      } else if(strcmp(buffer, "RequestUpdate\n")==0){
-        if(!closing){
-          if(!_operation->switch_imaging){
-            strcpy(buffer, "0");
+          // cout << "(Imaging) Received message: ";
+          // for(unsigned int i = 0; i < recvN; i++){
+          //   cout << buffer[i];
+          // }
+          // cout << endl;
+          if(strcmp(buffer, "SendPacket\n")==0){
+            cout << "(Imaging) Receiving packet" << endl;
+            strcpy(buffer, "4");
             send(server, buffer, 1, 0);
-          } else if(_operation->switch_imaging_mode == 0){
-            strcpy(buffer, "1");
-            send(server, buffer, 1, 0);
-          } else if(_operation->switch_imaging_mode == 1){
-            strcpy(buffer, "2");
-            send(server, buffer, 1, 0);
+            int recvN = recv(server, (uint8_t*)&newPacket, sizeof(ImagingData), 0);
+            cout << "(Imaging) Packet received" << endl;
+            if(recvN > 0){
+              _fifo->write(newPacket);
+            }
+          } else if(strcmp(buffer, "RequestUpdate\n")==0){
+            if(!closing){
+              if(!_operation->switch_imaging){
+                strcpy(buffer, "0");
+                send(server, buffer, 1, 0);
+              } else if(_operation->switch_imaging_mode == 0){
+                strcpy(buffer, "1");
+                send(server, buffer, 1, 0);
+              } else if(_operation->switch_imaging_mode == 1){
+                strcpy(buffer, "2");
+                send(server, buffer, 1, 0);
+              }
+              // send(server, buffer, bufsize, 0);
+            } else{
+              strcpy(buffer, "3");
+              send(server, buffer, 1, 0);
+              isExit = true;
+            }
+          } else{
+            cout << "Unknown packet: " << buffer << endl;
           }
-          // send(server, buffer, bufsize, 0);
         } else{
-          strcpy(buffer, "3");
-          send(server, buffer, 1, 0);
-          isExit = true;
+          cout << "Client disconnected, waiting for new connection" << endl;
         }
-      } else{
-        cout << "Unknown packet: " << buffer << endl;
-      }
-    } while(!isExit);
+      } while(recvN > 0);
+    }
+  } while(!isExit);
     
-    cout << "(Imaging) Connection terminated..." << endl;
-    cout << "(Imaging) Goodbye..." << endl;
-    // exit(1);
-  }
+  cout << "(Imaging) Connection terminated..." << endl;
+  cout << "(Imaging) Goodbye..." << endl;
+  // exit(1);
   
   close(client);
 }

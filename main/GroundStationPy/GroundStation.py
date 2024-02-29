@@ -30,7 +30,7 @@ class GroundStation(ttk.LabelFrame):
     self.toggle_imaging_mode_variable = tk.StringVar(value='1')
     self.toggle_stand_by_mode_variable = tk.StringVar(value='OFF')
     
-    self.control_option = tk.StringVar(value="1")
+    self.control_option_variable = tk.StringVar(value="1")
   
   def init_layout(self):
     left_frame = ttk.Frame(master=self)
@@ -74,7 +74,7 @@ class GroundStation(ttk.LabelFrame):
 
     top_frame = ttk.LabelFrame(master=left_frame, text='Attitude control option')
     top_frame.pack(side='top',fill='both')
-    tk.Button(master=top_frame, textvariable=self.control_option, relief='raised', command=self.toggle_attitude_control_option).pack(side='left',fill='both')
+    tk.Button(master=top_frame, textvariable=self.control_option_variable, relief='raised', command=self.toggle_attitude_control_option).pack(side='left',fill='both')
 
     top_frame = ttk.LabelFrame(master=left_frame, text='Imaging')
     top_frame.pack(side='top',fill='both')
@@ -150,9 +150,9 @@ class GroundStation(ttk.LabelFrame):
   def toggle_attitude_control(self):
     if self.toggle_attitude_control_variable.get() == 'OFF':
       self.toggle_attitude_control_variable.set('ON')
-      if self.toggle_attitude_control_option.get()=="1":
+      if self.control_option_variable.get()=="1":
         f = 1
-      elif self.toggle_attitude_control_option.get()=="2":
+      elif self.control_option_variable.get()=="2":
         f = 2
     elif self.toggle_attitude_control_variable.get() == 'ON':
       self.toggle_attitude_control_variable.set('OFF')
@@ -160,10 +160,18 @@ class GroundStation(ttk.LabelFrame):
     self.ser.write([protocol['control_commands'].index("SET_ATTITUDE_CONTROL"), f])
   
   def toggle_attitude_control_option(self):
-    if self.toggle_attitude_control_option.get() == "1":
-      self.toggle_attitude_control_option.set("2")
-    elif self.toggle_attitude_control_option.get() == "2":
-      self.toggle_attitude_control_option.set("1")
+    if self.control_option_variable.get() == "1":
+      self.control_option_variable.set("2")
+    elif self.control_option_variable.get() == "2":
+      self.control_option_variable.set("1")
+    if self.toggle_attitude_control_variable.get() == 'OFF':
+      f = 0
+    elif self.toggle_attitude_control_variable.get() == 'ON':
+      if self.control_option_variable.get()=="1":
+        f = 1
+      elif self.control_option_variable.get()=="2":
+        f = 2
+    self.ser.write([protocol['control_commands'].index("SET_ATTITUDE_CONTROL"), f])
   
   def toggle_imaging(self):
     if self.toggle_imaging_variable.get() == 'OFF':

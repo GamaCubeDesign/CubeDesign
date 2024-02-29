@@ -210,9 +210,11 @@ void parseSerial(uint8_t c){
       parsing_function = setAttitudeControl;
       break;
     case SET_IMAGING:
+      // Serial.println("PRINT: PARSING IMAGING");
       parsing_function = setImaging;
       break;
     case SET_IMAGING_MODE:
+      // Serial.println("PRINT: PARSING IMAGING MODE");
       parsing_function = setImagingMode;
       break;
     case SET_STAND_BY_MODE:
@@ -333,24 +335,29 @@ void control_toggleCommand(uint8_t c){
 
 void setActiveThermalControl(uint8_t c){
   operation.switch_active_thermal_control = c==1;
+  parsing_function = parseSerial;
 }
 
 void setAttitudeControl(uint8_t c){
-  operation.switch_attitude_control = c==1;
+  operation.switch_attitude_control = c-48;
+  parsing_function = parseSerial;
 }
 
 void setImaging(uint8_t c){
-  Serial.print("PRINT:IMAGING ");Serial.println(c==1);
+  // Serial.print("PRINT:IMAGING ");Serial.println(c==1);
   operation.switch_imaging = c==1;
+  parsing_function = parseSerial;
 }
 
 void setImagingMode(uint8_t c){
-  Serial.print("PRINT:IMAGING MODE ");Serial.println(c==1);
+  // Serial.print("PRINT:IMAGING MODE ");Serial.println(c==1);
   operation.switch_imaging_mode = c==1;
+  parsing_function = parseSerial;
 }
 
 void setStandByMode(uint8_t c){
   operation.switch_stand_by_mode = c==1;
+  parsing_function = parseSerial;
 }
 
 void control_print_status_packet(){

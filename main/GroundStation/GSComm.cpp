@@ -192,14 +192,14 @@ void startSetOperationProtocol(){
   gsPacket.operation.protocol = PROTOCOL_SET_OPERATION;
   gsPacket.operation.operation = GS_SET_OPERATION;
   gsPacket.data.operation.switch_active_thermal_control = operation.switch_active_thermal_control;
-  gsPacket.data.operation.switch_attitude_control = 0;//operation.switch_attitude_control;
-  gsPacket.data.operation.switch_imaging = 1;//operation.switch_imaging;
-  gsPacket.data.operation.switch_imaging_mode = 1;//operation.switch_imaging_mode;
+  gsPacket.data.operation.switch_attitude_control = operation.switch_attitude_control;
+  gsPacket.data.operation.switch_imaging = operation.switch_imaging;
+  gsPacket.data.operation.switch_imaging_mode = operation.switch_imaging_mode;
   gsPacket.data.operation.switch_stand_by_mode = operation.switch_stand_by_mode;
   Serial.println("PRINT:OPERATION");
-  Serial.print("PRINT:ATTITUDE CONTROL");Serial.println((int)gsPacket.data.operation.switch_attitude_control);
-  Serial.print("PRINT:IMAGING");Serial.println(gsPacket.data.operation.switch_imaging);
-  Serial.print("PRINT:IMAGING MODE");Serial.println(gsPacket.data.operation.switch_imaging_mode);
+  Serial.print("PRINT:ATTITUDE CONTROL ");Serial.println((int)gsPacket.data.operation.switch_attitude_control);
+  Serial.print("PRINT:IMAGING ");Serial.println(gsPacket.data.operation.switch_imaging);
+  Serial.print("PRINT:IMAGING MODE ");Serial.println(gsPacket.data.operation.switch_imaging_mode);
 
   gsPacket.length = 3;
 
@@ -257,19 +257,25 @@ void switchCaseStatusProtocol(){
       printPrint();
       Serial.print("Status: packets available: ");
       Serial.println(satPacket.byte_data.number_of_packets);
-      for(unsigned int i = 0; i < 32; i++){
-        for(unsigned int j = 0; j < 8; j++){
-          if(k < satPacket.byte_data.number_of_packets){
-            bitSet(gsPacket.data.resend.packets[i],j);
-          } else{
-            bitClear(gsPacket.data.resend.packets[i],j);
+      if(satPacket.byte_data.number_of_packets > 0){
+        for(unsigned int i = 0; i < 32; i++){
+          for(unsigned int j = 0; j < 8; j++){
+            if(k < satPacket.byte_data.number_of_packets){
+              bitSet(gsPacket.data.resend.packets[i],j);
+            } else{
+              bitClear(gsPacket.data.resend.packets[i],j);
+            }
+            k++;
           }
-          k++;
         }
+        gsPacket.operation.operation = GS_STATUS_START_TRANSMISSION;
+        gsPacket.length = 2;
+        sendGSPacket();
+      } else{
+        gsPacket.operation.operation = GS_STATUS_DONE;
+        gsPacket.length = 2;
+        sendGSPacket();
       }
-      gsPacket.operation.operation = GS_STATUS_START_TRANSMISSION;
-      gsPacket.length = 2;
-      sendGSPacket();
       break;
     case SATELLITE_STATUS_PACKET:
       Serial.print(PRINT_STR);

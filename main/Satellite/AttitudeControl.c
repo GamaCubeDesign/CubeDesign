@@ -24,14 +24,24 @@ void send_to_control(int mode, int gz){
     printf("ATTITUDE CONTROL ");
     printf("%d", mode);
     printf(" Gyro print ");
+    // printf("ATTITUDE Sending: ");
     serialPutchar(serial_port, (mode+48));
     serialPutchar(serial_port, ';');
     u_int8_t b;
+    int negative = 0;
+    if(gz < 0){
+      gz *= -1;
+      negative = 1;
+    }
     while (gz>0){
       b = gz%10;
+      // printf("%d", (int)b);
       serialPutchar(serial_port, b);
       printf("%d", (int)b);
       gz/=10;
+    }
+    if(negative){
+      serialPutchar(serial_port, '-');
     }
     printf("\n");
     serialPutchar(serial_port,'\n');

@@ -1,0 +1,12 @@
+cmake_minimum_required( VERSION 3.2 )
+project( cubedesign )
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+find_package(Threads REQUIRED)
+file( GLOB SOURCE_FILES *.cpp )
+foreach(SOURCE_FILE ${SOURCE_FILES})
+	get_filename_component( FILE_NAME ${SOURCE_FILE} NAME_WE )
+	add_executable( ${FILE_NAME} ${SOURCE_FILE} )
+	target_link_libraries( ${FILE_NAME} ${OpenCV_LIBS} Threads::Threads )
+endforeach()
+

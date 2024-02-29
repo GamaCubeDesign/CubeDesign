@@ -79,11 +79,14 @@ void open_antennas(){
   // char is_to_open;
   // f >> is_to_open;
   // if(is_to_open == '1'){
-  //   cout << "Opening Antenna in 60 secods" << endl;
-  //   sleep(60);
-  //   digitalWrite(MEC, HIGH);   // Set GPIO27 to HIGH
-  //   usleep(500000);         // Wait for 500ms
-  //   digitalWrite(MEC, LOW);  // Set GPIO27 to LOW
+    int val = rand()%20;
+    cout << "Opening Antenna in " << 3 << " seconds" << endl;
+    sleep(3);
+    digitalWrite(MEC, HIGH);   // Set GPIO27 to HIGH
+    // usleep(500000);         // Wait for 500ms
+    sleep(2);
+    digitalWrite(MEC, LOW);  // Set GPIO27 to LOW
+    cout << "Done" << endl;
   //   f.close();
   //   f.open("OPEN_ANTENNAS.txt", ios::writing);
   //   f << '0'
@@ -116,11 +119,12 @@ int main( int argc, char *argv[] ){
   std::thread imaging_thread (run_imaging_server);
 
   // std::thread async_in_thread = start_serial_thread();
-
+  std::cout << "Opening antennas" << endl;
   open_antennas();
 
   running = true;
   while(running){
+    usleep(200000);
     loop();
   }
 

@@ -340,10 +340,12 @@ void setAttitudeControl(uint8_t c){
 }
 
 void setImaging(uint8_t c){
+  Serial.print("PRINT:IMAGING ");Serial.println(c==1);
   operation.switch_imaging = c==1;
 }
 
 void setImagingMode(uint8_t c){
+  Serial.print("PRINT:IMAGING MODE ");Serial.println(c==1);
   operation.switch_imaging_mode = c==1;
 }
 

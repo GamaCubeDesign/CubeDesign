@@ -29,6 +29,8 @@ class GroundStation(ttk.LabelFrame):
     self.toggle_imaging_variable = tk.StringVar(value='OFF')
     self.toggle_imaging_mode_variable = tk.StringVar(value='1')
     self.toggle_stand_by_mode_variable = tk.StringVar(value='OFF')
+    
+    self.control_option = tk.StringVar(value="1")
   
   def init_layout(self):
     left_frame = ttk.Frame(master=self)
@@ -69,6 +71,10 @@ class GroundStation(ttk.LabelFrame):
     top_frame = ttk.LabelFrame(master=left_frame, text='Attitude control')
     top_frame.pack(side='top',fill='both')
     tk.Button(master=top_frame, textvariable=self.toggle_attitude_control_variable, relief='raised', command=self.toggle_attitude_control).pack(side='left',fill='both')
+
+    top_frame = ttk.LabelFrame(master=left_frame, text='Attitude control option')
+    top_frame.pack(side='top',fill='both')
+    tk.Button(master=top_frame, textvariable=self.control_option, relief='raised', command=self.toggle_attitude_control_option).pack(side='left',fill='both')
 
     top_frame = ttk.LabelFrame(master=left_frame, text='Imaging')
     top_frame.pack(side='top',fill='both')
@@ -144,11 +150,20 @@ class GroundStation(ttk.LabelFrame):
   def toggle_attitude_control(self):
     if self.toggle_attitude_control_variable.get() == 'OFF':
       self.toggle_attitude_control_variable.set('ON')
-      f = 1
+      if self.toggle_attitude_control_option.get()=="1":
+        f = 1
+      elif self.toggle_attitude_control_option.get()=="2":
+        f = 2
     elif self.toggle_attitude_control_variable.get() == 'ON':
       self.toggle_attitude_control_variable.set('OFF')
       f = 0
     self.ser.write([protocol['control_commands'].index("SET_ATTITUDE_CONTROL"), f])
+  
+  def toggle_attitude_control_option(self):
+    if self.toggle_attitude_control_option.get() == "1":
+      self.toggle_attitude_control_option.set("2")
+    elif self.toggle_attitude_control_option.get() == "2":
+      self.toggle_attitude_control_option.set("1")
   
   def toggle_imaging(self):
     if self.toggle_imaging_variable.get() == 'OFF':

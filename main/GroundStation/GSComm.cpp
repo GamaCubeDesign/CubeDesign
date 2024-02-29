@@ -188,13 +188,18 @@ void startSetOperationProtocol(){
   if(talking){
     return;
   }
+  gsPacket.length = 3;
   gsPacket.operation.protocol = PROTOCOL_SET_OPERATION;
   gsPacket.operation.operation = GS_SET_OPERATION;
   gsPacket.data.operation.switch_active_thermal_control = operation.switch_active_thermal_control;
-  gsPacket.data.operation.switch_attitude_control = operation.switch_attitude_control;
-  gsPacket.data.operation.switch_imaging = operation.switch_imaging;
-  gsPacket.data.operation.switch_imaging_mode = operation.switch_imaging_mode;
+  gsPacket.data.operation.switch_attitude_control = 1;//operation.switch_attitude_control;
+  gsPacket.data.operation.switch_imaging = 0;//operation.switch_imaging;
+  gsPacket.data.operation.switch_imaging_mode = 1;//operation.switch_imaging_mode;
   gsPacket.data.operation.switch_stand_by_mode = operation.switch_stand_by_mode;
+  Serial.println("PRINT:OPERATION");
+  Serial.print("PRINT:ATTITUDE CONTROL");Serial.println((int)gsPacket.data.operation.switch_attitude_control);
+  Serial.print("PRINT:IMAGING");Serial.println(gsPacket.data.operation.switch_imaging);
+  Serial.print("PRINT:IMAGING MODE");Serial.println(gsPacket.data.operation.switch_imaging_mode);
 
   gsPacket.length = 3;
 
@@ -304,8 +309,8 @@ void switchCaseStatusProtocol(){
         gsPacket.operation.operation = GS_STATUS_DONE;
         gsPacket.length = 2;
       } else{
-        gsPacket.operation.protocol = PROTOCOL_IMAGING_DATA;
-        gsPacket.operation.operation = GS_IMAGING_RESEND_STATUS;
+        gsPacket.operation.protocol = PROTOCOL_STATUS;
+        gsPacket.operation.operation = GS_STATUS_RESEND_PACKET;
         gsPacket.length = sizeof(GSPacket);//35;
       }
       sendGSPacket();

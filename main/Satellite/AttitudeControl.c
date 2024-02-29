@@ -45,7 +45,7 @@ void send_to_control(int mode, int gz){
     }
     printf("\n");
     serialPutchar(serial_port,'\n');
-    if(serialDataAvail (serial_port) ){
+    while(serialDataAvail (serial_port) ){
 		//fflush (stdout) ; /* transmit character serially on port */
 	    printf("ATTITUDE CONTROL RECEIVED: %d\n", (int)serialGetchar(serial_port));
 	  }

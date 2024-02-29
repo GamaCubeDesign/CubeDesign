@@ -172,7 +172,10 @@ int main()
             for (size_t j = 0; j < allCentroids[k].size(); j++) {
                 Point2f zero(0,0);
                 // Se o raio ja tiver sido visitado antes, ou o centroide for diferente dele mesmo (para os casos de valor NaN) ou se o centroide for igual a zero, apenas va para o proximo
-                if (matrixVisited[k][j] == 1 || allCentroids[k][j] != allCentroids[k][j] || allCentroids[k][j] == zero) continue;
+                if (matrixVisited[k][j] == 1 || allCentroids[k][j] != allCentroids[k][j] || allCentroids[k][j] == zero){
+                    cout << "CONDIÇÃO 1" << endl;
+                    continue;
+                }
                 std::cout << "TO NO CONTORNO = " << j << endl;
                 int duration = 1;
 
@@ -183,7 +186,10 @@ int main()
                 int nextIndex = k + 1; // Index do frame seguinte
                 while (true)
                 {
-                    if (nextIndex == countOfFrames) break; // Caso o index iguale o numero total de frames, saia
+                    if (nextIndex == countOfFrames){
+                        cout << "Caso o index iguale o numero total de frames, saia" << endl;
+                        break;
+                    }
                     // O valor da duracao atual do raio e salva, pois, caso ele percorra todos os centroides do frame seguinte e nenhum esteja numa distancia proxima, entao ele nao muda o valor da duracao
                     int beforeCheckDuration = duration;
                     for (size_t i = 0; i < allCentroids[nextIndex].size(); i++)

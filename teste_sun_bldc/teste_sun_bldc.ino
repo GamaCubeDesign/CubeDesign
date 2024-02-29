@@ -33,6 +33,10 @@ float previousError = 0.0;
 float integral = 0.0;
 float derivative = 0.0;
 
+int target_velo = 0;
+int current_velo = 0;
+long next_iter = millis()+TIME_ROT;
+
 void setup() {
   
   driver.voltage_power_supply = 5;
@@ -53,27 +57,29 @@ void setup() {
 
 }
 
-void velo(int vel){
-  ti = millis();
-  int duracao = 5000;
-  unsigned long tempo = 70000;
-  if (ti>tf){
-      tf +=tempo;
-  }
-  long next_iter = millis()+TIME_ROT;
+void velo(){
+  // ti = millis();
+  // int duracao = 5000;
+  // unsigned long tempo = 70000;
+  // if (ti>tf){
+  //     tf +=tempo;
+  // }
 
-  int v = 5;
-  motor.move(v);
-  while(v <= vel){
-    motor.move(v);
+  // int v = 5;
+  // motor.move(v);
+  // while(v <= vel){
+    // motor.move(v);
     if(millis() > next_iter){
-      v += 5;
+      if(current_velo < target_velo){
+        current_velo += 5;
+      } else{
+        current_velo -= 5;
+      }
       next_iter = millis() + TIME_ROT;
     }
-  }
-  while(millis() <= (next_iter+tempo)){ //limitar esse tempo
-    motor.move(vel);
-  }
+  // if(millis() <= (next_iter+tempo)){ //limitar esse tempo
+  //   motor.move(vel);
+  // }
  
 }
 
@@ -96,7 +102,7 @@ void sun_pointing(float angulo){
   } else if(value < -500){
     value = -500;
   }
-  velo(value);
+  velo();
   previousError = error;
   Serial.write((uint8_t)((int)(value / 4)));
 }
@@ -119,7 +125,7 @@ void estabilization(float vel_angular){
   } else if(value < -500){
     value = -500;
   }
-  velo(value);
+  velo();
   Serial.write((uint8_t)((int)(value / 4)));
   previousError = error;
   
@@ -250,12 +256,21 @@ void loop() {
     Serial.println(g);
   }
   
+  mode = 3;
+  // target_velo = 300;
   if (mode == 0){
    Serial.println("Controle desativado");
   }else if (mode == 1){//mudar para 1 ou 2 de acordo com a telemetria
     sun_pointing(a);
+    // velo();
   }else if(mode == 2){
     estabilization(giros);//mudar para velocidade angular de acordo com o girsocópio
+    // velo();
+  } else if(mode == 3){
+    target_velo = 300;
+    velo();
   }
   
+  velo();
+  motor.move(current_velo);
 }

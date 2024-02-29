@@ -20,21 +20,26 @@ void send_to_control(int mode, int gz){
     fprintf (stdout, "Unable to start wiringPi: %s\n", strerror (errno)) ;
     return;
   }
-	  
-	if(serialDataAvail (serial_port) )
-	{ 
+	  printf("ATTITUDE CONTROL DAMMIT\n");
+	// if(serialDataAvail (serial_port) )
+	// { 
+    printf("ATTITUDE CONTROL ");
+    printf("%d", mode);
+    printf(" ATTITUDE TYPE ");
     serialPutchar(serial_port, (mode+48));
     serialPutchar(serial_port, ';');
     u_int8_t b;
     while (gz>0){
       b = gz%10;
       serialPutchar(serial_port, b);
+      printf("%d ", (int)b);
       gz/=10;
     }
+    printf("\n");
     serialPutchar(serial_port,'\n');
 		//fflush (stdout) ; /* transmit character serially on port */
 	                     
-	}
+	// }
 	
 }
 

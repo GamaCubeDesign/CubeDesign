@@ -187,7 +187,7 @@ void switchCaseStatusProtocol(){
         satPacket.operation.operation = SATELLITE_STATUS_PACKET;
         satPacket.byte_data.index = i;
         satPacket.length = sizeof(SatPacket);//sizeof(int64_t)+sizeof(HealthData);
-        if(i==2) continue;
+        // if(i==2) continue;
         sendSatPacket();
         // sleep(1);
       }
@@ -256,7 +256,7 @@ void switchCaseImagingDataProtocol(){
         satPacket.operation.operation = SATELLITE_IMAGING_PACKET;
         satPacket.byte_data.index = i;
         satPacket.length = sizeof(SatPacket);//3+sizeof(ImagingData);
-        if(i==2) continue;
+        // if(i==2) continue;
         sendSatPacket();
       }
       DBG_Println("I:D");
@@ -309,20 +309,24 @@ void switchCaseImagingDataProtocol(){
 void switchCaseSetOperationProtocol(){
   switch(gsPacket.operation.operation){
     case GS_SET_OPERATION:
-      DBG_Println("O:1");
-      satPacket.operation.protocol = PROTOCOL_SET_OPERATION;
-      satPacket.operation.operation = SATELLITE_SET_OPERATION_ECHO;
-      satPacket.data.operation_echo.switch_active_thermal_control = gsPacket.data.operation.switch_active_thermal_control;
-      satPacket.data.operation_echo.switch_attitude_control = gsPacket.data.operation.switch_attitude_control;
-      satPacket.data.operation_echo.switch_imaging = gsPacket.data.operation.switch_imaging;
-      satPacket.data.operation_echo.switch_imaging_mode = gsPacket.data.operation.switch_imaging_mode;
-      satPacket.data.operation_echo.switch_stand_by_mode = gsPacket.data.operation.switch_stand_by_mode;
-      satPacket.length = sizeof(SatPacket);//3+sizeof(GSOperation);
-      sendSatPacket();
-      break;
-    case GS_SET_OPERATION_DONE:
+    //   DBG_Println("O:1");
+    //   satPacket.operation.protocol = PROTOCOL_SET_OPERATION;
+    //   satPacket.operation.operation = SATELLITE_SET_OPERATION_ECHO;
+    //   satPacket.data.operation_echo.switch_active_thermal_control = gsPacket.data.operation.switch_active_thermal_control;
+    //   satPacket.data.operation_echo.switch_attitude_control = gsPacket.data.operation.switch_attitude_control;
+    //   satPacket.data.operation_echo.switch_imaging = gsPacket.data.operation.switch_imaging;
+    //   satPacket.data.operation_echo.switch_imaging_mode = gsPacket.data.operation.switch_imaging_mode;
+    //   satPacket.data.operation_echo.switch_stand_by_mode = gsPacket.data.operation.switch_stand_by_mode;
+    //   satPacket.length = sizeof(SatPacket);//3+sizeof(GSOperation);
+    //   sendSatPacket();
+    //   break;
+    // case GS_SET_OPERATION_DONE:
       DBG_Println("O:D");
-      *((uint8_t*)&operation) = *((uint8_t*)&satPacket.data.operation_echo);
+      *((uint8_t*)&operation) = *((uint8_t*)&gsPacket.data.operation);
+      cout << "OPERATION: " << endl;
+      cout << "Imaging: " << (int)operation.switch_imaging << endl;
+      cout << "Imaging mode: " << (int)operation.switch_imaging_mode << endl;
+      cout << "Control: " << (int)operation.switch_attitude_control << endl;
       satPacket.operation.protocol = PROTOCOL_SET_OPERATION;
       satPacket.operation.operation = SATELLITE_SET_OPERATION_DONE;
       satPacket.length = 2;

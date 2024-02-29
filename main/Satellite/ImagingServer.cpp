@@ -81,19 +81,19 @@ void ImagingDataServer::run_server(){
       } else if(strcmp(buffer, "RequestUpdate\n")==0){
         if(!closing){
           if(!_operation->switch_imaging){
-            strcpy(buffer, "Ok 0\n");
-            send(server, buffer, 5, 0);
+            strcpy(buffer, "0");
+            send(server, buffer, 1, 0);
           } else if(_operation->switch_imaging_mode == 0){
-            strcpy(buffer, "Ok 1\n");
-            send(server, buffer, 5, 0);
+            strcpy(buffer, "1");
+            send(server, buffer, 1, 0);
           } else if(_operation->switch_imaging_mode == 1){
-            strcpy(buffer, "Ok 2\n");
-            send(server, buffer, 5, 0);
+            strcpy(buffer, "2");
+            send(server, buffer, 1, 0);
           }
           // send(server, buffer, bufsize, 0);
         } else{
-          strcpy(buffer, "Close\n");
-          send(server, buffer, 6, 0);
+          strcpy(buffer, "3");
+          send(server, buffer, 1, 0);
           isExit = true;
         }
       } else{

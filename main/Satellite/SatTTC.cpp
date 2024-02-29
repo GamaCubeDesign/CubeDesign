@@ -67,31 +67,30 @@ void read_fifos(){
   }
   while(status_fifo.available()){
     HealthData statusPacket = status_fifo.read();
-    float gx = statusPacket.giros_x;
-    float gy = statusPacket.giros_y;
-    // send_to_control(operation.switch_attitude_control, 1000*gx,1000*gy);
+    float gz = statusPacket.giros_z;
+    send_to_control(operation.switch_attitude_control, 1000*gz);
     logger.writeSatStatusPacket(statusPacket);
   }
 }
 
 void open_antennas(){
-  fstream f;
-  f.open("OPEN_ANTENNAS.txt", ios::in);
-  char is_to_open;
-  f >> is_to_open;
-  if(is_to_open == '1'){
-    cout << "Opening Antenna in 60 secods" << endl;
-    sleep(60);
-    digitalWrite(MEC, HIGH);   // Set GPIO27 to HIGH
-    usleep(500000);         // Wait for 500ms
-    digitalWrite(MEC, LOW);  // Set GPIO27 to LOW
-    f.close();
-    f.open("OPEN_ANTENNAS.txt", ios::writing);
-    f << '0'
-  } else{
-    cout << "Not opening Antenna" << endl;
-  }
-  f.close();
+  // fstream f;
+  // f.open("OPEN_ANTENNAS.txt", ios::in);
+  // char is_to_open;
+  // f >> is_to_open;
+  // if(is_to_open == '1'){
+  //   cout << "Opening Antenna in 60 secods" << endl;
+  //   sleep(60);
+  //   digitalWrite(MEC, HIGH);   // Set GPIO27 to HIGH
+  //   usleep(500000);         // Wait for 500ms
+  //   digitalWrite(MEC, LOW);  // Set GPIO27 to LOW
+  //   f.close();
+  //   f.open("OPEN_ANTENNAS.txt", ios::writing);
+  //   f << '0'
+  // } else{
+  //   cout << "Not opening Antenna" << endl;
+  // }
+  // f.close();
 }
 
 void loop(){

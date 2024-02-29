@@ -192,8 +192,8 @@ void startSetOperationProtocol(){
   gsPacket.operation.protocol = PROTOCOL_SET_OPERATION;
   gsPacket.operation.operation = GS_SET_OPERATION;
   gsPacket.data.operation.switch_active_thermal_control = operation.switch_active_thermal_control;
-  gsPacket.data.operation.switch_attitude_control = 1;//operation.switch_attitude_control;
-  gsPacket.data.operation.switch_imaging = 0;//operation.switch_imaging;
+  gsPacket.data.operation.switch_attitude_control = 0;//operation.switch_attitude_control;
+  gsPacket.data.operation.switch_imaging = 1;//operation.switch_imaging;
   gsPacket.data.operation.switch_imaging_mode = 1;//operation.switch_imaging_mode;
   gsPacket.data.operation.switch_stand_by_mode = operation.switch_stand_by_mode;
   Serial.println("PRINT:OPERATION");

@@ -80,6 +80,8 @@ class ImagingDataClient{
       if(strcmp(buffer, "Ok\n")==0){
         cout << "Sending packet..." << endl;
         send(client, (uint8_t*)&newPacket, sizeof(ImagingData), 0);
+      } else{
+        cout << "Unknown response: " << buffer << endl;
       }
     }
 
@@ -89,7 +91,7 @@ class ImagingDataClient{
       send(client, buffer, bufsize, 0);
       recv(client, buffer, bufsize, 0);
       cout << "Update received" << endl;
-      if(strcmp(buffer, "Close\n")==0){
+      if(buffer[0] == '3'){
         isExit = true;
         cout << "Closing connection" << endl;
         
@@ -97,13 +99,13 @@ class ImagingDataClient{
 
         cout << "Connection terminated..." << endl;
         cout << "Goodbye" << endl;
-      } else if(strcmp(buffer, "Ok 0\n")==0){
+      } else if(buffer[0] == '0'){
         cout << "Nominal operation, imaging off" << endl;
         return 0;
-      } else if(strcmp(buffer, "Ok 1\n")==0){
+      } else if(buffer[0] == '1'){
         cout << "Nominal operation, imaging on, type 1" << endl;
         return 1;
-      } else if(strcmp(buffer, "Ok 2\n")==0){
+      } else if(buffer[0] == '2'){
         cout << "Nominal operation, imaging on, type 2" << endl;
         return 2;
       } else{

@@ -67,9 +67,8 @@ void read_fifos(){
   }
   while(status_fifo.available()){
     HealthData statusPacket = status_fifo.read();
-    float gx = statusPacket.giros_x;
-    float gy = statusPacket.giros_y;
-    // send_to_control(operation.switch_attitude_control, 1000*gx,1000*gy);
+    float gz = statusPacket.giros_z;
+    send_to_control(operation.switch_attitude_control, 1000*gz);
     logger.writeSatStatusPacket(statusPacket);
   }
 }

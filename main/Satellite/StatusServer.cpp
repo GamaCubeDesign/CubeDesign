@@ -22,8 +22,10 @@ StatusDataServer::StatusDataServer(StatusFIFO *fifo, Operation *operation, unsig
     newPacket.pressure = 1.0;
     newPacket.accel_x = 1;
     newPacket.accel_y = 1;
+    newPacket.accel_z = 1;
     newPacket.giros_x = 1;
     newPacket.giros_y = 1;
+    newPacket.giros_z = 1;
     _fifo->write(newPacket);
   }
 }

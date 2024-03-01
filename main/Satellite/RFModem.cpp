@@ -102,25 +102,25 @@ void initRFModule(){
   LoRa_receive(&modem);
 }
 
-void check_reception_timeout(){
-  if(my_millis() > last_reception_timeout){
-    last_reception_timeout = my_millis() + last_reception_timer;
-    modem_reset();
-  }
-}
+// void check_reception_timeout(){
+//   if(my_millis() > last_reception_timeout){
+//     last_reception_timeout = my_millis() + last_reception_timer;
+//     modem_reset();
+//   }
+// }
 
-void modem_reset(){
-  // while(!receiving);
-  // LoRa_stop_receive(&modem);
-  LoRa_end(&modem);
-  usleep(100000);
-  receiving = true;
-  transmitting = false;
-  timeout = false;
-  tx_done = false;
-  LoRa_begin(&modem);
-  LoRa_receive(&modem);
-}
+// void modem_reset(){
+//   // while(!receiving);
+//   // LoRa_stop_receive(&modem);
+//   LoRa_end(&modem);
+//   usleep(100000);
+//   receiving = true;
+//   transmitting = false;
+//   timeout = false;
+//   tx_done = false;
+//   LoRa_begin(&modem);
+//   LoRa_receive(&modem);
+// }
 
 int tx_transmitt(uint8_t* buf, unsigned int size){
 

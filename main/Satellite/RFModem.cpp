@@ -13,6 +13,8 @@ bool transmitting = false;
 bool tx_done = false;
 bool receiving = false;
 bool timeout = false;
+unsigned long last_reception_timeout = 300000;
+unsigned long last_reception_timer = 300000;
 unsigned long wait_for_new_transmission = 100;
 unsigned long next_transmission_time = 0;
 unsigned long last_transmission_time = 0;
@@ -27,6 +29,8 @@ uint8_t modem_read(){
 }
 
 void * rx_f(void *p){
+  last_reception_timeout = my_millis() + last_reception_timer;
+
   cout << "rx: Receive callback" << endl;
   rxData *rx = (rxData *)p;
   // printf("rx done \n");
@@ -98,13 +102,22 @@ void initRFModule(){
   LoRa_receive(&modem);
 }
 
+void check_reception_timeout(){
+  if(my_millis() > last_reception_timeout){
+    last_reception_timeout = my_millis() + last_reception_timer;
+    modem_reset();
+  }
+}
+
 void modem_reset(){
-  while(!receiving);
-  LoRa_stop_receive(&modem);
+  // while(!receiving);
+  // LoRa_stop_receive(&modem);
   LoRa_end(&modem);
-  usleep(50000);
+  usleep(100000);
   receiving = true;
   transmitting = false;
+  timeout = false;
+  tx_done = false;
   LoRa_begin(&modem);
   LoRa_receive(&modem);
 }
@@ -136,6 +149,7 @@ int tx_transmitt(uint8_t* buf, unsigned int size){
     timeout = true;
     return 1;
   }
+  return 0;
 }
 
 void tx_send(uint8_t* buf, unsigned int size){

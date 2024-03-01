@@ -15,7 +15,7 @@ channel0 = AnalogIn(ads, ADS.P0)
 channel1 = AnalogIn(ads, ADS.P1)
 channel2 = AnalogIn(ads, ADS.P2)
 ntc = channel0.voltage
-volt_3v = channel1.voltage
+volt_3v = 5*channel1.voltage
 volt_bat = channel2.voltage*2
 print(volt_bat, ntc, volt_3v)
 # Loop to read the analog inputs continuously

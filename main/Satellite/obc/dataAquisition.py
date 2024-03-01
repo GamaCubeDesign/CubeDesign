@@ -2,6 +2,7 @@ import socket
 import sys
 import json
 import struct
+import math
 
 HOST = "127.0.0.1"
 PORT = 8081
@@ -40,6 +41,16 @@ if __name__=='__main__':
     # r = str(resp, encoding='utf-8')
     # if r=='Ok\n':
     print("Sending data")
+    v = data['ext_temp_voltage']
+    v0 = data['volt_3v']
+    R0 = 10000
+    Rx = v*R0/(v0-v)
+    print(Rx)
+    print(type(Rx))
+    l1 = math.log(Rx)
+    l3 = l1*l1*l1
+    Temp = 1 / (0.001129148 + (0.000234125 * l1) + (0.0000000876741 * l3)) # Kelvin
+    Temp = Temp - 273.15;  # Convert Kelvin to Celsius
     p = [
       data['index'].to_bytes(4,'little'),
       data['time'].to_bytes(4,'little'),
@@ -48,7 +59,7 @@ if __name__=='__main__':
       #bytearray(struct.pack("f", data['battery_charge'])),
       #bytearray(struct.pack("f", data['battery_temperature'])),
       bytearray(struct.pack("f", data['temp_bmp'])),
-      bytearray(struct.pack("f", data['ext_temp_voltage'])),
+      bytearray(struct.pack("f", Temp)),
       bytearray(struct.pack("f", data['diskp'])),
       bytearray(struct.pack("f", data['altitude_bmp'])),
       bytearray(struct.pack("f", data['pressure_bmp'])),

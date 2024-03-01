@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/DADOS/Workbench/GCD/TTC/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv-offline
+# Install script for directory: /home/bcr/rasp/vitinho/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv-offline
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/DADOS/Workbench/GCD/TTC/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv-offline/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/bcr/rasp/vitinho/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv-offline/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

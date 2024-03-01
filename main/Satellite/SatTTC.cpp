@@ -108,9 +108,9 @@ void loop(){
   // checkConsole();
   updateRFComm();
   read_fifos();
-  if(my_millis() > next_reset_rf){
-    modem_reset();
-  }
+  // if(my_millis() > next_reset_rf){
+  //   modem_reset();
+  // }
 }
 
 int main( int argc, char *argv[] ){

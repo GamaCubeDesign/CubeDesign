@@ -11,8 +11,8 @@
 using namespace std;
 using namespace cv;
 
-ImagingData testingData;
-ImagingDataClient imagingSocket(8080);
+// ImagingData testingData;
+// ImagingDataClient imagingSocket(8080);
 
 // Variavel de distancia dos centroides de parametro
 int distance = 60;
@@ -22,15 +22,15 @@ bool stopLoop = false;
 
 // Função que verifica a entrada do teclado
 void checkInput() {
-    /*while (true) {
+    while (true) {
         if (imagingSocket.update() == 0) {
             sleep(1);
             ::stopLoop = true;
             break;
         }
-    }*/
-    sleep(5);
-    ::stopLoop = true;
+    }
+    // sleep(5);
+    // ::stopLoop = true;
 }
 
 double twoPointDistance(Point2f A, Point2f B) {
@@ -41,22 +41,22 @@ double twoPointDistance(Point2f A, Point2f B) {
 
 int main() 
 {
-    cout << "Imaging code" << endl;/*
+    cout << "Imaging code" << endl;
     while(imagingSocket.connect_to_socket() < 0){
    		 cout << "Error connecting to socket" << endl;
    		 cout << "Goodbye" << endl;
    		 return 0;
-    }*/
+    }
     
-    //while(true) {
+    while(true) {
 	 
     // Recebendo entrada de qual tratamento sera realizado
-    //int scene = imagingSocket.update();
-    int scene = 1;
+    int scene = imagingSocket.update();
+    // int scene = 1;
     
     if(scene == 0) {
-    	this_thread::sleep_for(chrono::milliseconds(100));
-    	//continue;
+    	this_thread::sleep_for(chrono::milliseconds(1000));
+    	continue;
     }
     
     //std::filesystem::remove_all("frames");
@@ -74,7 +74,7 @@ int main()
     int numberOfFrames = 0;
     thread inputThread(checkInput);
     // Loop para pegar cada frame
-    // while (!::stopLoop) {
+    while (!::stopLoop) {
     //     // Ler o frame
     //     Mat frame;
     //     capture >> frame;
@@ -83,14 +83,17 @@ int main()
         
     //     // Escolhe o tempo de distancia entre os frames
     //     // Adiciona um pequeno delay
-    //     this_thread::sleep_for(chrono::milliseconds(100));
-    // }
+      this_thread::sleep_for(chrono::milliseconds(100));
+    }
+    
     bool checking_files = true;
     do{
       fstream f;
-      f.open("frames/frame_" + to_string(numberOfFrames) + ".png", ios::in);
+      f.open("frames/frame_" + to_string(numberOfFrames+1) + ".png", ios::in);
+      cout << "Checking frame: " << "frames/frame_" + to_string(numberOfFrames+1) + ".png" << endl;
       if(f){
         numberOfFrames++;
+        cout << "Opening frame: " << "frames/frame_" + to_string(numberOfFrames+1) + ".png" << endl;
         f.close();
       } else{
         checking_files = false;
@@ -107,7 +110,7 @@ int main()
 
     int countOfFrames = 0 ;
     while (numberOfFrames--) {
-        Mat greyFrame = imread("frames/frame_" + to_string(countOfFrames++) + ".png", 0);
+        Mat greyFrame = imread("frames/frame_" + to_string(++countOfFrames) + ".png", 0);
         GaussianBlur(greyFrame, greyFrame, Size(5, 5), 0);
         Mat threshFrame;
 
@@ -179,6 +182,7 @@ int main()
 
             // Loop de grau 3, para analisar todos os frames, e em cada frame analisar todos os raios dele, e no ultimo loop ficar rodando o codigo ate achar onde o raio acaba
             for (size_t j = 0; j < allCentroids[k].size(); j++) {
+                cout << "j - " << j << endl;
                 Point2f zero(0,0);
                 // Se o raio ja tiver sido visitado antes, ou o centroide for diferente dele mesmo (para os casos de valor NaN) ou se o centroide for igual a zero, apenas va para o proximo
                 if (matrixVisited[k][j] == 1 || allCentroids[k][j] != allCentroids[k][j] || allCentroids[k][j] == zero){
@@ -322,6 +326,6 @@ int main()
     }
 
     // waitKey(0);
-    //}
+    }
     return 0;
 }

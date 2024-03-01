@@ -58,6 +58,7 @@ void tx_f(txData *tx){
   if(timeout){
     cout << "tx: tx callback but a timout has occured" << endl;
   } else{
+    cout << "tx: transmission nominal" << endl;
     transmitting = false;
     receiving = true;
     tx_done = true;
@@ -97,9 +98,21 @@ void initRFModule(){
   LoRa_receive(&modem);
 }
 
+void modem_reset(){
+  while(!receiving);
+  LoRa_stop_receive(&modem);
+  LoRa_end(&modem);
+  usleep(50000);
+  receiving = true;
+  transmitting = false;
+  LoRa_begin(&modem);
+  LoRa_receive(&modem);
+}
+
 int tx_transmitt(uint8_t* buf, unsigned int size){
 
   cout << "tx: starting transmission" << endl;
+  timeout = false;
 
   char txbuf[255];
   modem.tx.data.buf = txbuf;
@@ -120,6 +133,7 @@ int tx_transmitt(uint8_t* buf, unsigned int size){
     // cout << "tx: waiting " << my_millis() << endl;
   }
   if(!tx_done){
+    timeout = true;
     return 1;
   }
 }
@@ -130,7 +144,6 @@ void tx_send(uint8_t* buf, unsigned int size){
   receiving = false;
   transmitting = true;
   tx_done = false;
-  timeout = false;
 
   usleep(50000);
 
@@ -140,11 +153,13 @@ void tx_send(uint8_t* buf, unsigned int size){
     counter++;
     cout << "tx: Trying again " << counter << endl;
     LoRa_end(&modem);
-    LoRa_begin(&modem); // Restart LoRa and start listening
+    LoRa_begin(&modem); // Restart LoRa and try again
   }
   if(!tx_done){ // Give up. Restart LoRa and start listening
     LoRa_end(&modem);
     LoRa_begin(&modem);
+    transmitting = false;
+    receiving = true;
     LoRa_receive(&modem);
   }
   // usleep(50000);

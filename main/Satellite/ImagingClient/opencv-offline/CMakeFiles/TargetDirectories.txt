@@ -1,3 +1,3 @@
-/home/bcr/rasp/vitinho/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv-offline/CMakeFiles/rebuild_cache.dir
-/home/bcr/rasp/vitinho/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv-offline/CMakeFiles/edit_cache.dir
-/home/bcr/rasp/vitinho/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv-offline/CMakeFiles/main.dir
+/mnt/DADOS/Workbench/GCD/TTC/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv-offline/CMakeFiles/main.dir
+/mnt/DADOS/Workbench/GCD/TTC/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv-offline/CMakeFiles/edit_cache.dir
+/mnt/DADOS/Workbench/GCD/TTC/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv-offline/CMakeFiles/rebuild_cache.dir

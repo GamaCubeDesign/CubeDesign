@@ -101,10 +101,16 @@ void open_antennas(){
   // f.close();
 }
 
+unsigned long reset_rf_timer = 60;
+unsigned long next_reset_rf = 60;
+
 void loop(){
   // checkConsole();
   updateRFComm();
   read_fifos();
+  if(my_millis() > next_reset_rf){
+    modem_reset();
+  }
 }
 
 int main( int argc, char *argv[] ){

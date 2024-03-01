@@ -15,6 +15,7 @@ extern unsigned int rx_buffer_size;
 
 extern uint8_t modem_available();
 extern uint8_t modem_read();
+extern void modem_reset();
 
 extern void * rx_f(void *p);
 extern void tx_f(txData *tx);

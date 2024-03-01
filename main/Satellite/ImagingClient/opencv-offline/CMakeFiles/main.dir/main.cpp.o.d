@@ -1,5 +1,5 @@
 CMakeFiles/main.dir/main.cpp.o: \
- /mnt/DADOS/Workbench/GCD/TTC/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv-test/main.cpp \
+ /mnt/DADOS/Workbench/GCD/TTC/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv-offline/main.cpp \
  /usr/include/stdc-predef.h /usr/include/opencv4/opencv2/core/core.hpp \
  /usr/include/opencv4/opencv2/core.hpp \
  /usr/include/opencv4/opencv2/core/cvdef.h \
@@ -265,7 +265,7 @@ CMakeFiles/main.dir/main.cpp.o: \
  /usr/include/c++/11/bits/fstream.tcc /usr/include/c++/11/thread \
  /usr/include/c++/11/bits/std_thread.h \
  /usr/include/c++/11/bits/this_thread_sleep.h \
- /mnt/DADOS/Workbench/GCD/TTC/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv-test/../ImagingDataClient.cpp \
+ /mnt/DADOS/Workbench/GCD/TTC/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv-offline/../ImagingDataClient.cpp \
  /usr/include/x86_64-linux-gnu/sys/socket.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
  /usr/include/x86_64-linux-gnu/bits/socket.h \
@@ -295,14 +295,5 @@ CMakeFiles/main.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h \
  /usr/include/x86_64-linux-gnu/bits/netdb.h \
- /mnt/DADOS/Workbench/GCD/TTC/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv-test/../../../CommunicationProtocol.h \
- /mnt/DADOS/Workbench/GCD/TTC/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv-test/../../../CommunicationProtocol.h \
- /usr/include/c++/11/filesystem /usr/include/c++/11/bits/fs_fwd.h \
- /usr/include/c++/11/bits/fs_path.h /usr/include/c++/11/locale \
- /usr/include/c++/11/bits/locale_facets_nonio.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
- /usr/include/libintl.h /usr/include/c++/11/bits/locale_facets_nonio.tcc \
- /usr/include/c++/11/bits/locale_conv.h /usr/include/c++/11/iomanip \
- /usr/include/c++/11/bits/quoted_string.h /usr/include/c++/11/codecvt \
- /usr/include/c++/11/bits/fs_dir.h /usr/include/c++/11/bits/fs_ops.h
+ /mnt/DADOS/Workbench/GCD/TTC/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv-offline/../../../CommunicationProtocol.h \
+ /mnt/DADOS/Workbench/GCD/TTC/TTEC-Gamacubedesign/main/Satellite/ImagingClient/opencv-offline/../../../CommunicationProtocol.h

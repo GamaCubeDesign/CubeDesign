@@ -11,8 +11,8 @@
 using namespace std;
 using namespace cv;
 
-// ImagingData testingData;
-// ImagingDataClient imagingSocket(8080);
+ImagingData testingData;
+ImagingDataClient imagingSocket(8080);
 
 // Variavel de distancia dos centroides de parametro
 int distance = 60;
@@ -245,7 +245,7 @@ int main()
                         cout << "radius " << newData.radius << ", ";
                         cout << "x " << newData.x << ", ";
                         cout << "y " << newData.y << endl;
-                        //imagingSocket.send_packet(newData);
+                        imagingSocket.send_packet(newData);
                         // fstream newfile;
                         // newfile.open("raios.txt", ios::app);
                         // newfile << "Inicio = " << k << " e Fim = " << nextIndex-1 << " e Duracao = " << duration/3 << "seg e Centroide = " << centroideSum << endl;
@@ -314,7 +314,7 @@ int main()
                     cout << "index " << newData.index << ", ";
                     cout << "duration " << newData.duration << ", ";
                     cout << "radius " << newData.radius << endl;
-                    //imagingSocket.send_packet(newData);
+                    imagingSocket.send_packet(newData);
                     break;
                 }
                 nextIndex = indexOfFrameOfBiggestContour;

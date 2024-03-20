@@ -1,0 +1,460 @@
+
+
+2024-02-28 00:15:22.285284
+
+
+
+2024-02-28 00:15:30.560137
+
+
+
+2024-02-28 00:15:42.276604
+
+
+
+2024-02-28 00:15:55.506175
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 06:32:51.858901
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 14:19:07.622776
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 14:38:30.813139
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}
+
+2024-02-28 14:41:15.830792
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}
+
+2024-02-28 14:46:42.088527
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "2", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}
+
+2024-02-28 14:50:27.489987
+
+
+
+2024-02-28 14:50:43.386265
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "2", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}
+
+2024-02-28 14:56:54.473761
+
+
+
+2024-02-28 14:56:59.112126
+
+
+
+2024-02-28 14:57:47.264369
+
+
+
+2024-02-28 14:57:52.527685
+
+
+
+2024-02-28 14:57:58.840983
+
+
+
+2024-02-28 14:58:08.155540
+
+
+
+2024-02-28 14:58:16.513137
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "2", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "0", "index": "1", "sd_memory_usage": "7.00", "internal_temperature": "32.80", "external_temperature": "1.53", "battery_voltage": "5.03", "altitude": "641.97", "pressure": "93848.00", "accel_x": "0.00", "accel_y": "0.00", "giro_x": "0.00", "giro_y": "0.00"}{"time": "500", "index": "2", "sd_memory_usage": "7.00", "internal_temperature": "32.70", "external_temperature": "1.53", "battery_voltage": "5.03", "altitude": "642.85", "pressure": "93838.00", "accel_x": "-0.08", "accel_y": "0.02", "giro_x": "-1.73", "giro_y": "0.14"}{"time": "1000", "index": "3", "sd_memory_usage": "7.00", "internal_temperature": "32.80", "external_temperature": "1.53", "battery_voltage": "5.03", "altitude": "642.50", "pressure": "93842.00", "accel_x": "-0.06", "accel_y": "0.02", "giro_x": "-1.73", "giro_y": "0.17"}{"time": "1500", "index": "4", "sd_memory_usage": "7.00", "internal_temperature": "32.80", "external_temperature": "1.53", "battery_voltage": "5.02", "altitude": "642.67", "pressure": "93840.00", "accel_x": "-0.06", "accel_y": "0.02", "giro_x": "-1.70", "giro_y": "0.16"}{"time": "2000", "index": "5", "sd_memory_usage": "7.00", "internal_temperature": "32.80", "external_temperature": "1.53", "battery_voltage": "5.03", "altitude": "642.67", "pressure": "93840.00", "accel_x": "-0.07", "accel_y": "0.01", "giro_x": "-1.73", "giro_y": "0.15"}{"time": "2500", "index": "6", "sd_memory_usage": "7.00", "internal_temperature": "32.80", "external_temperature": "1.53", "battery_voltage": "5.03", "altitude": "642.85", "pressure": "93838.00", "accel_x": "-0.07", "accel_y": "0.02", "giro_x": "-1.70", "giro_y": "0.18"}{"time": "3000", "index": "7", "sd_memory_usage": "7.00", "internal_temperature": "32.80", "external_temperature": "1.53", "battery_voltage": "5.03", "altitude": "642.67", "pressure": "93840.00", "accel_x": "-0.07", "accel_y": "0.02", "giro_x": "-1.73", "giro_y": "0.14"}{"time": "3500", "index": "8", "sd_memory_usage": "7.00", "internal_temperature": "32.80", "external_temperature": "1.53", "battery_voltage": "5.03", "altitude": "642.76", "pressure": "93839.00", "accel_x": "-0.07", "accel_y": "0.02", "giro_x": "-1.73", "giro_y": "0.17"}{"time": "4000", "index": "9", "sd_memory_usage": "7.00", "internal_temperature": "32.80", "external_temperature": "1.53", "battery_voltage": "5.03", "altitude": "642.50", "pressure": "93842.00", "accel_x": "-0.07", "accel_y": "0.02", "giro_x": "-1.71", "giro_y": "0.15"}{"time": "4500", "index": "10", "sd_memory_usage": "7.00", "internal_temperature": "32.90", "external_temperature": "1.53", "battery_voltage": "5.03", "altitude": "642.59", "pressure": "93841.00", "accel_x": "-0.07", "accel_y": "0.02", "giro_x": "-1.73", "giro_y": "0.14"}{"time": "5000", "index": "11", "sd_memory_usage": "7.00", "internal_temperature": "32.90", "external_temperature": "1.53", "battery_voltage": "5.03", "altitude": "641.88", "pressure": "93849.00", "accel_x": "-0.07", "accel_y": "0.02", "giro_x": "-1.70", "giro_y": "0.20"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "2", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "0", "index": "1", "sd_memory_usage": "7.00", "internal_temperature": "33.90", "external_temperature": "1.55", "battery_voltage": "5.02", "altitude": "640.99", "pressure": "93859.00", "accel_x": "-0.07", "accel_y": "0.02", "giro_x": "-1.70", "giro_y": "0.18"}{"time": "500", "index": "2", "sd_memory_usage": "7.00", "internal_temperature": "33.90", "external_temperature": "1.55", "battery_voltage": "5.03", "altitude": "641.35", "pressure": "93855.00", "accel_x": "-0.07", "accel_y": "0.02", "giro_x": "-1.70", "giro_y": "0.18"}{"time": "1000", "index": "3", "sd_memory_usage": "7.00", "internal_temperature": "33.90", "external_temperature": "1.55", "battery_voltage": "5.03", "altitude": "641.43", "pressure": "93854.00", "accel_x": "-0.07", "accel_y": "0.02", "giro_x": "-1.70", "giro_y": "0.18"}
+
+2024-02-28 15:42:54.378645
+
+
+
+2024-02-28 15:43:26.049549
+
+
+
+2024-02-28 15:43:30.622716
+
+
+
+2024-02-28 15:43:37.363087
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 15:45:14.321839
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 15:46:11.310127
+
+
+
+2024-02-28 15:46:25.059118
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 15:47:13.491448
+
+
+
+2024-02-28 15:47:28.226911
+
+
+
+2024-02-28 15:47:33.378802
+
+
+
+2024-02-28 15:48:02.537853
+
+
+
+2024-02-28 15:48:09.426173
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 16:00:28.935208
+
+
+
+2024-02-28 16:00:53.274878
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 16:01:46.156724
+
+
+
+2024-02-28 16:01:58.496526
+
+
+
+2024-02-28 16:02:05.738055
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 16:08:15.964888
+
+
+
+2024-02-28 16:08:20.656894
+
+
+
+2024-02-28 16:08:27.919767
+
+
+
+2024-02-28 16:08:33.905208
+
+
+
+2024-02-28 16:08:47.310432
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 16:10:34.614046
+
+
+
+2024-02-28 16:10:39.816854
+
+
+
+2024-02-28 16:10:45.109448
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 16:29:02.772468
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 17:14:08.634878
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 17:14:31.786186
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 17:16:49.058325
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 21:42:20.001938
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 21:43:39.757953
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 22:01:06.328947
+
+
+
+2024-02-28 22:08:15.708590
+
+
+
+2024-02-28 22:08:30.515198
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 22:26:46.521035
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 22:27:24.962900
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 22:30:04.234203
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 22:45:02.298949
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 22:45:26.605896
+
+
+
+2024-02-28 22:45:38.298286
+
+
+
+2024-02-28 22:46:01.344904
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 22:47:59.895407
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 22:48:18.495920
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 22:53:56.571260
+
+
+
+2024-02-28 22:54:04.483946
+
+
+
+2024-02-28 22:54:11.033190
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 22:54:52.176468
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 23:08:14.027988
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 23:11:24.173603
+
+
+
+2024-02-28 23:11:28.883916
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 23:11:48.236814
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 23:11:59.586742
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 23:16:18.432306
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 23:17:58.956165
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 23:18:56.255225
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 23:23:36.735188
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 23:25:50.083606
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 23:27:25.857737
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-28 23:30:29.952377
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "2", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}
+
+2024-02-28 23:34:15.987011
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "2", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}
+
+2024-02-28 23:44:43.151578
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-29 00:22:00.212429
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "2", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "20500", "index": "42", "sd_memory_usage": "7.00", "internal_temperature": "35.90", "external_temperature": "2.88", "battery_voltage": "3.50", "altitude": "622.94", "pressure": "94063.00", "accel_x": "-0.07", "accel_y": "0.02", "giro_x": "-1.73", "giro_y": "0.18"}{"time": "21000", "index": "43", "sd_memory_usage": "7.00", "internal_temperature": "36.00", "external_temperature": "2.88", "battery_voltage": "3.50", "altitude": "623.11", "pressure": "94061.00", "accel_x": "-0.08", "accel_y": "0.02", "giro_x": "-1.72", "giro_y": "0.21"}{"time": "21500", "index": "44", "sd_memory_usage": "7.00", "internal_temperature": "36.10", "external_temperature": "2.87", "battery_voltage": "3.50", "altitude": "623.73", "pressure": "94054.00", "accel_x": "-0.07", "accel_y": "0.03", "giro_x": "-1.70", "giro_y": "0.18"}{"time": "22000", "index": "45", "sd_memory_usage": "7.00", "internal_temperature": "36.20", "external_temperature": "2.88", "battery_voltage": "3.51", "altitude": "623.03", "pressure": "94062.00", "accel_x": "-0.07", "accel_y": "0.02", "giro_x": "-1.72", "giro_y": "0.22"}{"time": "22500", "index": "46", "sd_memory_usage": "7.00", "internal_temperature": "36.30", "external_temperature": "2.88", "battery_voltage": "3.50", "altitude": "622.94", "pressure": "94063.00", "accel_x": "-0.08", "accel_y": "0.01", "giro_x": "-1.72", "giro_y": "0.17"}
+
+2024-02-29 00:37:43.522351
+
+
+
+2024-02-29 00:37:59.509337
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-29 01:07:46.604469
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-29 01:22:50.795226
+
+
+
+2024-02-29 01:23:03.923692
+
+
+
+2024-02-29 01:23:17.476275
+
+
+
+2024-02-29 01:23:30.894352
+
+
+
+2024-02-29 01:23:36.117326
+
+
+
+2024-02-29 01:24:04.842694
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-29 01:27:10.648044
+
+
+
+2024-02-29 01:27:24.216721
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-29 09:10:51.933867
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-29 13:33:28.293706
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-02-29 13:52:40.736710
+
+
+
+2024-02-29 13:52:54.457074
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "2", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "68000", "index": "137", "sd_memory_usage": "8.00", "internal_temperature": "33.70", "external_temperature": "1.17", "battery_voltage": "3.30", "altitude": "633.29", "pressure": "93946.00", "accel_x": "-0.09", "accel_y": "0.03", "giro_x": "-1.71", "giro_y": "0.14"}{"time": "68500", "index": "138", "sd_memory_usage": "8.00", "internal_temperature": "33.70", "external_temperature": "1.17", "battery_voltage": "3.31", "altitude": "633.11", "pressure": "93948.00", "accel_x": "-0.09", "accel_y": "0.03", "giro_x": "-1.70", "giro_y": "0.18"}{"time": "69000", "index": "139", "sd_memory_usage": "8.00", "internal_temperature": "33.70", "external_temperature": "1.17", "battery_voltage": "3.31", "altitude": "633.46", "pressure": "93944.00", "accel_x": "-0.08", "accel_y": "0.02", "giro_x": "-1.70", "giro_y": "0.18"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "2", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "120500", "index": "242", "sd_memory_usage": "8.00", "internal_temperature": "36.20", "external_temperature": "1.19", "battery_voltage": "3.30", "altitude": "633.55", "pressure": "93943.00", "accel_x": "-0.05", "accel_y": "0.04", "giro_x": "-1.72", "giro_y": "0.18"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "2", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "131500", "index": "264", "sd_memory_usage": "8.00", "internal_temperature": "36.60", "external_temperature": "1.19", "battery_voltage": "3.30", "altitude": "633.38", "pressure": "93945.00", "accel_x": "-0.08", "accel_y": "0.05", "giro_x": "-1.75", "giro_y": "0.17"}{"time": "132000", "index": "265", "sd_memory_usage": "8.00", "internal_temperature": "36.60", "external_temperature": "1.19", "battery_voltage": "3.30", "altitude": "633.91", "pressure": "93939.00", "accel_x": "-0.06", "accel_y": "0.04", "giro_x": "-1.72", "giro_y": "0.20"}
+
+2024-03-01 01:18:34.684115
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-03-01 01:19:14.404987
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-03-01 01:31:23.476709
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-03-01 01:40:40.553616
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-03-01 01:43:04.743068
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-03-01 01:46:16.384824
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-03-01 01:47:53.823655
+
+
+
+2024-03-01 01:48:29.292858
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-03-01 02:00:56.835190
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "2", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "2", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "0", "index": "1", "sd_memory_usage": "8.00", "internal_temperature": "26.30", "external_temperature": "26.52", "battery_voltage": "5.03", "altitude": "638.16", "pressure": "93891.00", "accel_x": "0.00", "accel_y": "0.01", "giro_x": "8.37", "giro_y": "-0.23"}{"time": "500", "index": "2", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.49", "battery_voltage": "5.03", "altitude": "637.71", "pressure": "93896.00", "accel_x": "-0.07", "accel_y": "0.03", "giro_x": "-1.86", "giro_y": "-0.25"}{"time": "1000", "index": "3", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.45", "battery_voltage": "5.03", "altitude": "638.33", "pressure": "93889.00", "accel_x": "-0.07", "accel_y": "0.03", "giro_x": "-1.69", "giro_y": "0.14"}{"time": "1500", "index": "4", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.51", "battery_voltage": "5.03", "altitude": "638.16", "pressure": "93891.00", "accel_x": "-0.06", "accel_y": "0.03", "giro_x": "-1.65", "giro_y": "0.15"}{"time": "2000", "index": "5", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.48", "battery_voltage": "5.03", "altitude": "637.89", "pressure": "93894.00", "accel_x": "-0.07", "accel_y": "0.04", "giro_x": "-1.98", "giro_y": "-0.28"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "2", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "0", "index": "1", "sd_memory_usage": "8.00", "internal_temperature": "26.30", "external_temperature": "26.52", "battery_voltage": "5.03", "altitude": "638.16", "pressure": "93891.00", "accel_x": "0.00", "accel_y": "0.01", "giro_x": "8.37", "giro_y": "-0.23"}{"time": "500", "index": "2", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.49", "battery_voltage": "5.03", "altitude": "637.71", "pressure": "93896.00", "accel_x": "-0.07", "accel_y": "0.03", "giro_x": "-1.86", "giro_y": "-0.25"}{"time": "1000", "index": "3", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.45", "battery_voltage": "5.03", "altitude": "638.33", "pressure": "93889.00", "accel_x": "-0.07", "accel_y": "0.03", "giro_x": "-1.69", "giro_y": "0.14"}{"time": "1500", "index": "4", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.51", "battery_voltage": "5.03", "altitude": "638.16", "pressure": "93891.00", "accel_x": "-0.06", "accel_y": "0.03", "giro_x": "-1.65", "giro_y": "0.15"}{"time": "2000", "index": "5", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.48", "battery_voltage": "5.03", "altitude": "637.89", "pressure": "93894.00", "accel_x": "-0.07", "accel_y": "0.04", "giro_x": "-1.98", "giro_y": "-0.28"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "2", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "0", "index": "1", "sd_memory_usage": "8.00", "internal_temperature": "26.30", "external_temperature": "26.52", "battery_voltage": "5.03", "altitude": "638.16", "pressure": "93891.00", "accel_x": "0.00", "accel_y": "0.01", "giro_x": "8.37", "giro_y": "-0.23"}{"time": "500", "index": "2", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.49", "battery_voltage": "5.03", "altitude": "637.71", "pressure": "93896.00", "accel_x": "-0.07", "accel_y": "0.03", "giro_x": "-1.86", "giro_y": "-0.25"}{"time": "1000", "index": "3", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.45", "battery_voltage": "5.03", "altitude": "638.33", "pressure": "93889.00", "accel_x": "-0.07", "accel_y": "0.03", "giro_x": "-1.69", "giro_y": "0.14"}{"time": "1500", "index": "4", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.51", "battery_voltage": "5.03", "altitude": "638.16", "pressure": "93891.00", "accel_x": "-0.06", "accel_y": "0.03", "giro_x": "-1.65", "giro_y": "0.15"}{"time": "2000", "index": "5", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.48", "battery_voltage": "5.03", "altitude": "637.89", "pressure": "93894.00", "accel_x": "-0.07", "accel_y": "0.04", "giro_x": "-1.98", "giro_y": "-0.28"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "2", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "0", "index": "1", "sd_memory_usage": "8.00", "internal_temperature": "26.30", "external_temperature": "26.52", "battery_voltage": "5.03", "altitude": "638.16", "pressure": "93891.00", "accel_x": "0.00", "accel_y": "0.01", "giro_x": "8.37", "giro_y": "-0.23"}{"time": "500", "index": "2", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.49", "battery_voltage": "5.03", "altitude": "637.71", "pressure": "93896.00", "accel_x": "-0.07", "accel_y": "0.03", "giro_x": "-1.86", "giro_y": "-0.25"}{"time": "1000", "index": "3", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.45", "battery_voltage": "5.03", "altitude": "638.33", "pressure": "93889.00", "accel_x": "-0.07", "accel_y": "0.03", "giro_x": "-1.69", "giro_y": "0.14"}{"time": "1500", "index": "4", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.51", "battery_voltage": "5.03", "altitude": "638.16", "pressure": "93891.00", "accel_x": "-0.06", "accel_y": "0.03", "giro_x": "-1.65", "giro_y": "0.15"}{"time": "2000", "index": "5", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.48", "battery_voltage": "5.03", "altitude": "637.89", "pressure": "93894.00", "accel_x": "-0.07", "accel_y": "0.04", "giro_x": "-1.98", "giro_y": "-0.28"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "2", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "0", "index": "1", "sd_memory_usage": "8.00", "internal_temperature": "26.30", "external_temperature": "26.52", "battery_voltage": "5.03", "altitude": "638.16", "pressure": "93891.00", "accel_x": "0.00", "accel_y": "0.01", "giro_x": "8.37", "giro_y": "-0.23"}{"time": "500", "index": "2", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.49", "battery_voltage": "5.03", "altitude": "637.71", "pressure": "93896.00", "accel_x": "-0.07", "accel_y": "0.03", "giro_x": "-1.86", "giro_y": "-0.25"}{"time": "1000", "index": "3", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.45", "battery_voltage": "5.03", "altitude": "638.33", "pressure": "93889.00", "accel_x": "-0.07", "accel_y": "0.03", "giro_x": "-1.69", "giro_y": "0.14"}{"time": "1500", "index": "4", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.51", "battery_voltage": "5.03", "altitude": "638.16", "pressure": "93891.00", "accel_x": "-0.06", "accel_y": "0.03", "giro_x": "-1.65", "giro_y": "0.15"}{"time": "2000", "index": "5", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.48", "battery_voltage": "5.03", "altitude": "637.89", "pressure": "93894.00", "accel_x": "-0.07", "accel_y": "0.04", "giro_x": "-1.98", "giro_y": "-0.28"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "2", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "0", "index": "1", "sd_memory_usage": "8.00", "internal_temperature": "26.30", "external_temperature": "26.52", "battery_voltage": "5.03", "altitude": "638.16", "pressure": "93891.00", "accel_x": "0.00", "accel_y": "0.01", "giro_x": "8.37", "giro_y": "-0.23"}{"time": "500", "index": "2", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.49", "battery_voltage": "5.03", "altitude": "637.71", "pressure": "93896.00", "accel_x": "-0.07", "accel_y": "0.03", "giro_x": "-1.86", "giro_y": "-0.25"}{"time": "1000", "index": "3", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.45", "battery_voltage": "5.03", "altitude": "638.33", "pressure": "93889.00", "accel_x": "-0.07", "accel_y": "0.03", "giro_x": "-1.69", "giro_y": "0.14"}{"time": "1500", "index": "4", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.51", "battery_voltage": "5.03", "altitude": "638.16", "pressure": "93891.00", "accel_x": "-0.06", "accel_y": "0.03", "giro_x": "-1.65", "giro_y": "0.15"}{"time": "2000", "index": "5", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.48", "battery_voltage": "5.03", "altitude": "637.89", "pressure": "93894.00", "accel_x": "-0.07", "accel_y": "0.04", "giro_x": "-1.98", "giro_y": "-0.28"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "2", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "0", "index": "1", "sd_memory_usage": "8.00", "internal_temperature": "26.30", "external_temperature": "26.52", "battery_voltage": "5.03", "altitude": "638.16", "pressure": "93891.00", "accel_x": "0.00", "accel_y": "0.01", "giro_x": "8.37", "giro_y": "-0.23"}{"time": "500", "index": "2", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.49", "battery_voltage": "5.03", "altitude": "637.71", "pressure": "93896.00", "accel_x": "-0.07", "accel_y": "0.03", "giro_x": "-1.86", "giro_y": "-0.25"}{"time": "1000", "index": "3", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.45", "battery_voltage": "5.03", "altitude": "638.33", "pressure": "93889.00", "accel_x": "-0.07", "accel_y": "0.03", "giro_x": "-1.69", "giro_y": "0.14"}{"time": "1500", "index": "4", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.51", "battery_voltage": "5.03", "altitude": "638.16", "pressure": "93891.00", "accel_x": "-0.06", "accel_y": "0.03", "giro_x": "-1.65", "giro_y": "0.15"}{"time": "2000", "index": "5", "sd_memory_usage": "8.00", "internal_temperature": "26.20", "external_temperature": "26.48", "battery_voltage": "5.03", "altitude": "637.89", "pressure": "93894.00", "accel_x": "-0.07", "accel_y": "0.04", "giro_x": "-1.98", "giro_y": "-0.28"}
+
+2024-03-01 03:09:54.897440
+
+
+
+2024-03-01 03:10:00.005828
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-03-01 03:10:25.110197
+
+
+
+2024-03-01 03:10:37.396162
+
+
+
+2024-03-01 03:10:51.598314
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}
+
+2024-03-01 03:12:07.577401
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "0.00", "pressure": "0.00", "accel_x": "10.00", "accel_y": "11.00", "giro_x": "12.00", "giro_y": "13.00"}{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}
+
+2024-03-01 03:14:18.824956
+
+
+
+2024-03-01 03:14:23.362782
+
+
+
+2024-03-01 03:14:49.661254
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "2", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "71000", "index": "143", "sd_memory_usage": "8.00", "internal_temperature": "27.50", "external_temperature": "25.77", "battery_voltage": "5.03", "altitude": "637.27", "pressure": "93901.00", "accel_x": "-0.12", "accel_y": "-0.01", "giro_x": "-1.69", "giro_y": "0.18"}{"time": "71500", "index": "144", "sd_memory_usage": "8.00", "internal_temperature": "27.50", "external_temperature": "25.74", "battery_voltage": "5.03", "altitude": "636.74", "pressure": "93907.00", "accel_x": "-0.13", "accel_y": "-0.01", "giro_x": "-1.67", "giro_y": "0.17"}
+
+2024-03-01 03:20:12.151426
+
+{"time": "0", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "1", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "2", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "3", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "4", "index": "0", "sd_memory_usage": "0.00", "internal_temperature": "0.00", "external_temperature": "0.00", "battery_voltage": "0.00", "altitude": "1.00", "pressure": "1.00", "accel_x": "1.00", "accel_y": "1.00", "giro_x": "1.00", "giro_y": "1.00"}{"time": "81500", "index": "164", "sd_memory_usage": "8.00", "internal_temperature": "27.40", "external_temperature": "25.71", "battery_voltage": "5.03", "altitude": "636.92", "pressure": "93905.00", "accel_x": "-0.14", "accel_y": "-0.01", "giro_x": "-1.69", "giro_y": "0.16"}{"time": "82000", "index": "165", "sd_memory_usage": "8.00", "internal_temperature": "27.30", "external_temperature": "25.26", "battery_voltage": "4.99", "altitude": "637.18", "pressure": "93902.00", "accel_x": "-0.12", "accel_y": "-0.01", "giro_x": "-1.66", "giro_y": "0.15"}{"time": "82500", "index": "166", "sd_memory_usage": "8.00", "internal_temperature": "27.40", "external_temperature": "25.71", "battery_voltage": "5.03", "altitude": "637.45", "pressure": "93899.00", "accel_x": "-0.13", "accel_y": "-0.01", "giro_x": "-1.67", "giro_y": "0.17"}
+
+2024-03-01 07:41:43.284350
+

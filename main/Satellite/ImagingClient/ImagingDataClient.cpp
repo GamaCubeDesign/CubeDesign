@@ -113,6 +113,7 @@ class ImagingDataClient{
         cout << "Unknown response: " << buffer << endl;
         return 0;
       }
+      return -1;
     }
 
     void close_client(){

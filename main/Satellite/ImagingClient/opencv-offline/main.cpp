@@ -22,15 +22,15 @@ bool stopLoop = false;
 
 // Função que verifica a entrada do teclado
 void checkInput() {
-    while (true) {
-        if (imagingSocket.update() == 0) {
-            sleep(1);
-            ::stopLoop = true;
-            break;
-        }
-    }
-    // sleep(5);
-    // ::stopLoop = true;
+    // while (true) {
+    //     if (imagingSocket.update() == 0) {
+    //         sleep(1);
+    //         ::stopLoop = true;
+    //         break;
+    //     }
+    // }
+    sleep(5);
+    ::stopLoop = true;
 }
 
 double twoPointDistance(Point2f A, Point2f B) {
@@ -42,17 +42,17 @@ double twoPointDistance(Point2f A, Point2f B) {
 int main() 
 {
     cout << "Imaging code" << endl;
-    while(imagingSocket.connect_to_socket() < 0){
-   		 cout << "Error connecting to socket" << endl;
-   		 cout << "Goodbye" << endl;
-   		 return 0;
-    }
+    // while(imagingSocket.connect_to_socket() < 0){
+   	// 	 cout << "Error connecting to socket" << endl;
+   	// 	 cout << "Goodbye" << endl;
+   	// 	 return 0;
+    // }
     
     while(true) {
 	 
     // Recebendo entrada de qual tratamento sera realizado
-    int scene = imagingSocket.update();
-    // int scene = 1;
+    // int scene = imagingSocket.update();
+    int scene = 1;
     
     if(scene == 0) {
     	this_thread::sleep_for(chrono::milliseconds(1000));

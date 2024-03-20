@@ -1,1 +1,1 @@
-{ "time": 0, "index": 1, "temp_bmp": 28.800, "pressure_bmp": 93923.000, "altitude_bmp": 635.320, "Gx_mpu": -1.664, "Gy_mpu": 0.183, "Gz_mpu": 0.038, "Ax_mpu": -0.074, "Ay_mpu": 0.017, "Az_mpu": 0.824, "battery_voltage": 5.023, "ext_temp_voltage": 3.366, "volt_3v": 3.340, "diskp": 8 }
+{ "time": 87500, "index": 176, "temp_bmp": 27.200, "pressure_bmp": 93904.000, "altitude_bmp": 637.010, "Gx_mpu": -1.679, "Gy_mpu": 0.145, "Gz_mpu": 0.038, "Ax_mpu": -0.123, "Ay_mpu": -0.009, "Az_mpu": 0.822, "battery_voltage": 5.032, "ext_temp_voltage": 1.645, "volt_3v": 3.342, "diskp": 8 }

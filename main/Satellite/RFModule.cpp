@@ -109,6 +109,7 @@ void updateRFComm(){
     //   talking = false;
     // }
     cout << "Message received" << endl;
+    rx_pointer = 0;
     while(modem_available()){
       b = modem_read();
       std::cout << (int)b << " " << (int)rx_pointer << std::endl;

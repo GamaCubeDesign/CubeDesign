@@ -51,7 +51,8 @@ int main()
     }
     
     while(true) {
-	 
+    ImagingData raio;
+    int contadorGlobal = 0;
     // Recebendo entrada de qual tratamento sera realizado
     int scene = imagingSocket.update();
     // int scene = 1;
@@ -155,6 +156,15 @@ int main()
                 centroidAfterWeight.x = xSum / areasSum;
                 centroidAfterWeight.y = ySum / areasSum;
                 allCentroids[countOfFrames - 1][i] = centroidAfterWeight;
+		if(scene == 3) {
+			raio.index = contadorGlobal++;
+			raio.type = 3;
+			raio.frame = countOfFrames - 1;
+			raio.area = biggestAreas[countOfFrames - 1][i];
+			raio.x = allCentroids[countOfFrames - 1][i].x;
+			raio.y = allCentroids[countOfFrames - 1][i].y;
+			imagingSocket.send_packet(raio);
+		}
             }
             c.visited[i] = 1;
         }
@@ -220,16 +230,17 @@ int main()
                         centroideSum.y = ySum / areasSum;
                         // Salvamento da duracao e do valor do centroide em txt
                         ImagingData newData;
+			newData.frame = nextIndex;
                         newData.type = 1;
                         newData.index = contadorRaio;
                         newData.x = centroideSum.x;
                         newData.y = centroideSum.y;
                         newData.duration = duration/3;
-                        newData.radius = areasSum;
+                        newData.area = areasSum;
                         cout << "type: " << newData.type << ", ";
                         cout << "index " << newData.index << ", ";
                         cout << "duration " << newData.duration << ", ";
-                        cout << "radius " << newData.radius << ", ";
+                        cout << "area " << newData.area << ", ";
                         cout << "x " << newData.x << ", ";
                         cout << "y " << newData.y << endl;
                         imagingSocket.send_packet(newData);
@@ -296,11 +307,11 @@ int main()
                     newData.type = 2;
                     newData.index = contadorRaio;
                     newData.duration = duration/3;
-                    newData.radius = biggestContourFrames;
+                    newData.area = biggestContourFrames;
                     cout << "type " << newData.type << ", ";
                     cout << "index " << newData.index << ", ";
                     cout << "duration " << newData.duration << ", ";
-                    cout << "radius " << newData.radius << endl;
+                    cout << "area " << newData.area << endl;
                     imagingSocket.send_packet(newData);
                     break;
                 }

@@ -161,7 +161,7 @@ struct ImagingData{
   uint32_t frame;
   float x;
   float y;
-  float radius;
+  float area;
   float duration;
 };
 

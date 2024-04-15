@@ -158,7 +158,7 @@ struct ImagingData{
   // LightningData lightnings[5];
   uint32_t time;
   uint32_t index;
-  uint32_t type;
+  uint32_t frame;
   float x;
   float y;
   float radius;

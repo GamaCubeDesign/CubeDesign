@@ -1,0 +1,2 @@
+PyAutoGUI==0.9.54
+streamlit==1.34.0
